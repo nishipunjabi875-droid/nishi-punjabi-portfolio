@@ -263,6 +263,115 @@ module.exports = {
           optional: true
         }
       ]
+    },
+    cart: {
+      name: 'Cart Page',
+      url: 'https://www.woodenstreet.com/cart',
+      components: [
+        {
+          id: 'logo',
+          name: 'Header Logo',
+          selector: 'header img, .logo-box img, a.logo img, .style_headerLogo__r964U img, img[src*="mob-logo.svg"], img[src*="logo.svg"]',
+          checkAttrs: ['src', 'alt']
+        },
+        {
+          id: 'cart-title',
+          name: 'Cart Page Heading',
+          selector: 'h1:has-text("Cart"), h1:has-text("Shopping"), h1, .cart-title, .style_cartTitle__X2z9Y',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'cart-items',
+          name: 'Cart Product Items',
+          selector: '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]',
+          multi: true,
+          optional: true,
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'empty-cart',
+          name: 'Empty Cart Section',
+          selector: '.empty-cart, .empty-cart-text, div:has-text("Your cart is empty"), section:has-text("cart is empty"), div:has-text("Cart is Empty")',
+          optional: true,
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'order-summary',
+          name: 'Order Summary Box',
+          selector: '.order-summary, .cart-totals, [class*="orderSummary" i], [class*="cartSummary" i], section:has-text("Order Summary"), div:has-text("PRICE DETAILS")',
+          optional: true,
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'coupon-box',
+          name: 'Coupon Code Input',
+          selector: '#coupon, input[name="coupon"], input[placeholder*="Coupon" i], input[placeholder*="Promo" i], [class*="coupon" i]',
+          optional: true,
+          checkAttrs: ['placeholder']
+        },
+        {
+          id: 'checkout-btn',
+          name: 'Checkout / Place Order Button',
+          selector: 'button#placeOrder, button:has-text("CONFIRM ORDER"), button:has-text("PLACE ORDER"), button:has-text("Place Order"), a[href*="checkout"], a[href*="/guest"], .checkout-btn',
+          optional: true,
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'footer',
+          name: 'Footer Section',
+          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-lightgrayColor',
+          checkAttrs: ['innerText'],
+          optional: true
+        }
+      ]
+    },
+    guest: {
+      name: 'Guest Checkout Page',
+      url: 'https://www.woodenstreet.com/guest',
+      components: [
+        {
+          id: 'logo',
+          name: 'Header Logo',
+          selector: 'header img, .logo-box img, a.logo img, .style_headerLogo__r964U img, img[src*="mob-logo.svg"], img[src*="logo.svg"]',
+          checkAttrs: ['src', 'alt']
+        },
+        {
+          id: 'guest-heading',
+          name: 'Guest Page Heading',
+          selector: 'h1:has-text("Guest"), h2:has-text("Guest"), h1, h2, .login-title, div:has-text("Login"), form h2, form h1',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'phone-input',
+          name: 'Mobile / Email Input',
+          selector: 'input#telephone, input[type="tel"], input[name="phone"], input[name="telephone"], input[placeholder*="Mobile" i], input[placeholder*="Phone" i]',
+          checkAttrs: ['placeholder', 'type'],
+          optional: true
+        },
+        {
+          id: 'continue-btn',
+          name: 'Continue Button',
+          selector: 'button:has-text("CONTINUE"), button:has-text("Continue"), input[type="submit"], input:has-text("CONTINUE"), button:has-text("GET OTP"), button:has-text("Proceed")',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'guest-form',
+          name: 'Guest Form Container',
+          selector: 'form, div[class*="guest" i], div[class*="login" i]',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'footer',
+          name: 'Footer Section',
+          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-lightgrayColor',
+          checkAttrs: ['innerText'],
+          optional: true
+        }
+      ]
     }
   }
 };
