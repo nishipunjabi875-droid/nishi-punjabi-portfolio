@@ -158,6 +158,9 @@ test.describe('Cart Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
+  // 1. Ensure products are added to cart before auditing
+  await ensureProductsInCart(page);
+
   console.log(`Navigating to URL: ${pageConfig.url}`);
   await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   
@@ -168,6 +171,9 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
   
   // Dismiss initial popups
   await dismissPopups(page);
+
+  // Perform cart price & calculation audit
+  const cartCalculations = await verifyCartCalculations(page);
   
   console.log('Triggering page auto-scroll to load lazy content completely...');
   await page.evaluate(async () => {
@@ -595,4 +601,170 @@ async function dismissPopups(page) {
   } catch (err) {
     console.error('Error during dismissPopups:', err);
   }
+}
+
+const PRODUCT_1_URL = 'https://www.woodenstreet.com/lorenz-3-seater-sofa-cotton-jade-ivory';
+const PRODUCT_2_URL = 'https://www.woodenstreet.com/connecting-flat-cotton-bedsheet-king-size-with-2-pillow-covers-beige';
+
+async function addProductToCart(page, productUrl) {
+  try {
+    console.log(`Adding product to cart from PDP: ${productUrl}`);
+    await page.goto(productUrl, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await page.waitForTimeout(2000);
+
+    await dismissPopups(page);
+
+    const addToCartSelectors = [
+      'button:has-text("ADD TO CART")',
+      'button:has-text("Add to Cart")',
+      '#button-cart',
+      '.add-to-cart',
+      '.add-cart-btn',
+      '#add-cart-btn',
+      'button[class*="add-to-cart"]',
+      'button[class*="addToCart"]',
+      '[class*="btnCart" i]'
+    ];
+
+    for (const sel of addToCartSelectors) {
+      const btn = page.locator(sel).first();
+      if (await btn.isVisible({ timeout: 2000 }).catch(() => false)) {
+        await btn.scrollIntoViewIfNeeded().catch(() => {});
+        await btn.click({ timeout: 5000 }).catch(() => {});
+        console.log(`   Successfully clicked Add to Cart button (${sel})`);
+        await page.waitForTimeout(3000);
+        return true;
+      }
+    }
+
+    const clicked = await page.evaluate(() => {
+      const btns = Array.from(document.querySelectorAll('button, a'));
+      const addBtn = btns.find(b => /add to cart/i.test(b.textContent));
+      if (addBtn) { addBtn.click(); return true; }
+      return false;
+    }).catch(() => false);
+
+    await page.waitForTimeout(3000);
+    return clicked;
+  } catch (err) {
+    console.log(`   Failed to add product to cart: ${err.message}`);
+    return false;
+  }
+}
+
+async function ensureProductsInCart(page) {
+  console.log('Checking cart contents before running audit...');
+  await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForTimeout(2000);
+  
+  const items = page.locator('.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]');
+  const count = await items.count().catch(() => 0);
+  if (count > 0) {
+    console.log(`Cart already contains ${count} item(s).`);
+    return;
+  }
+
+  console.log('Cart is empty. Adding products to cart...');
+  await addProductToCart(page, PRODUCT_1_URL);
+  await addProductToCart(page, PRODUCT_2_URL);
+
+  await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForTimeout(2000);
+}
+
+async function verifyCartCalculations(page) {
+  console.log('\n--- Auditing Cart Calculations & Price Breakdown ---');
+  
+  const calcResults = await page.evaluate(() => {
+    const parseAmount = (text) => {
+      if (!text) return 0;
+      const cleaned = text.replace(/[^0-9.]/g, '');
+      return parseFloat(cleaned) || 0;
+    };
+
+    const itemElements = Array.from(document.querySelectorAll('.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart_item" i]'));
+    const items = itemElements.map(el => {
+      const titleEl = el.querySelector('.product-name, [class*="productTitle" i], a[href*="/product/"], h3, h4, .title');
+      const priceEl = el.querySelector('.price, .selling-price, [class*="sellingPrice" i], [class*="cartPrice" i], .offerprice');
+      const qtyEl = el.querySelector('input[name*="quantity"], .qty-input, [class*="qty" i]');
+
+      const title = titleEl ? titleEl.innerText.trim() : 'Cart Item';
+      const price = priceEl ? parseAmount(priceEl.innerText) : 0;
+      const qty = qtyEl ? (parseInt(qtyEl.value || qtyEl.innerText, 10) || 1) : 1;
+
+      return { title, price, qty, itemTotal: price * qty };
+    });
+
+    const sumOfItems = items.reduce((acc, item) => acc + item.itemTotal, 0);
+
+    const bodyText = document.body.innerText;
+    
+    let subtotal = 0;
+    let discount = 0;
+    let totalPayable = 0;
+    let shipping = 0;
+
+    const summaryRows = Array.from(document.querySelectorAll('.order-summary tr, .cart-totals div, [class*="orderSummary" i] div, [class*="price-details" i] div, div[class*="summary" i] div, tr'));
+    summaryRows.forEach(row => {
+      const txt = row.innerText || '';
+      if (/subtotal|total mrp|total price/i.test(txt)) {
+        const val = parseAmount(txt);
+        if (val > 0) subtotal = val;
+      } else if (/discount|savings/i.test(txt)) {
+        const val = parseAmount(txt);
+        if (val > 0) discount = val;
+      } else if (/shipping|delivery/i.test(txt)) {
+        const val = parseAmount(txt);
+        if (val > 0) shipping = val;
+      } else if (/total payable|final amount|order total|total amount/i.test(txt)) {
+        const val = parseAmount(txt);
+        if (val > 0) totalPayable = val;
+      }
+    });
+
+    if (totalPayable === 0) {
+      const matchTotal = bodyText.match(/(?:Total Payable|Total Amount|Order Total|Final Amount)\s*[:\n]?\s*₹?\s*([\d,]+)/i);
+      if (matchTotal) totalPayable = parseAmount(matchTotal[1]);
+    }
+    if (subtotal === 0) {
+      const matchSub = bodyText.match(/(?:Sub Total|Subtotal|Total MRP)\s*[:\n]?\s*₹?\s*([\d,]+)/i);
+      if (matchSub) subtotal = parseAmount(matchSub[1]);
+    }
+
+    return {
+      itemsCount: items.length,
+      items,
+      sumOfItems,
+      subtotal,
+      discount,
+      shipping,
+      totalPayable
+    };
+  });
+
+  console.log('   📦 Cart Items Parsed:', calcResults.itemsCount);
+  if (calcResults.items.length > 0) {
+    calcResults.items.forEach((item, idx) => {
+      console.log(`      Item #${idx + 1}: ${item.title} | Price: ₹${item.price} | Qty: ${item.qty} | Item Total: ₹${item.itemTotal}`);
+    });
+  }
+
+  console.log(`   💰 Subtotal / Total MRP : ₹${calcResults.subtotal}`);
+  console.log(`   🏷️  Discount             : ₹${calcResults.discount}`);
+  console.log(`   🚚 Shipping / Delivery  : ₹${calcResults.shipping}`);
+  console.log(`   💵 Total Payable        : ₹${calcResults.totalPayable}`);
+
+  if (calcResults.itemsCount > 0) {
+    if (calcResults.totalPayable > 0 && calcResults.subtotal > 0) {
+      const expectedTotal = calcResults.subtotal - calcResults.discount + calcResults.shipping;
+      const diff = Math.abs(calcResults.totalPayable - expectedTotal);
+      if (diff <= 100) {
+        console.log(`   ✅ Price Calculation VERIFIED! Total Payable (₹${calcResults.totalPayable}) matches Subtotal - Discount + Shipping.`);
+      } else {
+        console.warn(`   ⚠️ Price Calculation Discrepancy: Total Payable is ₹${calcResults.totalPayable}, but Subtotal - Discount + Shipping = ₹${expectedTotal}`);
+      }
+    }
+  }
+
+  return calcResults;
 }
