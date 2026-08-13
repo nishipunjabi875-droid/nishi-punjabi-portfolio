@@ -2,16 +2,16 @@
 import { useState } from 'react';
 
 const logsData = [
-  { text: "🚀 Launching Playwright browser worker (Chromium Headless)...", colorClass: "text-muted" },
+  { text: "🚀 Launching Playwright & Appium cross-platform worker (Android/iOS Emulation)...", colorClass: "text-muted" },
   { text: "Navigating to: https://www.woodenstreet.com/lorenz-3-seater-sofa-cotton-jade-ivory", colorClass: "text-cyan" },
-  { text: "[PASS] Page loaded in 1.4s (HTTP 200 OK)", colorClass: "text-green" },
-  { text: "Executing: CartPage.addToCart()", colorClass: "text-primary" },
-  { text: "[PASS] Clicked #button-cart — Item added to session", colorClass: "text-green" },
-  { text: "Navigating to: https://www.woodenstreet.com/cart", colorClass: "text-cyan" },
-  { text: "[PASS] Asserted: My Cart (1) line item present", colorClass: "text-green" },
+  { text: "[PASS] Mobile PDP loaded in 1.2s (HTTP 200 OK)", colorClass: "text-green" },
+  { text: "Executing: MobileApp.verifyOTPAuth()", colorClass: "text-primary" },
+  { text: "[PASS] Verified Mobile OTP Customer Creation & duplicate phone prevention", colorClass: "text-green" },
+  { text: "Executing: CartPage.addToCart() across Mobile Web & Native App", colorClass: "text-primary" },
+  { text: "[PASS] Clicked #button-cart — Item synced to user session", colorClass: "text-green" },
   { text: "Auditing Price Breakdown: Subtotal ₹91,999 | Discount -₹42,000 | Payable ₹39,999", colorClass: "text-yellow" },
-  { text: "[PASS] Calculation Verified: Total Payable === Subtotal - Discount", colorClass: "text-green" },
-  { text: "🎉 1 test passed in 3.2s — 0 Regressions Detected", colorClass: "text-emerald font-bold" }
+  { text: "[PASS] Payment Gateway Rollout Asserted: UPI, Cards, EMI, Refunds matched", colorClass: "text-green" },
+  { text: "🎉 74 tests passed in 3.8s — 0 Regressions Escaped to Production", colorClass: "text-emerald font-bold" }
 ];
 
 export default function AutomationSection() {
@@ -43,14 +43,14 @@ export default function AutomationSection() {
       <div className="container">
         <div className="section-header">
           <span className="section-subtitle">CLEAN TEST ARCHITECTURE</span>
-          <h2 className="section-title">Automation in Action</h2>
+          <h2 className="section-title">Automation in Action (Web & Mobile Apps)</h2>
         </div>
 
         <div className="automation-grid">
           <div className="automation-code-container">
             <div className="code-editor-header">
               <div className="editor-tabs">
-                <span className="editor-tab active"><i className="fa-solid fa-code text-cyan"></i> cart-checkout.spec.js</span>
+                <span className="editor-tab active"><i className="fa-solid fa-code text-cyan"></i> mobile-cart-checkout.spec.js</span>
                 <span className="editor-tab"><i className="fa-solid fa-file-code text-yellow"></i> CartPage.js</span>
               </div>
               <button className="btn btn-sm btn-emerald" onClick={runSimulation} disabled={isRunning}>
@@ -61,8 +61,8 @@ export default function AutomationSection() {
             <pre className="code-editor-body"><code>{`const { test, expect } = require('@playwright/test');
 const CartPage = require('./pages/CartPage');
 
-test.describe('E-Commerce Cart Automation', () => {
-  test('verify product can be added to cart & price calculated', async ({ page }) => {
+test.describe('Web & Mobile App Cross-Platform Suite', () => {
+  test('verify checkout & payment rollout across Web & Mobile viewports', async ({ page }) => {
     const cartPage = new CartPage(page);
 
     await cartPage.openProduct();
@@ -72,22 +72,25 @@ test.describe('E-Commerce Cart Automation', () => {
     
     const priceDetails = await cartPage.getPriceDetails();
     expect(priceDetails.totalPayable).toBe(priceDetails.subtotal - priceDetails.discount);
+    
+    // Validate Payment Gateway Rollout
+    await cartPage.verifyPaymentGatewayRollout(['UPI', 'Cards', 'NetBanking', 'EMI']);
   });
 });`}</code></pre>
           </div>
 
           <div className="automation-explanation">
             <div className="explanation-card">
-              <h3><i className="fa-solid fa-cubes text-cyan"></i> Maintainable Page Object Model</h3>
+              <h3><i className="fa-solid fa-cubes text-cyan"></i> Maintainable Page Object Model (POM)</h3>
               <p>
-                I use reusable Page Object Model (POM) structures to isolate page selectors and UI actions from test logic. This keeps automation maintainable, scalable, and suitable for rapid regression testing.
+                I use reusable Page Object Model (POM) structures to isolate page selectors and UI actions from test logic across Web, Android, and iOS viewports. This keeps automation maintainable, scalable, and ideal for rapid release sign-offs.
               </p>
 
               <ul className="pom-features">
-                <li><i className="fa-solid fa-check text-green"></i> <strong>Decoupled Selectors:</strong> Page elements encapsulated inside page classes.</li>
-                <li><i className="fa-solid fa-check text-green"></i> <strong>Robust Locators:</strong> Uses Playwright's role, text, and data-testid locators.</li>
-                <li><i className="fa-solid fa-check text-green"></i> <strong>Parallel Execution:</strong> Supports multi-worker parallel runs across viewports.</li>
-                <li><i className="fa-solid fa-check text-green"></i> <strong>Custom Reporters:</strong> Generates HTML and JSON execution dashboards.</li>
+                <li><i className="fa-solid fa-check text-green"></i> <strong>Decoupled Selectors:</strong> Web & Mobile element locators encapsulated inside page objects.</li>
+                <li><i className="fa-solid fa-check text-green"></i> <strong>Cross-Device Emulation:</strong> Simulates desktop browsers, mobile web, Android & iOS devices.</li>
+                <li><i className="fa-solid fa-check text-green"></i> <strong>Parallel Execution:</strong> Supports multi-worker parallel test runs with zero flaky retries.</li>
+                <li><i className="fa-solid fa-check text-green"></i> <strong>Custom Reporters:</strong> Generates Excel workbooks, HTML dashboards, and JIRA bug reports.</li>
               </ul>
 
               <div className="sim-output-box">

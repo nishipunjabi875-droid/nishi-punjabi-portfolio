@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 
 const roles = [
+  "Website & Mobile App QA Specialist",
+  "Android & iOS Testing Engineer",
   "Playwright Automation Specialist",
-  "Mobile App Testing Specialist",
-  "API & Payload QA Engineer",
-  "E-Commerce Payment Audit QA"
+  "API & Payment Gateway Audit QA"
 ];
 
 const fullName = "Nishi Punjabi";
@@ -42,7 +42,7 @@ export default function HeroSection({ onOpenResume }) {
       <div className="container hero-grid">
         <div className="hero-content">
           <div className="hero-badge">
-            <i className="fa-solid fa-shield-halved"></i> QA AUTOMATION ENGINEER
+            <i className="fa-solid fa-shield-halved"></i> QA AUTOMATION ENGINEER | WEB & MOBILE (ANDROID & IOS)
           </div>
           <div className="hero-greeting">
             Hello, I'm 👋 <span className="hero-role-cycle text-cyan" style={{ fontSize: '0.95rem', fontWeight: 500 }}>• {roles[roleIndex]}</span>
@@ -51,10 +51,10 @@ export default function HeroSection({ onOpenResume }) {
             {typedName}<span className="typewriter-cursor">|</span>
           </h1>
           <h2 className="hero-tagline">
-            Breaking Bugs Before They Reach <span className="gradient-text">Production.</span>
+            Ensuring Flawless Quality Across <span className="gradient-text">Web & Mobile Apps.</span>
           </h2>
           <p className="hero-description">
-            A dedicated QA Automation Engineer specializing in high-traffic e-commerce applications across web and mobile. I focus on functional testing, regression automation, Playwright test suites, API validation, payment workflows, and end-to-end quality assurance.
+            QA Automation Engineer with hands-on expertise in end-to-end testing across <strong>Web, Android & iOS Apps</strong> for a high-traffic e-commerce platform (10,000+ SKUs). Specializing in Playwright automation, payment gateway rollout validation (UPI, Cards, Net Banking, EMI), CMS bulk updates, API testing, and JIRA bug triage.
           </p>
 
           <div className="hero-actions">
@@ -62,7 +62,7 @@ export default function HeroSection({ onOpenResume }) {
               <i className="fa-solid fa-layer-group"></i> View My Work
             </a>
             <button onClick={onOpenResume} className="btn btn-secondary">
-              <i className="fa-solid fa-download"></i> Download Resume
+              <i className="fa-solid fa-file-pdf"></i> View & Download Resume
             </button>
           </div>
 
@@ -73,7 +73,7 @@ export default function HeroSection({ onOpenResume }) {
             <a href="mailto:nishipunjabi65@gmail.com" className="hero-social-link">
               <i className="fa-solid fa-envelope"></i> Email <i className="fa-solid fa-arrow-up-right-from-square text-xs"></i>
             </a>
-            <span className="location-tag"><i className="fa-solid fa-location-dot"></i> Udaipur, Rajasthan, India</span>
+            <span className="location-tag"><i className="fa-solid fa-location-dot"></i> Udaipur, Rajasthan | +91 7976191632</span>
           </div>
         </div>
 
@@ -86,18 +86,18 @@ export default function HeroSection({ onOpenResume }) {
                 <span className="dot yellow"></span>
                 <span className="dot green"></span>
               </div>
-              <div className="console-title"><i className="fa-solid fa-terminal"></i> Playwright Test Runner — E-Commerce Suite</div>
+              <div className="console-title"><i className="fa-solid fa-terminal"></i> Playwright & App QA Runner — Web & Mobile Suite</div>
               <div className="console-status"><span className="badge-status-running"><i className="fa-solid fa-spinner fa-spin"></i> EXECUTING</span></div>
             </div>
             
             <div className="console-body">
-              <div className="console-line text-muted">Running 8 test suites across Chromium, Firefox, WebKit...</div>
+              <div className="console-line text-muted">Running test suites across Web (Chromium/Firefox/Safari) & Mobile (Android/iOS)...</div>
+              <div className="console-line"><span className="text-green">[PASS]</span> mobile_app.spec.js › Mobile OTP Auth & Customer Creation</div>
               <div className="console-line"><span className="text-green">[PASS]</span> checkout.spec.js › Add Product to Cart & Verify Price breakdown</div>
-              <div className="console-line"><span className="text-green">[PASS]</span> payment.spec.js › Verify Razorpay UPI & Card Payment Gateway flow</div>
+              <div className="console-line"><span className="text-green">[PASS]</span> payment.spec.js › Verify UPI, Cards, Net Banking & EMI Gateway rollout</div>
+              <div className="console-line"><span className="text-green">[PASS]</span> cms_integrity.spec.js › Bulk Price Update & PDP sync across Web/App</div>
               <div className="console-line"><span className="text-green">[PASS]</span> api.spec.js › POST /api/v1/checkout/apply-coupon [HTTP 200 OK]</div>
-              <div className="console-line"><span className="text-yellow">[RETRY]</span> leadforms.spec.js › Verify OTP verification form validation</div>
-              <div className="console-line"><span className="text-green">[PASS]</span> leadforms.spec.js › Verify OTP verification form validation (Resolved)</div>
-              <div className="console-line"><span className="text-cyan">[INFO]</span> Executed 74/74 assertions in 4.2s — 0 Regressions</div>
+              <div className="console-line"><span className="text-cyan">[INFO]</span> Executed 74/74 assertions in 3.8s — 0 Defects escaping to Prod</div>
             </div>
 
             <div className="console-footer-stats">
@@ -106,12 +106,12 @@ export default function HeroSection({ onOpenResume }) {
                 <span className="stat-mini-lbl">Pass Rate</span>
               </div>
               <div className="stat-mini-card">
-                <span className="stat-mini-val text-cyan">74+</span>
-                <span className="stat-mini-lbl">Assertions</span>
+                <span className="stat-mini-val text-cyan">Web & Mobile</span>
+                <span className="stat-mini-lbl">Cross-Platform</span>
               </div>
               <div className="stat-mini-card">
-                <span className="stat-mini-val text-purple">200 OK</span>
-                <span className="stat-mini-lbl">API Status</span>
+                <span className="stat-mini-val text-purple">Zero Defect</span>
+                <span className="stat-mini-lbl">Escaped to Prod</span>
               </div>
             </div>
           </div>

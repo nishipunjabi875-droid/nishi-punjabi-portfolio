@@ -61,6 +61,14 @@ export default function ContactSection({ onOpenResume }) {
                 </div>
               </a>
 
+              <a href="tel:+917976191632" className="c-info-card">
+                <div className="c-icon"><i className="fa-solid fa-phone"></i></div>
+                <div>
+                  <span className="c-lbl">Phone / WhatsApp</span>
+                  <span className="c-val">+91 7976191632</span>
+                </div>
+              </a>
+
               <a href="https://linkedin.com/in/nishi-punjabi-b610b8259" target="_blank" rel="noopener" className="c-info-card">
                 <div className="c-icon"><i className="fa-brands fa-linkedin"></i></div>
                 <div>
