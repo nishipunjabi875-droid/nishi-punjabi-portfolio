@@ -277,14 +277,14 @@ module.exports = {
         {
           id: 'cart-title',
           name: 'Cart Page Heading',
-          selector: 'h1:has-text("Cart"), h1:has-text("Shopping"), h1, .cart-title, .style_cartTitle__X2z9Y',
+          selector: 'h1:has-text("Cart"), h1:has-text("Shopping"), h1, .cart-title, .style_cartTitle__X2z9Y, div:has-text("My Cart")',
           checkAttrs: ['innerText'],
           optional: true
         },
         {
           id: 'cart-items',
           name: 'Cart Product Items',
-          selector: '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]',
+          selector: '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i], div:has(button:has-text("Remove")), div:has(span:has-text("Save For Later"))',
           multi: true,
           optional: true,
           checkAttrs: ['innerText']
@@ -299,16 +299,16 @@ module.exports = {
         {
           id: 'order-summary',
           name: 'Order Summary Box',
-          selector: '.order-summary, .cart-totals, [class*="orderSummary" i], [class*="cartSummary" i], section:has-text("Order Summary"), div:has-text("PRICE DETAILS")',
+          selector: '.order-summary, .cart-totals, [class*="orderSummary" i], [class*="cartSummary" i], section:has-text("Order Summary"), div:has-text("PRICE DETAILS"), div:has-text("Price Detail")',
           optional: true,
           checkAttrs: ['innerText']
         },
         {
           id: 'coupon-box',
           name: 'Coupon Code Input',
-          selector: '#coupon, input[name="coupon"], input[placeholder*="Coupon" i], input[placeholder*="Promo" i], [class*="coupon" i]',
+          selector: '#coupon, input[name="coupon"], input[placeholder*="Coupon" i], input[placeholder*="Promo" i], [class*="coupon" i], div:has-text("Coupon Applied")',
           optional: true,
-          checkAttrs: ['placeholder']
+          checkAttrs: ['innerText']
         },
         {
           id: 'checkout-btn',

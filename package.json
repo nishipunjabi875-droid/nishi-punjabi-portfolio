@@ -8,7 +8,9 @@
     "ui-audit:capture": "node src/automation/run.js --mode=capture",
     "ui-audit:compare": "node src/automation/run.js --mode=compare",
     "dev:faq": "node faq-clone/server.js",
-    "test:cart-qa": "npx playwright test cart-deep-qa.spec.js --config=playwright.cart-qa.config.js"
+    "test:cart-qa": "npx playwright test cart-deep-qa.spec.js --config=playwright.cart-qa.config.js",
+    "audit:cart:capture": "set MODE=capture&& npx playwright test cart-audit.spec.js",
+    "audit:cart:daily": "set MODE=compare&& npx playwright test cart-audit.spec.js"
   },
   "keywords": [],
   "author": "",

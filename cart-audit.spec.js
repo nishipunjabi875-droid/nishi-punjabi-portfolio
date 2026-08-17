@@ -51,25 +51,21 @@ test.describe('Cart Page Visual & Component Audit', () => {
     desktopPage.setDefaultNavigationTimeout(45000);
     desktopPage.setDefaultTimeout(15000);
     
+    await ensureProductsInCart(desktopPage);
     await runAuditForView(desktopPage, pageConfig, 'cart_desktop', 'Cart Page (Desktop)', baseline, mode, runData);
-    await desktopPage.close();
-    await desktopContext.close();
 
-    // 2. Audit Mobile View
+    // 2. Audit Mobile View (in same context to preserve session)
     console.log('\n--- Auditing Cart Page Mobile View ---');
-    const mobileContext = await browser.newContext({
-      viewport: { width: 375, height: 812 },
-      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1',
-      isMobile: true,
-      hasTouch: true
-    });
-    const mobilePage = await mobileContext.newPage();
+    const mobilePage = await desktopContext.newPage();
+    await mobilePage.setViewportSize({ width: 375, height: 812 });
     mobilePage.setDefaultNavigationTimeout(45000);
     mobilePage.setDefaultTimeout(15000);
     
     await runAuditForView(mobilePage, pageConfig, 'cart_mobile', 'Cart Page (Mobile)', baseline, mode, runData);
+    
     await mobilePage.close();
-    await mobileContext.close();
+    await desktopPage.close();
+    await desktopContext.close();
 
     // 3. Save Baseline or Write Report
     if (mode === 'capture') {
@@ -158,9 +154,6 @@ test.describe('Cart Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  // 1. Ensure products are added to cart before auditing
-  await ensureProductsInCart(page);
-
   console.log(`Navigating to URL: ${pageConfig.url}`);
   await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   
@@ -603,51 +596,28 @@ async function dismissPopups(page) {
   }
 }
 
-const PRODUCT_1_URL = 'https://www.woodenstreet.com/lorenz-3-seater-sofa-cotton-jade-ivory';
-const PRODUCT_2_URL = 'https://www.woodenstreet.com/connecting-flat-cotton-bedsheet-king-size-with-2-pillow-covers-beige';
+const CATEGORY_PRODUCTS = [
+  { name: 'Sofa & Living', url: 'https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory' },
+  { name: 'Home Furnishing & Bedding', url: 'https://www.woodenstreet.com/product/connecting-flat-cotton-bedsheet-king-size-with-2-pillow-covers-beige' },
+  { name: 'Study & Office Furniture', url: 'https://www.woodenstreet.com/product/jerold-study-table' }
+];
 
-async function addProductToCart(page, productUrl) {
+async function addProductToCart(page, product) {
   try {
-    console.log(`Adding product to cart from PDP: ${productUrl}`);
-    await page.goto(productUrl, { waitUntil: 'domcontentloaded', timeout: 45000 });
-    await page.waitForTimeout(2000);
+    console.log(`Adding [${product.name}] to cart from PDP: ${product.url}`);
+    await page.goto(product.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await page.waitForTimeout(2500);
 
-    await dismissPopups(page);
-
-    const addToCartSelectors = [
-      'button:has-text("ADD TO CART")',
-      'button:has-text("Add to Cart")',
-      '#button-cart',
-      '.add-to-cart',
-      '.add-cart-btn',
-      '#add-cart-btn',
-      'button[class*="add-to-cart"]',
-      'button[class*="addToCart"]',
-      '[class*="btnCart" i]'
-    ];
-
-    for (const sel of addToCartSelectors) {
-      const btn = page.locator(sel).first();
-      if (await btn.isVisible({ timeout: 2000 }).catch(() => false)) {
-        await btn.scrollIntoViewIfNeeded().catch(() => {});
-        await btn.click({ timeout: 5000 }).catch(() => {});
-        console.log(`   Successfully clicked Add to Cart button (${sel})`);
-        await page.waitForTimeout(3000);
-        return true;
-      }
+    const atc = page.locator('button:has-text("ADD TO CART")').first();
+    if (await atc.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await atc.click({ force: true });
+      console.log(`   Successfully clicked Add to Cart for [${product.name}]`);
+      await page.waitForTimeout(3000);
+      return true;
     }
-
-    const clicked = await page.evaluate(() => {
-      const btns = Array.from(document.querySelectorAll('button, a'));
-      const addBtn = btns.find(b => /add to cart/i.test(b.textContent));
-      if (addBtn) { addBtn.click(); return true; }
-      return false;
-    }).catch(() => false);
-
-    await page.waitForTimeout(3000);
-    return clicked;
+    return false;
   } catch (err) {
-    console.log(`   Failed to add product to cart: ${err.message}`);
+    console.log(`   Failed to add [${product.name}] to cart: ${err.message}`);
     return false;
   }
 }
@@ -657,19 +627,29 @@ async function ensureProductsInCart(page) {
   await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
   await page.waitForTimeout(2000);
   
-  const items = page.locator('.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]');
-  const count = await items.count().catch(() => 0);
-  if (count > 0) {
-    console.log(`Cart already contains ${count} item(s).`);
+  const itemLocators = '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i], div:has(button:has-text("Remove")), div:has(span:has-text("Save For Later"))';
+  let count = await page.locator(itemLocators).count().catch(() => 0);
+  if (count >= 3) {
+    console.log(`Cart already contains ${count} item(s) from multiple categories.`);
     return;
   }
 
-  console.log('Cart is empty. Adding products to cart...');
-  await addProductToCart(page, PRODUCT_1_URL);
-  await addProductToCart(page, PRODUCT_2_URL);
+  console.log(`Cart currently has ${count} item(s). Adding products from 3 distinct categories...`);
+  for (const product of CATEGORY_PRODUCTS) {
+    await addProductToCart(page, product);
+  }
 
+  console.log('Navigating to Cart Page to verify items...');
   await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(3000);
+
+  // If cart returns 0 due to client hydration delay, perform a fast reload
+  count = await page.locator(itemLocators).count().catch(() => 0);
+  if (count === 0) {
+    console.log('Refreshing cart page to hydrate session state...');
+    await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
+    await page.waitForTimeout(3000);
+  }
 }
 
 async function verifyCartCalculations(page) {
