@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
+const { extractComponentAttributes, prepareAndLoadPageCompletely } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -11,7 +12,7 @@ const SCREENSHOTS_DIR = path.join(REPORTS_DIR, 'screenshots');
 test.describe('Offline Store Page Visual & Component Audit', () => {
 
   test('Audit Store Page components in Desktop and Mobile views', async ({ browser }) => {
-    test.setTimeout(180000); // 180 seconds timeout for sequential multi-viewport audits
+    test.setTimeout(360000); // 360 seconds timeout for sequential multi-page, multi-viewport audits
     const mode = process.env.MODE || 'compare';
     console.log(`Running Store Page Component Audit in ${mode.toUpperCase()} mode...`);
 
@@ -36,40 +37,46 @@ test.describe('Offline Store Page Visual & Component Audit', () => {
       pages: {}
     };
 
-    const pageConfig = config.pages.store;
-    if (!pageConfig) {
-      throw new Error("Store Page configuration not found in config.js");
+    const storePagesList = [
+      { id: 'store', name: 'Offline Store Main Page' },
+      { id: 'store_city', name: 'City Store Page' },
+      { id: 'store_detail', name: 'Store Detail Page' }
+    ];
+
+    for (const sp of storePagesList) {
+      const pageConfig = config.pages[sp.id];
+      if (!pageConfig) continue;
+
+      // Audit Desktop View
+      console.log(`\n--- Auditing ${sp.name} Desktop View ---`);
+      const desktopContext = await browser.newContext({
+        viewport: { width: 1280, height: 800 },
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+      });
+      const desktopPage = await desktopContext.newPage();
+      desktopPage.setDefaultNavigationTimeout(45000);
+      desktopPage.setDefaultTimeout(15000);
+      
+      await runAuditForView(desktopPage, pageConfig, `${sp.id}_desktop`, `${sp.name} (Desktop)`, baseline, mode, runData);
+      await desktopPage.close().catch(() => {});
+      await desktopContext.close().catch(() => {});
+
+      // Audit Mobile View
+      console.log(`\n--- Auditing ${sp.name} Mobile View ---`);
+      const mobileContext = await browser.newContext({
+        viewport: { width: 375, height: 812 },
+        userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1',
+        isMobile: true,
+        hasTouch: true
+      });
+      const mobilePage = await mobileContext.newPage();
+      mobilePage.setDefaultNavigationTimeout(45000);
+      mobilePage.setDefaultTimeout(15000);
+      
+      await runAuditForView(mobilePage, pageConfig, `${sp.id}_mobile`, `${sp.name} (Mobile)`, baseline, mode, runData);
+      await mobilePage.close().catch(() => {});
+      await mobileContext.close().catch(() => {});
     }
-
-    // 1. Audit Desktop View
-    console.log('\n--- Auditing Store Page Desktop View ---');
-    const desktopContext = await browser.newContext({
-      viewport: { width: 1280, height: 800 },
-      userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-    });
-    const desktopPage = await desktopContext.newPage();
-    desktopPage.setDefaultNavigationTimeout(45000);
-    desktopPage.setDefaultTimeout(15000);
-    
-    await runAuditForView(desktopPage, pageConfig, 'store_desktop', 'Offline Store Page (Desktop)', baseline, mode, runData);
-    await desktopPage.close();
-    await desktopContext.close();
-
-    // 2. Audit Mobile View
-    console.log('\n--- Auditing Store Page Mobile View ---');
-    const mobileContext = await browser.newContext({
-      viewport: { width: 375, height: 812 },
-      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1',
-      isMobile: true,
-      hasTouch: true
-    });
-    const mobilePage = await mobileContext.newPage();
-    mobilePage.setDefaultNavigationTimeout(45000);
-    mobilePage.setDefaultTimeout(15000);
-    
-    await runAuditForView(mobilePage, pageConfig, 'store_mobile', 'Offline Store Page (Mobile)', baseline, mode, runData);
-    await mobilePage.close();
-    await mobileContext.close();
 
     // 3. Save Baseline or Write Report
     if (mode === 'capture') {
@@ -158,82 +165,7 @@ test.describe('Offline Store Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  console.log(`Navigating to URL: ${pageConfig.url}`);
-  await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  
-  console.log('Waiting for main elements to start loading...');
-  await page.locator('header, form').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
-    console.log('Header/Form not visible after 15s. Proceeding...');
-  });
-  
-  // Dismiss initial popups
-  await dismissPopups(page);
-  
-  console.log('Triggering page auto-scroll to load lazy content completely...');
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 150; // Smaller distance triggers lazy loaders reliably
-      let lastScrollHeight = document.body.scrollHeight;
-      let sameHeightCount = 0;
-      const startTime = Date.now();
-      const maxDuration = 30000; // Max 30 seconds to scroll page
-      
-      const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        
-        const scrollHeight = document.body.scrollHeight;
-        
-        if (Date.now() - startTime > maxDuration) {
-          clearInterval(timer);
-          resolve();
-          return;
-        }
-        
-        if (totalHeight >= scrollHeight - window.innerHeight) {
-          if (scrollHeight === lastScrollHeight) {
-            sameHeightCount++;
-            if (sameHeightCount >= 10) {
-              clearInterval(timer);
-              resolve();
-            }
-          } else {
-            sameHeightCount = 0;
-          }
-        } else {
-          sameHeightCount = 0;
-        }
-        
-        lastScrollHeight = scrollHeight;
-      }, 100);
-    });
-  });
-
-  // Scroll back to top
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-  
-  // Dismiss any popups triggered by scrolling
-  await dismissPopups(page);
-  
-  console.log('Waiting for all image assets to load completely...');
-  await page.evaluate(async () => {
-    const images = Array.from(document.querySelectorAll('img'));
-    await Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        const timer = setTimeout(resolve, 5000);
-        img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
-        img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
-      });
-    })).catch(() => {});
-  });
-
-  console.log('Allowing page components and DOM to settle (8s)...');
-  await page.waitForTimeout(8000);
-
-  await dismissPopups(page);
+  await prepareAndLoadPageCompletely(page, pageConfig.url);
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
   const pageComponentsData = [];
@@ -293,35 +225,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
           if (isPresent) {
             rect = await element.boundingBox();
-            
-            attributes.innerText = (await element.innerText()).trim();
-            attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-            
-            const src = await element.getAttribute('src');
-            if (src !== null) attributes.src = src;
-
-            const href = await element.getAttribute('href');
-            if (href !== null) attributes.href = href;
-
-            const alt = await element.getAttribute('alt');
-            if (alt !== null) attributes.alt = alt;
-
-            const placeholder = await element.getAttribute('placeholder');
-            if (placeholder !== null) attributes.placeholder = placeholder;
-
-            const computedStyles = await element.evaluate(el => {
-              const style = window.getComputedStyle(el);
-              return {
-                color: style.color,
-                fontSize: style.fontSize,
-                display: style.display,
-                visibility: style.visibility
-              };
-            });
-            attributes['style.color'] = computedStyles.color;
-            attributes['style.fontSize'] = computedStyles.fontSize;
-            attributes['style.display'] = computedStyles.display;
-            attributes['style.visibility'] = computedStyles.visibility;
+            attributes = await extractComponentAttributes(element, rect);
 
             if (mode === 'compare') {
               if (baselineComp && baselineComp.present) {
@@ -407,35 +311,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
       if (isPresent) {
         rect = await element.boundingBox();
-        
-        attributes.innerText = (await element.innerText()).trim();
-        attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-        
-        const src = await element.getAttribute('src');
-        if (src !== null) attributes.src = src;
-
-        const href = await element.getAttribute('href');
-        if (href !== null) attributes.href = href;
-
-        const alt = await element.getAttribute('alt');
-        if (alt !== null) attributes.alt = alt;
-
-        const placeholder = await element.getAttribute('placeholder');
-        if (placeholder !== null) attributes.placeholder = placeholder;
-
-        const computedStyles = await element.evaluate(el => {
-          const style = window.getComputedStyle(el);
-          return {
-            color: style.color,
-            fontSize: style.fontSize,
-            display: style.display,
-            visibility: style.visibility
-          };
-        });
-        attributes['style.color'] = computedStyles.color;
-        attributes['style.fontSize'] = computedStyles.fontSize;
-        attributes['style.display'] = computedStyles.display;
-        attributes['style.visibility'] = computedStyles.visibility;
+        attributes = await extractComponentAttributes(element, rect);
 
         if (mode === 'compare') {
           if (baselineComp && baselineComp.present) {

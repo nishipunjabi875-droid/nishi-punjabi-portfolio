@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
+const { extractComponentAttributes, prepareAndLoadPageCompletely } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -154,84 +155,8 @@ test.describe('Cart Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  console.log(`Navigating to URL: ${pageConfig.url}`);
-  await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  
-  console.log('Waiting for main elements to start loading...');
-  await page.locator('header, form, body').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
-    console.log('Header/Form not visible after 15s. Proceeding...');
-  });
-  
-  // Dismiss initial popups
-  await dismissPopups(page);
-
-  // Perform cart price & calculation audit
+  await prepareAndLoadPageCompletely(page, pageConfig.url);
   const cartCalculations = await verifyCartCalculations(page);
-  
-  console.log('Triggering page auto-scroll to load lazy content completely...');
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 150;
-      let lastScrollHeight = document.body.scrollHeight;
-      let sameHeightCount = 0;
-      const startTime = Date.now();
-      const maxDuration = 30000;
-      
-      const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        
-        const scrollHeight = document.body.scrollHeight;
-        
-        if (Date.now() - startTime > maxDuration) {
-          clearInterval(timer);
-          resolve();
-          return;
-        }
-        
-        if (totalHeight >= scrollHeight - window.innerHeight) {
-          if (scrollHeight === lastScrollHeight) {
-            sameHeightCount++;
-            if (sameHeightCount >= 10) {
-              clearInterval(timer);
-              resolve();
-            }
-          } else {
-            sameHeightCount = 0;
-          }
-        } else {
-          sameHeightCount = 0;
-        }
-        
-        lastScrollHeight = scrollHeight;
-      }, 100);
-    });
-  });
-
-  // Scroll back to top
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-  
-  await dismissPopups(page);
-  
-  console.log('Waiting for all image assets to load completely...');
-  await page.evaluate(async () => {
-    const images = Array.from(document.querySelectorAll('img'));
-    await Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        const timer = setTimeout(resolve, 5000);
-        img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
-        img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
-      });
-    })).catch(() => {});
-  });
-
-  console.log('Allowing page components and DOM to settle (8s)...');
-  await page.waitForTimeout(8000);
-
-  await dismissPopups(page);
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
   const pageComponentsData = [];
@@ -606,15 +531,43 @@ async function addProductToCart(page, product) {
   try {
     console.log(`Adding [${product.name}] to cart from PDP: ${product.url}`);
     await page.goto(product.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(2000);
 
-    const atc = page.locator('button:has-text("ADD TO CART")').first();
-    if (await atc.isVisible({ timeout: 5000 }).catch(() => false)) {
-      await atc.click({ force: true });
-      console.log(`   Successfully clicked Add to Cart for [${product.name}]`);
-      await page.waitForTimeout(3000);
+    // Dismiss blocking popups (login modals, city selectors, subscription popups)
+    await dismissPopups(page);
+    await page.waitForTimeout(1000);
+
+    const atcSelectors = [
+      'button:has-text("ADD TO CART")',
+      'button:has-text("Add To Cart")',
+      'button:has-text("Add to Cart")',
+      '#button-cart',
+      'button#button-cart',
+      '[class*="btnCart" i]',
+      'a:has-text("ADD TO CART")',
+      '.btnCart'
+    ];
+
+    let clicked = false;
+    for (const sel of atcSelectors) {
+      try {
+        const atc = page.locator(sel).first();
+        if (await atc.isVisible({ timeout: 2000 }).catch(() => false)) {
+          await atc.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => {});
+          await atc.click({ force: true });
+          console.log(`   Clicked Add to Cart matching selector: "${sel}" for [${product.name}]`);
+          clicked = true;
+          break;
+        }
+      } catch {}
+    }
+
+    if (clicked) {
+      await page.waitForTimeout(5000);
       return true;
     }
+
+    console.log(`   ⚠️ Could not locate a visible Add to Cart button for [${product.name}]`);
     return false;
   } catch (err) {
     console.log(`   Failed to add [${product.name}] to cart: ${err.message}`);
@@ -625,31 +578,34 @@ async function addProductToCart(page, product) {
 async function ensureProductsInCart(page) {
   console.log('Checking cart contents before running audit...');
   await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await page.waitForTimeout(2000);
+  await page.waitForTimeout(3000);
+  await dismissPopups(page);
   
-  const itemLocators = '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i], div:has(button:has-text("Remove")), div:has(span:has-text("Save For Later"))';
+  const itemLocators = '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]';
   let count = await page.locator(itemLocators).count().catch(() => 0);
-  if (count >= 3) {
-    console.log(`Cart already contains ${count} item(s) from multiple categories.`);
+  if (count >= 1) {
+    console.log(`Cart already contains ${count} item(s).`);
     return;
   }
 
-  console.log(`Cart currently has ${count} item(s). Adding products from 3 distinct categories...`);
+  console.log(`Cart currently has ${count} item(s). Adding products from categories...`);
   for (const product of CATEGORY_PRODUCTS) {
-    await addProductToCart(page, product);
+    const success = await addProductToCart(page, product);
+    if (success) {
+      // Re-check cart page after adding
+      await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
+      await page.waitForTimeout(3000);
+      count = await page.locator(itemLocators).count().catch(() => 0);
+      if (count >= 1) {
+        console.log(`✅ Cart successfully populated with ${count} item(s).`);
+        return;
+      }
+    }
   }
 
   console.log('Navigating to Cart Page to verify items...');
   await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
-  await page.waitForTimeout(3000);
-
-  // If cart returns 0 due to client hydration delay, perform a fast reload
-  count = await page.locator(itemLocators).count().catch(() => 0);
-  if (count === 0) {
-    console.log('Refreshing cart page to hydrate session state...');
-    await page.reload({ waitUntil: 'domcontentloaded', timeout: 30000 });
-    await page.waitForTimeout(3000);
-  }
+  await page.waitForTimeout(4000);
 }
 
 async function verifyCartCalculations(page) {

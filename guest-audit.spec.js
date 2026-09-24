@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
+const { extractComponentAttributes, prepareAndLoadPageCompletely } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -51,25 +52,20 @@ test.describe('Guest Checkout Page Visual & Component Audit', () => {
     desktopPage.setDefaultNavigationTimeout(45000);
     desktopPage.setDefaultTimeout(15000);
     
+    await ensureProductsInCart(desktopPage);
     await runAuditForView(desktopPage, pageConfig, 'guest_desktop', 'Guest Checkout Page (Desktop)', baseline, mode, runData);
-    await desktopPage.close();
-    await desktopContext.close();
 
     // 2. Audit Mobile View
     console.log('\n--- Auditing Guest Checkout Page Mobile View ---');
-    const mobileContext = await browser.newContext({
-      viewport: { width: 375, height: 812 },
-      userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1',
-      isMobile: true,
-      hasTouch: true
-    });
-    const mobilePage = await mobileContext.newPage();
+    const mobilePage = await desktopContext.newPage();
+    await mobilePage.setViewportSize({ width: 375, height: 812 });
     mobilePage.setDefaultNavigationTimeout(45000);
     mobilePage.setDefaultTimeout(15000);
     
     await runAuditForView(mobilePage, pageConfig, 'guest_mobile', 'Guest Checkout Page (Mobile)', baseline, mode, runData);
     await mobilePage.close();
-    await mobileContext.close();
+    await desktopPage.close();
+    await desktopContext.close();
 
     // 3. Save Baseline or Write Report
     if (mode === 'capture') {
@@ -158,81 +154,16 @@ test.describe('Guest Checkout Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  console.log(`Navigating to URL: ${pageConfig.url}`);
-  await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  
-  console.log('Waiting for main elements to start loading...');
-  await page.locator('header, form, body').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
-    console.log('Header/Form not visible after 15s. Proceeding...');
-  });
-  
-  // Dismiss initial popups
-  await dismissPopups(page);
-  
-  console.log('Triggering page auto-scroll to load lazy content completely...');
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 150;
-      let lastScrollHeight = document.body.scrollHeight;
-      let sameHeightCount = 0;
-      const startTime = Date.now();
-      const maxDuration = 30000;
-      
-      const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        
-        const scrollHeight = document.body.scrollHeight;
-        
-        if (Date.now() - startTime > maxDuration) {
-          clearInterval(timer);
-          resolve();
-          return;
-        }
-        
-        if (totalHeight >= scrollHeight - window.innerHeight) {
-          if (scrollHeight === lastScrollHeight) {
-            sameHeightCount++;
-            if (sameHeightCount >= 10) {
-              clearInterval(timer);
-              resolve();
-            }
-          } else {
-            sameHeightCount = 0;
-          }
-        } else {
-          sameHeightCount = 0;
-        }
-        
-        lastScrollHeight = scrollHeight;
-      }, 100);
-    });
-  });
+  await prepareAndLoadPageCompletely(page, pageConfig.url);
 
-  // Scroll back to top
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-  
-  await dismissPopups(page);
-  
-  console.log('Waiting for all image assets to load completely...');
-  await page.evaluate(async () => {
-    const images = Array.from(document.querySelectorAll('img'));
-    await Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        const timer = setTimeout(resolve, 5000);
-        img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
-        img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
-      });
-    })).catch(() => {});
-  });
-
-  console.log('Allowing page components and DOM to settle (8s)...');
-  await page.waitForTimeout(8000);
-
-  await dismissPopups(page);
+  if (page.url().includes('/cart')) {
+    console.log('   Redirected to Cart Page. Clicking Place Order button to enter Guest Checkout...');
+    const placeOrderBtn = page.locator('button#placeOrder, button:has-text("PLACE ORDER"), button:has-text("CONFIRM ORDER"), .checkout-btn').first();
+    if (await placeOrderBtn.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await placeOrderBtn.click({ force: true });
+      await page.waitForTimeout(4000);
+    }
+  }
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
   const pageComponentsData = [];
@@ -292,35 +223,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
           if (isPresent) {
             rect = await element.boundingBox();
-            
-            attributes.innerText = (await element.innerText()).trim();
-            attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-            
-            const src = await element.getAttribute('src');
-            if (src !== null) attributes.src = src;
-
-            const href = await element.getAttribute('href');
-            if (href !== null) attributes.href = href;
-
-            const alt = await element.getAttribute('alt');
-            if (alt !== null) attributes.alt = alt;
-
-            const placeholder = await element.getAttribute('placeholder');
-            if (placeholder !== null) attributes.placeholder = placeholder;
-
-            const computedStyles = await element.evaluate(el => {
-              const style = window.getComputedStyle(el);
-              return {
-                color: style.color,
-                fontSize: style.fontSize,
-                display: style.display,
-                visibility: style.visibility
-              };
-            });
-            attributes['style.color'] = computedStyles.color;
-            attributes['style.fontSize'] = computedStyles.fontSize;
-            attributes['style.display'] = computedStyles.display;
-            attributes['style.visibility'] = computedStyles.visibility;
+            attributes = await extractComponentAttributes(element, rect);
 
             if (mode === 'compare') {
               if (baselineComp && baselineComp.present) {
@@ -406,35 +309,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
       if (isPresent) {
         rect = await element.boundingBox();
-        
-        attributes.innerText = (await element.innerText()).trim();
-        attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-        
-        const src = await element.getAttribute('src');
-        if (src !== null) attributes.src = src;
-
-        const href = await element.getAttribute('href');
-        if (href !== null) attributes.href = href;
-
-        const alt = await element.getAttribute('alt');
-        if (alt !== null) attributes.alt = alt;
-
-        const placeholder = await element.getAttribute('placeholder');
-        if (placeholder !== null) attributes.placeholder = placeholder;
-
-        const computedStyles = await element.evaluate(el => {
-          const style = window.getComputedStyle(el);
-          return {
-            color: style.color,
-            fontSize: style.fontSize,
-            display: style.display,
-            visibility: style.visibility
-          };
-        });
-        attributes['style.color'] = computedStyles.color;
-        attributes['style.fontSize'] = computedStyles.fontSize;
-        attributes['style.display'] = computedStyles.display;
-        attributes['style.visibility'] = computedStyles.visibility;
+        attributes = await extractComponentAttributes(element, rect);
 
         if (mode === 'compare') {
           if (baselineComp && baselineComp.present) {
@@ -595,4 +470,52 @@ async function dismissPopups(page) {
   } catch (err) {
     console.error('Error during dismissPopups:', err);
   }
+}
+
+const CATEGORY_PRODUCTS = [
+  { name: 'Sofa & Living', url: 'https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory' },
+  { name: 'Home Furnishing & Bedding', url: 'https://www.woodenstreet.com/product/connecting-flat-cotton-bedsheet-king-size-with-2-pillow-covers-beige' },
+  { name: 'Study & Office Furniture', url: 'https://www.woodenstreet.com/product/jerold-study-table' }
+];
+
+async function addProductToCart(page, product) {
+  try {
+    console.log(`Adding [${product.name}] to cart from PDP: ${product.url}`);
+    await page.goto(product.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+    await page.waitForTimeout(2500);
+
+    const atc = page.locator('button:has-text("ADD TO CART")').first();
+    if (await atc.isVisible({ timeout: 5000 }).catch(() => false)) {
+      await atc.click({ force: true });
+      console.log(`   Successfully clicked Add to Cart for [${product.name}]`);
+      await page.waitForTimeout(3000);
+      return true;
+    }
+    return false;
+  } catch (err) {
+    console.log(`   Failed to add [${product.name}] to cart: ${err.message}`);
+    return false;
+  }
+}
+
+async function ensureProductsInCart(page) {
+  console.log('Checking cart contents before running guest checkout audit...');
+  await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForTimeout(2000);
+  
+  const itemLocators = '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i]';
+  let count = await page.locator(itemLocators).count().catch(() => 0);
+  if (count >= 1) {
+    console.log(`Cart already contains ${count} item(s).`);
+    return;
+  }
+
+  console.log(`Cart currently has ${count} item(s). Adding product to enable guest checkout...`);
+  for (const product of CATEGORY_PRODUCTS) {
+    if (await addProductToCart(page, product)) break;
+  }
+
+  console.log('Navigating to Cart Page to verify items...');
+  await page.goto('https://www.woodenstreet.com/cart', { waitUntil: 'domcontentloaded', timeout: 45000 });
+  await page.waitForTimeout(3000);
 }

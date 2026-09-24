@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
-const { extractComponentAttributes } = require('./src/automation/auditHelper');
+const { extractComponentAttributes, prepareAndLoadPageCompletely } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -159,137 +159,7 @@ test.describe('Home Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  console.log(`\n🧹 Clearing browser cache, cookies, and local storage for fresh banner capture...`);
-  try {
-    const client = await page.context().newCDPSession(page);
-    await client.send('Network.clearBrowserCache').catch(() => {});
-    await client.send('Network.setCacheDisabled', { cacheDisabled: true }).catch(() => {});
-    await page.context().clearCookies().catch(() => {});
-  } catch (err) {
-    console.log('Note: CDP cache clear notification:', err.message);
-  }
-
-  console.log(`Navigating to URL: ${pageConfig.url}`);
-  await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  
-  // Clear local/session storage right after load
-  await page.evaluate(() => {
-    try { localStorage.clear(); sessionStorage.clear(); } catch(e) {}
-  }).catch(() => {});
-
-  console.log('Waiting for main elements to start loading...');
-  await page.locator('header, form').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
-    console.log('Header/Form not visible after 15s. Proceeding...');
-  });
-  
-  // Dismiss initial popups
-  await dismissPopups(page);
-  
-  // Force all lazy-loaded banner images to set src from data-src/data-lazy
-  await page.evaluate(() => {
-    document.querySelectorAll('img[data-src], img[data-lazy], img[data-original]').forEach(img => {
-      const src = img.getAttribute('data-src') || img.getAttribute('data-lazy') || img.getAttribute('data-original');
-      if (src && !img.src.includes(src)) {
-        img.src = src;
-      }
-    });
-  }).catch(() => {});
-
-  console.log('Triggering complete page auto-scroll to load ALL lazy content...');
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let currentPosition = 0;
-      const step = 500;
-      let lastScrollHeight = document.body.scrollHeight;
-      let sameHeightCount = 0;
-      const startTime = Date.now();
-      const maxScrollTime = 25000; // 25 seconds for full homepage scroll
-
-      const timer = setInterval(() => {
-        window.scrollBy(0, step);
-        currentPosition += step;
-        const currentScrollHeight = document.body.scrollHeight;
-
-        if (window.innerHeight + window.scrollY >= currentScrollHeight - 30) {
-          if (currentScrollHeight === lastScrollHeight) {
-            sameHeightCount++;
-            if (sameHeightCount >= 4) {
-              clearInterval(timer);
-              resolve();
-              return;
-            }
-          } else {
-            sameHeightCount = 0;
-            lastScrollHeight = currentScrollHeight;
-          }
-        } else {
-          sameHeightCount = 0;
-        }
-
-        if (Date.now() - startTime > maxScrollTime) {
-          clearInterval(timer);
-          resolve();
-        }
-      }, 40);
-    });
-  });
-
-  console.log('Reached bottom of homepage. Waiting for lazy components to settle...');
-  await page.waitForTimeout(3000);
-
-  // Force all lazy-loaded banner images to set src from data-src/data-lazy/data-original
-  await page.evaluate(() => {
-    document.querySelectorAll('img').forEach(img => {
-      const lazySrc = img.getAttribute('data-src') || 
-                      img.getAttribute('data-lazy') || 
-                      img.getAttribute('data-original') ||
-                      img.getAttribute('data-srcset');
-      if (lazySrc && (!img.src || img.src.includes('data:image') || !img.src.includes(lazySrc.split(' ')[0]))) {
-        img.src = lazySrc.split(' ')[0];
-      }
-    });
-  }).catch(() => {});
-
-  console.log('Scrolling back to top...');
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1500);
-
-  // Dismiss any popups triggered by scrolling
-  await dismissPopups(page);
-
-  // Wait for all images on the page to load completely (resolves even on errors or timeouts)
-  console.log('Waiting for all image assets across the page to load completely...');
-  await page.evaluate(async () => {
-    const images = Array.from(document.querySelectorAll('img'));
-    await Promise.all(images.map(img => {
-      if (img.complete && img.naturalWidth > 0) return Promise.resolve();
-      return new Promise(resolve => {
-        const timer = setTimeout(resolve, 5000);
-        img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
-        img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
-      });
-    })).catch(() => {});
-  });
-
-  // Freeze CSS animations and banner slide transitions so screenshots don't capture mid-animation frames
-  await page.evaluate(() => {
-    const style = document.createElement('style');
-    style.id = 'freeze-animations-style';
-    style.innerHTML = `
-      *, *::before, *::after {
-        animation-play-state: paused !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
-      }
-    `;
-    document.head.appendChild(style);
-  }).catch(() => {});
-
-  console.log('Allowing page components and DOM to settle before screenshot...');
-  await page.waitForTimeout(3000);
-
-  // Dismiss any timed popups right before auditing/screenshotting
-  await dismissPopups(page);
+  await prepareAndLoadPageCompletely(page, pageConfig.url);
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
   const pageComponentsData = [];

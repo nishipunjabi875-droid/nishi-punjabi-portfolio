@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
+const { extractComponentAttributes, prepareAndLoadPageCompletely } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -160,86 +161,7 @@ test.describe('Category Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
-  console.log(`Navigating to URL: ${pageConfig.url}`);
-  await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
-  
-  console.log('Waiting for main elements to start loading...');
-  await page.locator('header, form').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
-    console.log('Header/Form not visible after 15s. Proceeding...');
-  });
-  
-  // Dismiss initial popups
-  await dismissPopups(page);
-  
-  console.log('Triggering page auto-scroll to load lazy content completely...');
-  await page.evaluate(async () => {
-    await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 150; // Smaller distance triggers lazy loaders reliably
-      let lastScrollHeight = document.body.scrollHeight;
-      let sameHeightCount = 0;
-      const startTime = Date.now();
-      const maxDuration = 30000; // Max 30 seconds to scroll page
-      
-      const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        
-        const scrollHeight = document.body.scrollHeight;
-        
-        if (Date.now() - startTime > maxDuration) {
-          clearInterval(timer);
-          resolve();
-          return;
-        }
-        
-        if (totalHeight >= scrollHeight - window.innerHeight) {
-          if (scrollHeight === lastScrollHeight) {
-            sameHeightCount++;
-            // Wait for 10 iterations (1.0s) of stable height to ensure infinite/lazy loaders finished
-            if (sameHeightCount >= 10) {
-              clearInterval(timer);
-              resolve();
-            }
-          } else {
-            sameHeightCount = 0;
-          }
-        } else {
-          sameHeightCount = 0;
-        }
-        
-        lastScrollHeight = scrollHeight;
-      }, 100); // 100ms interval for stable rendering
-    });
-  });
-
-  // Scroll back to top
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-  
-  // Dismiss any popups triggered by scrolling
-  await dismissPopups(page);
-  
-  // Wait for all images on the page to load completely (resolves even on errors or timeouts)
-  console.log('Waiting for all image assets to load completely...');
-  await page.evaluate(async () => {
-    const images = Array.from(document.querySelectorAll('img'));
-    await Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
-      return new Promise(resolve => {
-        // Fallback safety timeout (5 seconds) per image to prevent hangs
-        const timer = setTimeout(resolve, 5000);
-        img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
-        img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
-      });
-    })).catch(() => {});
-  });
-
-  console.log('Allowing page components and DOM to settle, and waiting for timed login popups (12s)...');
-  await page.waitForTimeout(12000);
-
-  // Dismiss any timed popups (like the 10-second login popup) right before auditing/screenshotting
-  await dismissPopups(page);
+  await prepareAndLoadPageCompletely(page, pageConfig.url);
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
   const pageComponentsData = [];
@@ -299,36 +221,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
           if (isPresent) {
             rect = await element.boundingBox();
-            
-            // Extract details & styling properties
-            attributes.innerText = (await element.innerText()).trim();
-            attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-            
-            const src = await element.getAttribute('src');
-            if (src !== null) attributes.src = src;
-
-            const href = await element.getAttribute('href');
-            if (href !== null) attributes.href = href;
-
-            const alt = await element.getAttribute('alt');
-            if (alt !== null) attributes.alt = alt;
-
-            const placeholder = await element.getAttribute('placeholder');
-            if (placeholder !== null) attributes.placeholder = placeholder;
-
-            const computedStyles = await element.evaluate(el => {
-              const style = window.getComputedStyle(el);
-              return {
-                color: style.color,
-                fontSize: style.fontSize,
-                display: style.display,
-                visibility: style.visibility
-              };
-            });
-            attributes['style.color'] = computedStyles.color;
-            attributes['style.fontSize'] = computedStyles.fontSize;
-            attributes['style.display'] = computedStyles.display;
-            attributes['style.visibility'] = computedStyles.visibility;
+            attributes = await extractComponentAttributes(element, rect);
 
             if (mode === 'compare') {
               if (baselineComp && baselineComp.present) {
@@ -414,36 +307,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
       if (isPresent) {
         rect = await element.boundingBox();
-        
-        // Extract details & styling properties
-        attributes.innerText = (await element.innerText()).trim();
-        attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-        
-        const src = await element.getAttribute('src');
-        if (src !== null) attributes.src = src;
-
-        const href = await element.getAttribute('href');
-        if (href !== null) attributes.href = href;
-
-        const alt = await element.getAttribute('alt');
-        if (alt !== null) attributes.alt = alt;
-
-        const placeholder = await element.getAttribute('placeholder');
-        if (placeholder !== null) attributes.placeholder = placeholder;
-
-        const computedStyles = await element.evaluate(el => {
-          const style = window.getComputedStyle(el);
-          return {
-            color: style.color,
-            fontSize: style.fontSize,
-            display: style.display,
-            visibility: style.visibility
-          };
-        });
-        attributes['style.color'] = computedStyles.color;
-        attributes['style.fontSize'] = computedStyles.fontSize;
-        attributes['style.display'] = computedStyles.display;
-        attributes['style.visibility'] = computedStyles.visibility;
+        attributes = await extractComponentAttributes(element, rect);
 
         if (mode === 'compare') {
           if (baselineComp && baselineComp.present) {
