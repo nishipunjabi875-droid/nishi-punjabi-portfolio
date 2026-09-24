@@ -88,6 +88,13 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
   // 1. Clear cache and storage
   await clearPageCache(page);
 
+  // Set Cache-Control headers to force fresh content from server
+  await page.setExtraHTTPHeaders({
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
+  }).catch(() => {});
+
   // 2. Navigate to target URL
   console.log(`Navigating to URL: ${pageUrl}`);
   await page.goto(pageUrl, { waitUntil: 'domcontentloaded', timeout: 45000 });
@@ -114,16 +121,16 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
     });
   }).catch(() => {});
 
-  // 4. Smooth scroll down to bottom of page to trigger ALL lazy content
+  // 4. Fast smooth scroll down to bottom of page to trigger ALL lazy content
   console.log('Triggering complete page auto-scroll to load ALL lazy content...');
   await page.evaluate(async () => {
     await new Promise((resolve) => {
       let currentPosition = 0;
-      const step = 500;
+      const step = 700;
       let lastScrollHeight = document.body.scrollHeight;
       let sameHeightCount = 0;
       const startTime = Date.now();
-      const maxScrollTime = 25000; // 25 seconds max scroll
+      const maxScrollTime = 12000; // 12 seconds max scroll
 
       const timer = setInterval(() => {
         window.scrollBy(0, step);
@@ -133,7 +140,7 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
         if (window.innerHeight + window.scrollY >= currentScrollHeight - 30) {
           if (currentScrollHeight === lastScrollHeight) {
             sameHeightCount++;
-            if (sameHeightCount >= 4) {
+            if (sameHeightCount >= 3) {
               clearInterval(timer);
               resolve();
               return;
@@ -150,12 +157,12 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
           clearInterval(timer);
           resolve();
         }
-      }, 40);
+      }, 30);
     });
   });
 
   console.log('Reached bottom of page. Waiting for lazy components to settle...');
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(1500);
 
   // 5. Force lazy-loaded images again after scroll
   await page.evaluate(() => {
@@ -173,7 +180,7 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
   // 6. Scroll back to top
   console.log('Scrolling back to top...');
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1500);
+  await page.waitForTimeout(1000);
 
   await dismissPopups(page);
 
@@ -184,7 +191,7 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
     await Promise.all(images.map(img => {
       if (img.complete && img.naturalWidth > 0) return Promise.resolve();
       return new Promise(resolve => {
-        const timer = setTimeout(resolve, 5000);
+        const timer = setTimeout(resolve, 3000);
         img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
         img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
       });
@@ -206,7 +213,7 @@ async function prepareAndLoadPageCompletely(page, pageUrl) {
   }).catch(() => {});
 
   console.log('Allowing page components and DOM to settle before screenshot...');
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(1500);
 
   await dismissPopups(page);
 }

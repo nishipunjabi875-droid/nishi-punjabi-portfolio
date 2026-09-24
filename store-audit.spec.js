@@ -12,7 +12,7 @@ const SCREENSHOTS_DIR = path.join(REPORTS_DIR, 'screenshots');
 test.describe('Offline Store Page Visual & Component Audit', () => {
 
   test('Audit Store Page components in Desktop and Mobile views', async ({ browser }) => {
-    test.setTimeout(360000); // 360 seconds timeout for sequential multi-page, multi-viewport audits
+    test.setTimeout(480000); // 480 seconds timeout for sequential multi-page, multi-viewport audits
     const mode = process.env.MODE || 'compare';
     console.log(`Running Store Page Component Audit in ${mode.toUpperCase()} mode...`);
 

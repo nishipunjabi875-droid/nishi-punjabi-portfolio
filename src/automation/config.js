@@ -231,6 +231,14 @@ module.exports = {
           checkAttrs: ['innerText']
         },
         {
+          id: 'store-banners',
+          name: 'Store Page Banners',
+          selector: 'div[class*="banner" i] img, section img[src*="store" i], img[src*="store%20page" i], img[alt*="furniture-" i]',
+          multi: true,
+          optional: true,
+          checkAttrs: ['src', 'alt']
+        },
+        {
           id: 'city-search',
           name: 'City Search Input',
           selector: '#Search\\ city, input[placeholder*="City" i], .style_search-city-card-top__inG8m input',
@@ -290,6 +298,14 @@ module.exports = {
           checkAttrs: ['innerText']
         },
         {
+          id: 'city-store-banners',
+          name: 'City Store Showcase Banners',
+          selector: 'div.store-wrapper img, .store-card img, img[src*="store%20page" i], img[alt*="Furniture Store" i]',
+          multi: true,
+          optional: true,
+          checkAttrs: ['src', 'alt']
+        },
+        {
           id: 'store-cards',
           name: 'Experience Store Cards',
           selector: 'div.store-wrapper, .store-card, [class*="storeCard" i], [class*="experience" i], a[href*="furniture-store-"]',
@@ -333,6 +349,14 @@ module.exports = {
           name: 'Store Detail Name',
           selector: 'h1.style_subHeading__KJtt3, h1[class*="store" i], h1',
           checkAttrs: ['innerText']
+        },
+        {
+          id: 'store-detail-banners',
+          name: 'Store Detail Showcase Banners',
+          selector: 'img[src*="store%20page" i], [class*="store" i] img, section img[src*="jpg"], section img[src*="png"]',
+          multi: true,
+          optional: true,
+          checkAttrs: ['src', 'alt']
         },
         {
           id: 'store-address',
