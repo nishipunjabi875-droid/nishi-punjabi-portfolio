@@ -41,18 +41,45 @@ if (mode === 'compare' && fs.existsSync(LAST_RUN_STATE_PATH)) {
   }
 }
 
+// Reset current run state file for a clean capture of updated pages
+try {
+  if (!fs.existsSync(REPORTS_DIR)) {
+    fs.mkdirSync(REPORTS_DIR, { recursive: true });
+  }
+  fs.writeFileSync(LAST_RUN_STATE_PATH, '{}', 'utf8');
+  console.log(`   Reset current run state file at: ${LAST_RUN_STATE_PATH}`);
+} catch (err) {
+  console.error(`⚠️ Failed to reset current run state file:`, err);
+}
+
 const extraArgs = [];
 if (args.includes('--headed')) {
   extraArgs.push('--headed');
 }
 
+// Dynamically discover all audit spec files in root directory
+const rootDir = path.join(__dirname, '../../');
+let auditSpecs = [];
+try {
+  auditSpecs = fs.readdirSync(rootDir)
+    .filter(file => file.endsWith('-audit.spec.js'))
+    .sort();
+} catch (e) {
+  auditSpecs = ['home-audit.spec.js', 'pdp-audit.spec.js', 'category-audit.spec.js', 'store-audit.spec.js', 'cart-audit.spec.js', 'guest-audit.spec.js'];
+}
+
+if (auditSpecs.length === 0) {
+  auditSpecs = ['home-audit.spec.js', 'pdp-audit.spec.js', 'category-audit.spec.js', 'store-audit.spec.js', 'cart-audit.spec.js', 'guest-audit.spec.js'];
+}
+
 console.log(`=========================================`);
 console.log(`🚀 COMPONENT AUDIT AUTOMATION LAUNCHER`);
 console.log(`   Mode: ${mode.toUpperCase()}`);
+console.log(`   Auditing Specs (${auditSpecs.length}): ${auditSpecs.join(', ')}`);
 console.log(`=========================================`);
 
-// Spawn Playwright Test runner specs for Home Page, PDP, Category Page, Store Page, Cart Page, and Guest Page
-const result = spawnSync('npx', ['playwright', 'test', 'home-audit.spec.js', 'pdp-audit.spec.js', 'category-audit.spec.js', 'store-audit.spec.js', 'cart-audit.spec.js', 'guest-audit.spec.js', ...extraArgs], {
+// Spawn Playwright Test runner for all audit specs
+const result = spawnSync('npx', ['playwright', 'test', '--workers=1', ...auditSpecs, ...extraArgs], {
   stdio: 'inherit',
   shell: true,
   env: { 

@@ -44,6 +44,35 @@ class Reporter {
         }
       }
 
+      // Merge baseline and cached run state pages so single-spec runs (like home-audit.spec.js)
+      // preserve all monitored pages in the dashboard instead of truncating to only 1 page.
+      const baselinePath = path.join(__dirname, 'baseline.json');
+      let baselinePages = {};
+      if (fs.existsSync(baselinePath)) {
+        try {
+          const baselineData = JSON.parse(fs.readFileSync(baselinePath, 'utf8'));
+          baselinePages = baselineData.pages || {};
+        } catch (e) {}
+      }
+
+      let cachedRunState = {};
+      const lastRunStatePath = path.join(reportsDir, 'last_run_state.json');
+      if (fs.existsSync(lastRunStatePath)) {
+        try {
+          cachedRunState = JSON.parse(fs.readFileSync(lastRunStatePath, 'utf8'));
+        } catch (e) {}
+      }
+
+      const mergedResults = {
+        ...baselinePages,
+        ...cachedRunState,
+        ...results
+      };
+
+      try {
+        fs.writeFileSync(lastRunStatePath, JSON.stringify(mergedResults, null, 2), 'utf8');
+      } catch (e) {}
+
       // Calculate high-level summary stats
       let totalPages = 0;
       let totalComponents = 0;
@@ -51,7 +80,7 @@ class Reporter {
       let changedCount = 0;
       let missingCount = 0;
 
-      Object.values(results).forEach(page => {
+      Object.values(mergedResults).forEach(page => {
         totalPages++;
         page.components.forEach(comp => {
           totalComponents++;
@@ -104,7 +133,7 @@ class Reporter {
         return `<div class="trend-text ${badgeClass}">${displayVal} vs last run</div>`;
       };
 
-      const resultsJson = JSON.stringify(results);
+      const resultsJson = JSON.stringify(mergedResults);
       const previousResultsJson = previousResults ? JSON.stringify(previousResults) : 'null';
       const prevDateJson = previousDate ? JSON.stringify(previousDate) : 'null';
 
@@ -1059,7 +1088,8 @@ class Reporter {
       document.getElementById('activePageUrl').innerHTML = \`<a href="\${page.url}" target="_blank" style="color: var(--neon-blue); text-decoration: none;">\${page.url}</a>\`;
       
       // Load screenshots
-      document.getElementById('pageScreenshot').src = './screenshots/' + pageId + '_current.png';
+      const currentScreenshot = (page && page.screenshot) ? page.screenshot : (pageId + '_current.png');
+      document.getElementById('pageScreenshot').src = './screenshots/' + currentScreenshot;
       document.getElementById('baselineScreenshot').src = './screenshots/' + pageId + '_baseline.png';
 
       // Load previous screenshot if available
@@ -1453,13 +1483,14 @@ class Reporter {
       
       if (viewType === 'baseline') {
         img.src = './screenshots/' + pageId + '_baseline.png';
-        document.getElementById('lightboxTitle').innerText = 'Reference Baseline - ' + data[pageId].name;
+        document.getElementById('lightboxTitle').innerText = 'Reference Baseline - ' + (data[pageId] ? data[pageId].name : pageId);
       } else if (viewType === 'previous') {
         img.src = './screenshots/' + pageId + '_previous.png';
-        document.getElementById('lightboxTitle').innerText = 'Previous Run View - ' + data[pageId].name;
+        document.getElementById('lightboxTitle').innerText = 'Previous Run View - ' + (data[pageId] ? data[pageId].name : pageId);
       } else {
-        img.src = './screenshots/' + pageId + '_current.png';
-        document.getElementById('lightboxTitle').innerText = "Today's Highlights - " + data[pageId].name;
+        const currentScreenshot = (data[pageId] && data[pageId].screenshot) ? data[pageId].screenshot : (pageId + '_current.png');
+        img.src = './screenshots/' + currentScreenshot;
+        document.getElementById('lightboxTitle').innerText = "Today's Highlights - " + (data[pageId] ? data[pageId].name : pageId);
       }
     }
 

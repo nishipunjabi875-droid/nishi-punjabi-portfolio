@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./src/automation/config');
 const Reporter = require('./src/automation/reporter');
+const { extractComponentAttributes } = require('./src/automation/auditHelper');
 
 const BASELINE_PATH = path.join(__dirname, 'src/automation/baseline.json');
 const REPORTS_DIR = path.join(__dirname, 'reports');
@@ -11,7 +12,7 @@ const SCREENSHOTS_DIR = path.join(REPORTS_DIR, 'screenshots');
 test.describe('Home Page Visual & Component Audit', () => {
 
   test('Audit Home Page components in Desktop and Mobile views', async ({ browser }) => {
-    test.setTimeout(180000); // 180 seconds timeout for sequential multi-viewport audits
+    test.setTimeout(300000); // 300 seconds timeout for full multi-viewport audits
     const mode = process.env.MODE || 'compare';
     console.log(`Running Home Page Component Audit in ${mode.toUpperCase()} mode...`);
 
@@ -52,8 +53,8 @@ test.describe('Home Page Visual & Component Audit', () => {
     desktopPage.setDefaultTimeout(15000);
     
     await runAuditForView(desktopPage, pageConfig, 'home_desktop', 'Home Page (Desktop)', baseline, mode, runData);
-    await desktopPage.close();
-    await desktopContext.close();
+    await desktopPage.close().catch(() => {});
+    await desktopContext.close().catch(() => {});
 
     // 2. Audit Mobile View
     console.log('\n--- Auditing Home Page Mobile View ---');
@@ -68,8 +69,8 @@ test.describe('Home Page Visual & Component Audit', () => {
     mobilePage.setDefaultTimeout(15000);
     
     await runAuditForView(mobilePage, pageConfig, 'home_mobile', 'Home Page (Mobile)', baseline, mode, runData);
-    await mobilePage.close();
-    await mobileContext.close();
+    await mobilePage.close().catch(() => {});
+    await mobileContext.close().catch(() => {});
 
     // 3. Save Baseline or Write Report
     if (mode === 'capture') {
@@ -158,9 +159,24 @@ test.describe('Home Page Visual & Component Audit', () => {
  * Audit engine helper for a specific page viewport/context
  */
 async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mode, runData) {
+  console.log(`\n🧹 Clearing browser cache, cookies, and local storage for fresh banner capture...`);
+  try {
+    const client = await page.context().newCDPSession(page);
+    await client.send('Network.clearBrowserCache').catch(() => {});
+    await client.send('Network.setCacheDisabled', { cacheDisabled: true }).catch(() => {});
+    await page.context().clearCookies().catch(() => {});
+  } catch (err) {
+    console.log('Note: CDP cache clear notification:', err.message);
+  }
+
   console.log(`Navigating to URL: ${pageConfig.url}`);
   await page.goto(pageConfig.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   
+  // Clear local/session storage right after load
+  await page.evaluate(() => {
+    try { localStorage.clear(); sessionStorage.clear(); } catch(e) {}
+  }).catch(() => {});
+
   console.log('Waiting for main elements to start loading...');
   await page.locator('header, form').first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {
     console.log('Header/Form not visible after 15s. Proceeding...');
@@ -169,63 +185,85 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
   // Dismiss initial popups
   await dismissPopups(page);
   
-  console.log('Triggering page auto-scroll to load lazy content completely...');
+  // Force all lazy-loaded banner images to set src from data-src/data-lazy
+  await page.evaluate(() => {
+    document.querySelectorAll('img[data-src], img[data-lazy], img[data-original]').forEach(img => {
+      const src = img.getAttribute('data-src') || img.getAttribute('data-lazy') || img.getAttribute('data-original');
+      if (src && !img.src.includes(src)) {
+        img.src = src;
+      }
+    });
+  }).catch(() => {});
+
+  console.log('Triggering complete page auto-scroll to load ALL lazy content...');
   await page.evaluate(async () => {
     await new Promise((resolve) => {
-      let totalHeight = 0;
-      const distance = 150; // Smaller distance triggers lazy loaders reliably
+      let currentPosition = 0;
+      const step = 500;
       let lastScrollHeight = document.body.scrollHeight;
       let sameHeightCount = 0;
       const startTime = Date.now();
-      const maxDuration = 30000; // Max 30 seconds to scroll page
-      
+      const maxScrollTime = 25000; // 25 seconds for full homepage scroll
+
       const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        totalHeight += distance;
-        
-        const scrollHeight = document.body.scrollHeight;
-        
-        if (Date.now() - startTime > maxDuration) {
-          clearInterval(timer);
-          resolve();
-          return;
-        }
-        
-        if (totalHeight >= scrollHeight - window.innerHeight) {
-          if (scrollHeight === lastScrollHeight) {
+        window.scrollBy(0, step);
+        currentPosition += step;
+        const currentScrollHeight = document.body.scrollHeight;
+
+        if (window.innerHeight + window.scrollY >= currentScrollHeight - 30) {
+          if (currentScrollHeight === lastScrollHeight) {
             sameHeightCount++;
-            // Wait for 10 iterations (1.0s) of stable height to ensure infinite/lazy loaders finished
-            if (sameHeightCount >= 10) {
+            if (sameHeightCount >= 4) {
               clearInterval(timer);
               resolve();
+              return;
             }
           } else {
             sameHeightCount = 0;
+            lastScrollHeight = currentScrollHeight;
           }
         } else {
           sameHeightCount = 0;
         }
-        
-        lastScrollHeight = scrollHeight;
-      }, 100); // 100ms interval for stable rendering
+
+        if (Date.now() - startTime > maxScrollTime) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 40);
     });
   });
 
-  // Scroll back to top
+  console.log('Reached bottom of homepage. Waiting for lazy components to settle...');
+  await page.waitForTimeout(3000);
+
+  // Force all lazy-loaded banner images to set src from data-src/data-lazy/data-original
+  await page.evaluate(() => {
+    document.querySelectorAll('img').forEach(img => {
+      const lazySrc = img.getAttribute('data-src') || 
+                      img.getAttribute('data-lazy') || 
+                      img.getAttribute('data-original') ||
+                      img.getAttribute('data-srcset');
+      if (lazySrc && (!img.src || img.src.includes('data:image') || !img.src.includes(lazySrc.split(' ')[0]))) {
+        img.src = lazySrc.split(' ')[0];
+      }
+    });
+  }).catch(() => {});
+
+  console.log('Scrolling back to top...');
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(1000);
-  
+  await page.waitForTimeout(1500);
+
   // Dismiss any popups triggered by scrolling
   await dismissPopups(page);
-  
+
   // Wait for all images on the page to load completely (resolves even on errors or timeouts)
-  console.log('Waiting for all image assets to load completely...');
+  console.log('Waiting for all image assets across the page to load completely...');
   await page.evaluate(async () => {
     const images = Array.from(document.querySelectorAll('img'));
     await Promise.all(images.map(img => {
-      if (img.complete) return Promise.resolve();
+      if (img.complete && img.naturalWidth > 0) return Promise.resolve();
       return new Promise(resolve => {
-        // Fallback safety timeout (5 seconds) per image to prevent hangs
         const timer = setTimeout(resolve, 5000);
         img.addEventListener('load', () => { clearTimeout(timer); resolve(); });
         img.addEventListener('error', () => { clearTimeout(timer); resolve(); });
@@ -233,10 +271,24 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
     })).catch(() => {});
   });
 
-  console.log('Allowing page components and DOM to settle, and waiting for timed login popups (12s)...');
-  await page.waitForTimeout(12000);
+  // Freeze CSS animations and banner slide transitions so screenshots don't capture mid-animation frames
+  await page.evaluate(() => {
+    const style = document.createElement('style');
+    style.id = 'freeze-animations-style';
+    style.innerHTML = `
+      *, *::before, *::after {
+        animation-play-state: paused !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+      }
+    `;
+    document.head.appendChild(style);
+  }).catch(() => {});
 
-  // Dismiss any timed popups (like the 10-second login popup) right before auditing/screenshotting
+  console.log('Allowing page components and DOM to settle before screenshot...');
+  await page.waitForTimeout(3000);
+
+  // Dismiss any timed popups right before auditing/screenshotting
   await dismissPopups(page);
 
   const pageBaseline = baseline.pages ? baseline.pages[viewId] : null;
@@ -297,36 +349,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
           if (isPresent) {
             rect = await element.boundingBox();
-            
-            // Extract details & styling properties
-            attributes.innerText = (await element.innerText()).trim();
-            attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-            
-            const src = await element.getAttribute('src');
-            if (src !== null) attributes.src = src;
-
-            const href = await element.getAttribute('href');
-            if (href !== null) attributes.href = href;
-
-            const alt = await element.getAttribute('alt');
-            if (alt !== null) attributes.alt = alt;
-
-            const placeholder = await element.getAttribute('placeholder');
-            if (placeholder !== null) attributes.placeholder = placeholder;
-
-            const computedStyles = await element.evaluate(el => {
-              const style = window.getComputedStyle(el);
-              return {
-                color: style.color,
-                fontSize: style.fontSize,
-                display: style.display,
-                visibility: style.visibility
-              };
-            });
-            attributes['style.color'] = computedStyles.color;
-            attributes['style.fontSize'] = computedStyles.fontSize;
-            attributes['style.display'] = computedStyles.display;
-            attributes['style.visibility'] = computedStyles.visibility;
+            attributes = await extractComponentAttributes(element, rect);
 
             if (mode === 'compare') {
               if (baselineComp && baselineComp.present) {
@@ -412,36 +435,7 @@ async function runAuditForView(page, pageConfig, viewId, viewName, baseline, mod
 
       if (isPresent) {
         rect = await element.boundingBox();
-        
-        // Extract details & styling properties
-        attributes.innerText = (await element.innerText()).trim();
-        attributes.classList = await element.evaluate(el => Array.from(el.classList).join(' '));
-        
-        const src = await element.getAttribute('src');
-        if (src !== null) attributes.src = src;
-
-        const href = await element.getAttribute('href');
-        if (href !== null) attributes.href = href;
-
-        const alt = await element.getAttribute('alt');
-        if (alt !== null) attributes.alt = alt;
-
-        const placeholder = await element.getAttribute('placeholder');
-        if (placeholder !== null) attributes.placeholder = placeholder;
-
-        const computedStyles = await element.evaluate(el => {
-          const style = window.getComputedStyle(el);
-          return {
-            color: style.color,
-            fontSize: style.fontSize,
-            display: style.display,
-            visibility: style.visibility
-          };
-        });
-        attributes['style.color'] = computedStyles.color;
-        attributes['style.fontSize'] = computedStyles.fontSize;
-        attributes['style.display'] = computedStyles.display;
-        attributes['style.visibility'] = computedStyles.visibility;
+        attributes = await extractComponentAttributes(element, rect);
 
         if (mode === 'compare') {
           if (baselineComp && baselineComp.present) {

@@ -1,6 +1,3 @@
-/**
- * Configuration for page elements, selectors, and checked attributes.
- */
 module.exports = {
   pages: {
     home: {
@@ -67,7 +64,7 @@ module.exports = {
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, section.bg-lightgrayColor, section:has-text("OUR COMPANY"), div[class*="footerSection"]',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section:has-text("OUR COMPANY")',
           checkAttrs: ['innerText'],
           optional: true
         }
@@ -98,7 +95,7 @@ module.exports = {
         {
           id: 'product-title',
           name: 'Product Title',
-          selector: 'h1.style_productName__K1G0f, h1.product-title, h1, [itemprop="name"]',
+          selector: 'h1.style_productName__K1G0f, h1.product-title, h1',
           checkAttrs: ['innerText']
         },
         {
@@ -116,7 +113,7 @@ module.exports = {
         {
           id: 'variant-options',
           name: 'Variant Options Swatches',
-          selector: '[class*="swatch" i], [class*="attributeGroup" i], .bg-lightgrayColor',
+          selector: 'div.font-redhatMedium.tracking-tight, [class*="swatch" i], [class*="attributeGroup" i], [class*="variant-option" i]',
           multi: true,
           optional: true,
           checkAttrs: ['innerText']
@@ -136,14 +133,14 @@ module.exports = {
         {
           id: 'reviews',
           name: 'Customer Reviews Section',
-          selector: 'section:has-text("Customer Reviews"), div:has-text("Customer Reviews"), .style_reviewSection__c_Q4u',
+          selector: '.style_reviewSection__c_Q4u, section:has-text("Customer Reviews"), #reviews',
           optional: true,
           checkAttrs: ['innerText']
         },
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-white.py-5:has-text("Woodenstreet.com")',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section.bg-white.py-5:has-text("Woodenstreet.com"), section:has-text("OUR COMPANY"), div:has-text("OUR COMPANY")',
           checkAttrs: ['innerText'],
           optional: true
         }
@@ -180,13 +177,13 @@ module.exports = {
         {
           id: 'filter-panel',
           name: 'Filters Sidebar Panel',
-          selector: 'section:has(div:has-text("Filters")), .filter-panel, [class*="filterContainer" i], .bg-white.shadow-md.rounded-radius4, .style_filter-links-bottom__SBa7h span:has-text("Filter"), span.style_filter_btn__ZDigM:has-text("Filter")',
+          selector: '.bg-white.shadow-md.rounded-radius4, .szh-accordion, .filter-panel, [class*="filterContainer" i], [class*="filter-section" i], span.style_filter_btn__ZDigM:has-text("Filter"), .style_filter-links-bottom__SBa7h span:has-text("Filter")',
           checkAttrs: ['innerText']
         },
         {
           id: 'sort-dropdown',
           name: 'Sort Dropdown Bar',
-          selector: '.top-filters, div:has(span:has-text("Sort By")), [class*="sortBox" i], .style_filter-links-bottom__SBa7h span:has-text("Sort"), span.style_filter_btn__ZDigM:has-text("Sort")',
+          selector: '.top-filters, select[name*="sort" i], [class*="sortBox" i], [class*="sortSelect" i], .style_filter_btn__ZDigM:has-text("Sort"), span.style_filter_btn__ZDigM:has-text("Sort")',
           checkAttrs: ['innerText']
         },
         {
@@ -199,7 +196,7 @@ module.exports = {
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-white.py-5:has-text("Woodenstreet.com")',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section.bg-white.py-5:has-text("Woodenstreet.com")',
           checkAttrs: ['innerText'],
           optional: true
         }
@@ -258,7 +255,103 @@ module.exports = {
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-lightgrayColor',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section:has-text("OUR COMPANY"), div:has-text("OUR COMPANY")',
+          checkAttrs: ['innerText'],
+          optional: true
+        }
+      ]
+    },
+    store_city: {
+      name: 'City Store Page',
+      url: 'https://www.woodenstreet.com/furniture-store-bangalore',
+      components: [
+        {
+          id: 'logo',
+          name: 'Header Logo',
+          selector: 'header img, .logo-box img, a.logo img, .style_headerLogo__r964U img, img[src*="mob-logo.svg"], img[src*="logo.svg"]',
+          checkAttrs: ['src', 'alt']
+        },
+        {
+          id: 'search-input',
+          name: 'Search Input',
+          selector: '#search, input[placeholder*="search" i], .search-box input, input[type="search"]',
+          checkAttrs: ['placeholder', 'type']
+        },
+        {
+          id: 'navigation',
+          name: 'Navigation Bar',
+          selector: 'nav.navigation, .menu-list, .navigation-menu, .style_headerSection___0VZL, #menutouch, .style_menu-mobile-btn__dfbgY, .style_menu-header__ILZYG',
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'city-title',
+          name: 'City Store Heading',
+          selector: 'h1.style_subHeading__KJtt3, h1',
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'store-cards',
+          name: 'Experience Store Cards',
+          selector: 'div.store-wrapper, .store-card, [class*="storeCard" i], [class*="experience" i], a[href*="furniture-store-"]',
+          multi: true,
+          optional: true,
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'footer',
+          name: 'Footer Section',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section:has-text("OUR COMPANY"), div:has-text("OUR COMPANY")',
+          checkAttrs: ['innerText'],
+          optional: true
+        }
+      ]
+    },
+    store_detail: {
+      name: 'Store Detail Page',
+      url: 'https://www.woodenstreet.com/furniture-store-kirti-nagar-delhi',
+      components: [
+        {
+          id: 'logo',
+          name: 'Header Logo',
+          selector: 'header img, .logo-box img, a.logo img, .style_headerLogo__r964U img, img[src*="mob-logo.svg"], img[src*="logo.svg"]',
+          checkAttrs: ['src', 'alt']
+        },
+        {
+          id: 'search-input',
+          name: 'Search Input',
+          selector: '#search, input[placeholder*="search" i], .search-box input, input[type="search"]',
+          checkAttrs: ['placeholder', 'type']
+        },
+        {
+          id: 'navigation',
+          name: 'Navigation Bar',
+          selector: 'nav.navigation, .menu-list, .navigation-menu, .style_headerSection___0VZL, #menutouch, .style_menu-mobile-btn__dfbgY, .style_menu-header__ILZYG',
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'store-name',
+          name: 'Store Detail Name',
+          selector: 'h1.style_subHeading__KJtt3, h1[class*="store" i], h1',
+          checkAttrs: ['innerText']
+        },
+        {
+          id: 'store-address',
+          name: 'Store Address Info',
+          selector: '[class*="storeAddress" i], [class*="address" i], div:has-text("Address")',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'appointment-btn',
+          name: 'Book Appointment Button',
+          selector: 'button:has-text("Book an Appointment"), button:has-text("Book Appointment"), [class*="btn" i]:has-text("Appointment")',
+          checkAttrs: ['innerText'],
+          optional: true
+        },
+        {
+          id: 'footer',
+          name: 'Footer Section',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i], section:has-text("OUR COMPANY"), div:has-text("OUR COMPANY")',
           checkAttrs: ['innerText'],
           optional: true
         }
@@ -284,7 +377,7 @@ module.exports = {
         {
           id: 'cart-items',
           name: 'Cart Product Items',
-          selector: '.cart-item, .cart-list-item, .cart-product-row, tr.product, div[class*="cartItem" i], div[class*="cart-product" i], [class*="cart-item" i], div:has(button:has-text("Remove")), div:has(span:has-text("Save For Later"))',
+          selector: '.cart-item, .cart-list-item, [class*="product-info" i], [class*="product-detail" i], div[class*="cartItem" i], div[class*="cart_item" i]',
           multi: true,
           optional: true,
           checkAttrs: ['innerText']
@@ -292,21 +385,21 @@ module.exports = {
         {
           id: 'empty-cart',
           name: 'Empty Cart Section',
-          selector: '.empty-cart, .empty-cart-text, div:has-text("Your cart is empty"), section:has-text("cart is empty"), div:has-text("Cart is Empty")',
+          selector: '.empty-cart, .empty-cart-text, div:has-text("Your cart is empty"), section:has-text("cart is empty")',
           optional: true,
           checkAttrs: ['innerText']
         },
         {
           id: 'order-summary',
           name: 'Order Summary Box',
-          selector: '.order-summary, .cart-totals, [class*="orderSummary" i], [class*="cartSummary" i], section:has-text("Order Summary"), div:has-text("PRICE DETAILS"), div:has-text("Price Detail")',
+          selector: '.order-summary, .cart-totals, [class*="orderSummary" i], [class*="cartSummary" i], div[class*="priceDetails" i], div:has-text("Price Detail")',
           optional: true,
           checkAttrs: ['innerText']
         },
         {
           id: 'coupon-box',
           name: 'Coupon Code Input',
-          selector: '#coupon, input[name="coupon"], input[placeholder*="Coupon" i], input[placeholder*="Promo" i], [class*="coupon" i], div:has-text("Coupon Applied")',
+          selector: '#coupon, input[name="coupon"], input[placeholder*="Coupon" i], input[placeholder*="Promo" i], [class*="coupon" i]',
           optional: true,
           checkAttrs: ['innerText']
         },
@@ -320,7 +413,7 @@ module.exports = {
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-lightgrayColor',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i]',
           checkAttrs: ['innerText'],
           optional: true
         }
@@ -339,7 +432,7 @@ module.exports = {
         {
           id: 'guest-heading',
           name: 'Guest Page Heading',
-          selector: 'h1:has-text("Guest"), h2:has-text("Guest"), h1, h2, .login-title, div:has-text("Login"), form h2, form h1',
+          selector: '.guest-heading, [class*="guest" i] h1, form h2, form h1, div[class*="login" i] h1, h1:has-text("Guest"), h2:has-text("Guest")',
           checkAttrs: ['innerText'],
           optional: true
         },
@@ -360,14 +453,14 @@ module.exports = {
         {
           id: 'guest-form',
           name: 'Guest Form Container',
-          selector: 'form, div[class*="guest" i], div[class*="login" i]',
+          selector: 'form#guestForm, form[action*="guest" i], div[class*="guestContainer" i], div[class*="guest" i], form',
           checkAttrs: ['innerText'],
           optional: true
         },
         {
           id: 'footer',
           name: 'Footer Section',
-          selector: '.style_footerSection__KdicH, footer, #footer, [class*="footer" i], section.bg-lightgrayColor',
+          selector: 'footer, #footer, .style_footerSection__KdicH, div[class*="footer" i]',
           checkAttrs: ['innerText'],
           optional: true
         }
