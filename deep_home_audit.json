@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-09-26T05:11:10.518Z",
+  "targetUrl": "https://beta.teamwoodenstreet.com/",
+  "pageLoadTimeMs": 5687,
+  "seoAudit": {
+    "title": "Furniture @upto 70% OFF | Online Furniture Store in India Wooden Street",
+    "metaDesc": "Woodenstreet - #1 online furniture store in India. Explore &amp; shop exclusive office &amp; home furniture online at the best prices on our website. FREE shipping, No cost EMI",
+    "metaOgTitle": "Furniture @upto 70% OFF | Online Furniture Store in India Wooden Street",
+    "h1Count": 1,
+    "h1Texts": [
+      "Online Furniture"
+    ],
+    "canonical": "https://beta.teamwoodenstreet.com/"
+  },
+  "consoleErrors": [],
+  "consoleWarnings": [],
+  "uncaughtExceptions": [],
+  "failedNetworkRequests": [],
+  "slowRequests": [],
+  "imageAudit": {
+    "totalImages": 91,
+    "brokenImages": [],
+    "missingAltCount": 10,
+    "missingSrc": []
+  },
+  "linkAudit": {
+    "totalAnchors": 533,
+    "emptyOrHash": [],
+    "javascriptVoid": []
+  },
+  "searchStatus": "Search input working, found 0 autosuggest items"
+}
