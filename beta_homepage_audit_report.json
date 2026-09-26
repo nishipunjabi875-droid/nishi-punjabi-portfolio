@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-09-26T05:03:41.875Z",
+  "targetUrl": "https://beta.teamwoodenstreet.com/",
+  "totalLinksExtracted": 542,
+  "uniqueInternalUrlsTested": 266,
+  "broken404Links": [
+    {
+      "href": "https://beta.teamwoodenstreet.com/all-sofa",
+      "fullUrl": "https://beta.teamwoodenstreet.com/all-sofa",
+      "text": "SOFAS",
+      "parentSection": "Body",
+      "status": 404,
+      "finalUrl": "https://beta.teamwoodenstreet.com/all-sofa",
+      "errorMsg": null,
+      "isSoft404": false
+    },
+    {
+      "href": "https://beta.teamwoodenstreet.com/freedom-sale",
+      "fullUrl": "https://beta.teamwoodenstreet.com/freedom-sale",
+      "text": "",
+      "parentSection": "Body",
+      "status": 404,
+      "finalUrl": "https://beta.teamwoodenstreet.com/freedom-sale",
+      "errorMsg": null,
+      "isSoft404": false
+    }
+  ],
+  "otherHttpErrors": [],
+  "fetchFailures": [],
+  "emptyOrHashLinks": [],
+  "brokenImagesInDOM": [],
+  "consoleErrors": [],
+  "failedNetworkRequests": []
+}
