@@ -18,6 +18,12 @@ require('dotenv').config();
         args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
 
+    const defaultHeaders = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache'
+    };
+
     const allExtractedItems = [];
 
     // -------------------------------------------------------------
@@ -26,7 +32,8 @@ require('dotenv').config();
     console.log('[1/6] Launching Desktop context (1440x900) & navigating...');
     const desktopContext = await browser.newContext({
         viewport: { width: 1440, height: 900 },
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        extraHTTPHeaders: defaultHeaders
     });
     const desktopPage = await desktopContext.newPage();
 
@@ -115,7 +122,8 @@ require('dotenv').config();
         viewport: { width: 375, height: 812 },
         userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
         isMobile: true,
-        hasTouch: true
+        hasTouch: true,
+        extraHTTPHeaders: defaultHeaders
     });
     const mobilePage = await mobileContext.newPage();
 
@@ -228,7 +236,11 @@ require('dotenv').config();
         const batch = uniqueUrls.slice(i, i + batchSize);
         await Promise.all(batch.map(async (url) => {
             try {
-                const res = await mobilePage.request.get(url, { timeout: 20000, maxRedirects: 5 });
+                const res = await mobilePage.request.get(url, { 
+                    timeout: 20000, 
+                    maxRedirects: 5,
+                    headers: defaultHeaders
+                });
                 const status = res.status();
                 const finalUrl = res.url();
                 let isSoft404 = false;
@@ -250,6 +262,7 @@ require('dotenv').config();
         }));
     }
 
+    await mobileContext.close();
     await browser.close();
 
     // -------------------------------------------------------------
@@ -330,13 +343,13 @@ require('dotenv').config();
     console.log('===============================================\n');
 
     if (broken404Items.length > 0) {
-        console.log('🚨 LIST OF 404 BROKEN LINKS FOUND:');
+        console.log('🚨 LIST OF 404 BROKEN LINKS FOUND ON PRODUCTION:');
         broken404Items.forEach((b, i) => {
             console.log(` ${i + 1}. [${b.device}] [${b.section}] "${b.linkText}" -> ${b.fullUrl}`);
         });
         console.log('');
     } else {
-        console.log('✅ SUCCESS: No 404 broken links found on homepage!\n');
+        console.log('✅ SUCCESS: No 404 broken links found on Production homepage!\n');
     }
 
     // -------------------------------------------------------------
@@ -409,7 +422,6 @@ require('dotenv').config();
     });
 
     await workbook.xlsx.writeFile(excelFilename);
-    // Also save as Homepage_Links_Navigation_Report.xlsx for default dashboard compatibility
     await workbook.xlsx.writeFile('Homepage_Links_Navigation_Report.xlsx');
     console.log(`✅ Excel report saved successfully: ${excelFilename}`);
 
