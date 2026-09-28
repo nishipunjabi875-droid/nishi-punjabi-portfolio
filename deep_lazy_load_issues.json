@@ -1,0 +1,860 @@
+{
+  "timestamp": "2026-09-28T07:50:56.472Z",
+  "desktop": {
+    "deviceType": "desktop",
+    "atfHeroCheck": [
+      {
+        "src": "https://images.woodenstreet.de/image/data/website-sale/test/1.jpg?v=5",
+        "loadingAttr": "eager",
+        "fetchPriority": "high",
+        "isLazyInHero": false,
+        "naturalWidth": 1400,
+        "complete": true
+      }
+    ],
+    "clsAndA11yIssues": {
+      "totalImages": 67,
+      "missingDimensionsCount": 8,
+      "missingAltCount": 2,
+      "unswappedLazyCount": 0,
+      "sampleIssues": [
+        {
+          "type": "Missing Alt Attribute",
+          "src": "https://beta.teamwoodenstreet.com/images/client/CaretLeft.svg",
+          "parent": "BUTTON"
+        },
+        {
+          "type": "Missing Alt Attribute",
+          "src": "https://beta.teamwoodenstreet.com/images/client/CaretRight.svg",
+          "parent": "BUTTON"
+        }
+      ]
+    },
+    "oversizedImagesAudit": [
+      {
+        "src": "https://beta.teamwoodenstreet.com/images/header/mob-logo.svg",
+        "displayedWidth": 244,
+        "naturalWidth": 1293,
+        "naturalHeight": 200,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/all-dining-table-sets-1.jpg",
+        "displayedWidth": 266,
+        "naturalWidth": 2397,
+        "naturalHeight": 2397,
+        "ratio": 9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/store_bg.jpg",
+        "displayedWidth": 1400,
+        "naturalWidth": 3923,
+        "naturalHeight": 1593,
+        "ratio": 2.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/website-sale/BHARAT79/home_hero_2.jpg?v=5",
+        "displayedWidth": 600,
+        "naturalWidth": 2141,
+        "naturalHeight": 1308,
+        "ratio": 3.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/website-sale/BHARAT79/home_hero_3.jpg?v=5",
+        "displayedWidth": 600,
+        "naturalWidth": 2141,
+        "naturalHeight": 1308,
+        "ratio": 3.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/living-room-furniture.jpg",
+        "displayedWidth": 440,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 3.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/bedroom-furniture.jpg",
+        "displayedWidth": 440,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 3.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/dining-room-furniture.jpg",
+        "displayedWidth": 440,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 3.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/study-room-furniture.jpg",
+        "displayedWidth": 440,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 3.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/distinctly-indian.png",
+        "displayedWidth": 288,
+        "naturalWidth": 1522,
+        "naturalHeight": 279,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-sofa.jpg?v=1",
+        "displayedWidth": 1400,
+        "naturalWidth": 3924,
+        "naturalHeight": 1728,
+        "ratio": 2.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-sofa-cum-beds.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-coffee-tables.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/tv-units.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/office-chairs.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-home-temple.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-study-tables.jpg",
+        "displayedWidth": 550,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 5.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/human.jpg",
+        "displayedWidth": 312,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/craftsmanship.jpg",
+        "displayedWidth": 312,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/design.jpg",
+        "displayedWidth": 312,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/sustainability.jpg",
+        "displayedWidth": 312,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 950,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 16.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/17701965571759296122WhatsApp%20Image%202025-09-28%20at%205.31.51%20PM.jpeg",
+        "displayedWidth": 331,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 3.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1769246113WhatsApp%20Image%202026-01-22%20at%204.02.54%20PM.jpeg",
+        "displayedWidth": 331,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "ratio": 4.8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764678259WhatsApp%20Image%202025-11-26%20at%201.51.38%20PM.jpeg",
+        "displayedWidth": 331,
+        "naturalWidth": 1280,
+        "naturalHeight": 579,
+        "ratio": 3.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764747300WhatsApp%20Image%202025-11-17%20at%202.24.42%20PM%20(1).jpeg",
+        "displayedWidth": 331,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 3.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764747376WhatsApp%20Image%202025-11-17%20at%201.48.28%20PM%20(1)%20(1).jpeg",
+        "displayedWidth": 331,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 3.9
+      }
+    ],
+    "videoLazyCheck": [
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "preload": null,
+        "autoplay": false,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 3,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 3,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/86943.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/92223.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/57262.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      }
+    ],
+    "abortedMediaRequests": [
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/92223.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/86943.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/57262.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "imageNetworkErrors": []
+  },
+  "mobile": {
+    "deviceType": "mobile",
+    "atfHeroCheck": [
+      {
+        "src": "https://images.woodenstreet.de/image/data/website-sale/test/1-m.jpg?v=5",
+        "loadingAttr": "eager",
+        "fetchPriority": "high",
+        "isLazyInHero": false,
+        "naturalWidth": 900,
+        "complete": true
+      }
+    ],
+    "clsAndA11yIssues": {
+      "totalImages": 108,
+      "missingDimensionsCount": 8,
+      "missingAltCount": 2,
+      "unswappedLazyCount": 0,
+      "sampleIssues": [
+        {
+          "type": "Missing Alt Attribute",
+          "src": "https://beta.teamwoodenstreet.com/images/client/CaretLeft.svg",
+          "parent": "BUTTON"
+        },
+        {
+          "type": "Missing Alt Attribute",
+          "src": "https://beta.teamwoodenstreet.com/images/client/CaretRight.svg",
+          "parent": "BUTTON"
+        }
+      ]
+    },
+    "oversizedImagesAudit": [
+      {
+        "src": "https://beta.teamwoodenstreet.com/images/header/mob-logo.svg",
+        "displayedWidth": 118,
+        "naturalWidth": 1293,
+        "naturalHeight": 200,
+        "ratio": 11
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/kitchen-cabinets.png",
+        "displayedWidth": 78,
+        "naturalWidth": 1500,
+        "naturalHeight": 1300,
+        "ratio": 19.2
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/bookshelves.png",
+        "displayedWidth": 78,
+        "naturalWidth": 1500,
+        "naturalHeight": 1300,
+        "ratio": 19.2
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/divan-beds.png",
+        "displayedWidth": 78,
+        "naturalWidth": 1500,
+        "naturalHeight": 1300,
+        "ratio": 19.2
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/benches.png",
+        "displayedWidth": 78,
+        "naturalWidth": 1349,
+        "naturalHeight": 1166,
+        "ratio": 17.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/shop-by-categories/recliners.png",
+        "displayedWidth": 78,
+        "naturalWidth": 1347,
+        "naturalHeight": 1168,
+        "ratio": 17.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/website-sale/BHARAT79/home_hero_2.jpg?v=5",
+        "displayedWidth": 354,
+        "naturalWidth": 2141,
+        "naturalHeight": 1308,
+        "ratio": 6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/living-room-furniture.jpg",
+        "displayedWidth": 261,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 6.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/bedroom-furniture.jpg",
+        "displayedWidth": 261,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 6.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/dining-room-furniture.jpg",
+        "displayedWidth": 261,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 6.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/study-room-furniture.jpg",
+        "displayedWidth": 261,
+        "naturalWidth": 1672,
+        "naturalHeight": 2064,
+        "ratio": 6.4
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/distinctly-indian.png",
+        "displayedWidth": 144,
+        "naturalWidth": 1522,
+        "naturalHeight": 279,
+        "ratio": 10.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-sofa-cum-beds.jpg",
+        "displayedWidth": 362,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/mid-banners/all-coffee-tables.jpg",
+        "displayedWidth": 362,
+        "naturalWidth": 2900,
+        "naturalHeight": 1458,
+        "ratio": 8
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/editorial/dining-room-furniture.jpg?v=1",
+        "displayedWidth": 370,
+        "naturalWidth": 1579,
+        "naturalHeight": 1396,
+        "ratio": 4.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/human.jpg",
+        "displayedWidth": 181,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 6.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/craftsmanship.jpg",
+        "displayedWidth": 181,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 6.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/design.jpg",
+        "displayedWidth": 181,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 6.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/sustainability.jpg",
+        "displayedWidth": 181,
+        "naturalWidth": 1249,
+        "naturalHeight": 1770,
+        "ratio": 6.9
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/editorial/living-room-furniture.jpg?v=1",
+        "displayedWidth": 370,
+        "naturalWidth": 1579,
+        "naturalHeight": 1396,
+        "ratio": 4.3
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-1h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/woodenstreet-news-2h.jpg?v=101",
+        "displayedWidth": 650,
+        "naturalWidth": 15596,
+        "naturalHeight": 964,
+        "ratio": 24
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/17701965571759296122WhatsApp%20Image%202025-09-28%20at%205.31.51%20PM.jpeg",
+        "displayedWidth": 281,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 4.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1769246113WhatsApp%20Image%202026-01-22%20at%204.02.54%20PM.jpeg",
+        "displayedWidth": 281,
+        "naturalWidth": 1600,
+        "naturalHeight": 900,
+        "ratio": 5.7
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764678259WhatsApp%20Image%202025-11-26%20at%201.51.38%20PM.jpeg",
+        "displayedWidth": 281,
+        "naturalWidth": 1280,
+        "naturalHeight": 579,
+        "ratio": 4.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764747300WhatsApp%20Image%202025-11-17%20at%202.24.42%20PM%20(1).jpeg",
+        "displayedWidth": 281,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 4.6
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/1764747376WhatsApp%20Image%202025-11-17%20at%201.48.28%20PM%20(1)%20(1).jpeg",
+        "displayedWidth": 281,
+        "naturalWidth": 1280,
+        "naturalHeight": 720,
+        "ratio": 4.6
+      }
+    ],
+    "videoLazyCheck": [
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "preload": null,
+        "autoplay": false,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 4,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      },
+      {
+        "src": "",
+        "preload": null,
+        "autoplay": true,
+        "paused": true,
+        "readyState": 0,
+        "hasError": false
+      }
+    ],
+    "abortedMediaRequests": [
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1",
+        "error": "net::ERR_ABORTED"
+      }
+    ],
+    "imageNetworkErrors": []
+  }
+}
