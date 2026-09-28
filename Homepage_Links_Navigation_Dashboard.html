@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WoodenStreet Production Homepage Links & Navigation Dashboard</title>
+    <title>WoodenStreet Live Homepage Links & Redirection Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -57,7 +57,7 @@
         }
         .metric-value.text-danger { color: #dc2626 !important; }
         .metric-value.text-success { color: #16a34a !important; }
-        .metric-value.text-info { color: #0284c7 !important; }
+        .metric-value.text-warning { color: #d97706 !important; }
         .table-card {
             border: 1px solid var(--card-border);
             border-radius: 12px;
@@ -114,15 +114,15 @@
 
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid px-4">
-            <span class="navbar-brand"><i class="fa-solid fa-link me-2"></i> WoodenStreet Homepage Links Audit</span>
-            <span class="text-light small"><i class="fa-regular fa-clock me-1"></i> Audited: 28/9/2026, 5:58:13 pm</span>
+            <span class="navbar-brand"><i class="fa-solid fa-link me-2"></i> WoodenStreet Live Homepage Links & Redirection Dashboard</span>
+            <span class="text-light small"><i class="fa-regular fa-clock me-1"></i> Audited: 28/9/2026, 6:23:06 pm</span>
         </div>
     </nav>
 
     <div class="header-bg">
         <div class="container">
-            <h1 class="display-6 fw-bold mb-2">Production Homepage Links & 404 Dashboard</h1>
-            <p class="lead opacity-75 mb-0">Target URL: <a href="https://www.woodenstreet.com" target="_blank" class="text-white text-decoration-underline">https://www.woodenstreet.com</a> | Viewports: Desktop (1440x900) & Mobile (375x812)</p>
+            <h1 class="display-6 fw-bold mb-2">Live Homepage Navigation & Redirection Report</h1>
+            <p class="lead opacity-75 mb-0">Target Live URL: <a href="https://www.woodenstreet.com" target="_blank" class="text-white text-decoration-underline">https://www.woodenstreet.com</a> | Viewports: Desktop (1440x900) & Mobile (375x812)</p>
         </div>
     </div>
 
@@ -132,16 +132,23 @@
         <div class="row g-4 mb-4">
             <div class="col-md-3">
                 <div class="metric-card">
-                    <div class="metric-title"><i class="fa-solid fa-compass me-1"></i> Total Links</div>
-                    <div class="metric-value">758</div>
-                    <div class="text-muted small mt-1">Extracted from DOM</div>
+                    <div class="metric-title"><i class="fa-solid fa-compass me-1"></i> Total Homepage Links</div>
+                    <div class="metric-value">763</div>
+                    <div class="text-muted small mt-1">Desktop + Mobile Links</div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="metric-card">
-                    <div class="metric-title"><i class="fa-solid fa-circle-check me-1"></i> Passing Links</div>
-                    <div class="metric-value text-success">756</div>
+                    <div class="metric-title"><i class="fa-solid fa-circle-check me-1"></i> Passing Active Links</div>
+                    <div class="metric-value text-success">761</div>
                     <div class="text-muted small mt-1">Status 200 / Active</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <div class="metric-title"><i class="fa-solid fa-arrow-right-arrow-left me-1"></i> Redirected Links</div>
+                    <div class="metric-value text-warning">3</div>
+                    <div class="text-muted small mt-1">Canonical Redirections</div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -149,13 +156,6 @@
                     <div class="metric-title"><i class="fa-solid fa-triangle-exclamation me-1"></i> 404 Broken Links</div>
                     <div class="metric-value text-danger">0</div>
                     <div class="text-muted small mt-1">All Clear</div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="metric-card">
-                    <div class="metric-title"><i class="fa-solid fa-arrow-right-arrow-left me-1"></i> Redirects / Other</div>
-                    <div class="metric-value text-info">7</div>
-                    <div class="text-muted small mt-1">5 Redirects, 2 Other</div>
                 </div>
             </div>
         </div>
@@ -177,13 +177,13 @@
                     <div class="col-md-3">
                         <select id="statusFilter" class="form-select">
                             <option value="ALL">All Statuses</option>
-                            <option value="FAIL">🚨 404 / Failed Links</option>
+                            <option value="Redirected">🔁 Redirected Links (3)</option>
+                            <option value="FAIL">🚨 404 / Failed Links (0)</option>
                             <option value="200">✅ 200 Passing</option>
-                            <option value="Redirected">🔁 Redirected</option>
                         </select>
                     </div>
                     <div class="col-md-2 text-end">
-                        <a href="Production_Homepage_Links_Report.xlsx" class="btn btn-outline-success w-100" download><i class="fa-solid fa-file-excel me-1"></i> Export Excel</a>
+                        <a href="Homepage_Links_Navigation_Report.xlsx" class="btn btn-outline-success w-100" download><i class="fa-solid fa-file-excel me-1"></i> Export Excel</a>
                     </div>
                 </div>
             </div>
@@ -199,8 +199,8 @@
                             <th style="width: 90px;">Device</th>
                             <th style="width: 170px;">Section</th>
                             <th>Link Text / Label</th>
-                            <th>Target URL</th>
-                            <th>Final URL</th>
+                            <th>Original Target URL</th>
+                            <th>Final Destination URL</th>
                             <th style="width: 80px;" class="text-center">Status</th>
                             <th style="width: 160px;">Navigation Result</th>
                         </tr>
@@ -7260,46 +7260,42 @@ Call log:
 [2m    - accept-encoding: gzip,deflate,br[22m
 [2m    - Accept-Language: en-US,en;q=0.9[22m
 [2m    - Cache-Control: no-cache[22m
-[2m  - ← 301 Apple WebObjects 5.9.8-1[22m
-[2m    - connection: keep-alive[22m
-[2m    - content-length: 0[22m
+[2m  - ← 301 Moved Permanently[22m
 [2m    - server: daiquiri/5[22m
 [2m    - content-type: text/html; charset=UTF-8[22m
-[2m    - x-apple-jingle-correlation-key: 4VDH7XVLVKLAPPVPVRKEBOTA4Y[22m
-[2m    - x-apple-request-uuid: e5467fde-abaa-9607-beaf-ac5440ba60e6[22m
+[2m    - content-length: 0[22m
+[2m    - x-apple-jingle-correlation-key: MV6NIZWYLEBAMZY43E4NS22Q5E[22m
+[2m    - x-apple-request-uuid: 657cd466-d859-0206-671c-d938d96b50e9[22m
 [2m    - x-apple-translated-wo-url: /WebObjects/MZStore.woa/wa/viewSoftware?ls=1&id=1162068644&cc=in&urlDesc=/wooden-street[22m
 [2m    - apple-tk: false[22m
-[2m    - x-b3-spanid: 420a6ab8538940ef[22m
-[2m    - edge-control: cache-maxage=0s, cache-maxage=0s[22m
+[2m    - x-b3-spanid: f09acc21e855d5fa[22m
 [2m    - x-apple-lokamai-no-cache: true, true[22m
-[2m    - b3: e5467fdeabaa9607beafac5440ba60e6-420a6ab8538940ef[22m
+[2m    - b3: 657cd466d8590206671cd938d96b50e9-f09acc21e855d5fa[22m
 [2m    - cache-control: max-age=0, max-age=0, no-store[22m
-[2m    - x-apple-aka-ttl: Generated Mon Sep 28 05:28:11 PDT 2026, Expires Mon Sep 28 05:28:11 PDT 2026, TTL 0s, cache-maxage=0s[22m
-[2m    - x-b3-traceid: e5467fdeabaa9607beafac5440ba60e6[22m
+[2m    - x-apple-aka-ttl: Generated Mon Sep 28 05:53:01 PDT 2026, Expires Mon Sep 28 05:53:01 PDT 2026, TTL 0s, cache-maxage=0s[22m
+[2m    - x-b3-traceid: 657cd466d8590206671cd938d96b50e9[22m
 [2m    - x-webobjects-loadaverage: 0[22m
-[2m    - last-modified: Mon, 28 Sep 2026 12:28:11 GMT[22m
+[2m    - last-modified: Mon, 28 Sep 2026 12:53:01 GMT[22m
 [2m    - apple-seq: 0.0[22m
 [2m    - access-control-allow-origin: *[22m
 [2m    - apple-originating-system: MZStore[22m
 [2m    - strict-transport-security: max-age=31536000; includeSubDomains[22m
 [2m    - x-frame-options: SAMEORIGIN[22m
 [2m    - x-apple-orig-url: https://apps.apple.com/in/app/wooden-street/id1162068644?ls=1[22m
-[2m    - x-apple-application-site: ST11[22m
+[2m    - x-apple-application-site: MR22[22m
 [2m    - apple-timing-app: 3 ms[22m
 [2m    - location: itms-appss://apps.apple.com/in/app/wooden-street/id1162068644?ls=1[22m
-[2m    - x-apple-application-instance: 2500196[22m
-[2m    - x-responding-instance: MZStore:2500196:::[22m
-[2m    - x-daiquiri-instance: daiquiri:41896014:st47p00it-qujn12071501:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-st, daiquiri:41896001:st53p00it-qujn12040301:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-st, daiquiri:42282007:st53p00it-qujn11032102:7987:26RELEASE153:daiquiri-amp-store-l7shared-ext-001-st[22m
-[2m    - x-daiquiri-debug-worker-pid: 75044, 2310, 102174[22m
-[2m    - accept-ranges: bytes[22m
-[2m    - date: Mon, 28 Sep 2026 12:28:11 GMT[22m
-[2m    - via: 1.1 varnish[22m
-[2m    - x-cdn: fsly[22m
-[2m    - x-served-by: cache-maa10220-MAA[22m
-[2m    - x-cache-hits: 0[22m
-[2m    - x-timer: S1790598491.467521,VS0,VE294[22m
-[2m    - set-cookie: geo=IN; domain=apple.com[22m
-[2m    - x-cache: MISS fsly[22m
+[2m    - x-apple-application-instance: 3500163[22m
+[2m    - x-responding-instance: MZStore:3500163:::[22m
+[2m    - x-daiquiri-instance: daiquiri:11896010:mr50p00it-qujn12072902:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-mr, daiquiri:11896007:mr47p00it-qujn04123002:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-mr, daiquiri:12282001:mr47p00it-qujn06080702:7987:26RELEASE153:daiquiri-amp-store-l7shared-ext-001-mr[22m
+[2m    - x-daiquiri-debug-worker-pid: 34030, 43099, 108974[22m
+[2m    - date: Mon, 28 Sep 2026 12:53:01 GMT[22m
+[2m    - x-cache: TCP_REFRESH_MISS from a23-48-245-229.deploy.akamaitechnologies.com (AkamaiGHost/22.6.4-888a2d21768272d5e2d80e9762941e76) (S)[22m
+[2m    - connection: keep-alive[22m
+[2m    - x-cache-remote: TCP_REFRESH_MISS from a184-86-112-215.deploy.akamaitechnologies.com (AkamaiGHost/22.6.3-da071da6976b6d633b0b37bcfe65c0fc) (S)[22m
+[2m    - set-cookie: geo=IN; domain=.apple.com[22m
+[2m    - alt-svc: h3=":443"; ma=93600[22m
+[2m    - vary: X-Apple-Store-Front, Cookie[22m
 )
                                 </span>
                             </td>
@@ -8115,7 +8111,7 @@ Call log:
                             </td>
                         </tr>
                         
-                        <tr data-device="Mobile" data-section="Mobile Drawer / Menu" data-status="Redirected">
+                        <tr data-device="Mobile" data-section="Mobile Drawer / Menu" data-status="200">
                             <td class="text-muted small">525</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Drawer / Menu</span></td>
@@ -8124,13 +8120,13 @@ Call log:
                             <td><a href="https://www.woodenstreet.com/design-services/" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/design-services/</a></td>
                             <td class="text-center"><span class="badge bg-success">200</span></td>
                             <td>
-                                <span class="badge badge-redirect">
-                                    PASS (Redirected)
+                                <span class="badge badge-pass">
+                                    PASS
                                 </span>
                             </td>
                         </tr>
                         
-                        <tr data-device="Mobile" data-section="Mobile Drawer / Menu" data-status="Redirected">
+                        <tr data-device="Mobile" data-section="Mobile Drawer / Menu" data-status="200">
                             <td class="text-muted small">526</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Drawer / Menu</span></td>
@@ -8139,8 +8135,8 @@ Call log:
                             <td><a href="https://www.woodenstreet.com/blog/" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/blog/</a></td>
                             <td class="text-center"><span class="badge bg-success">200</span></td>
                             <td>
-                                <span class="badge badge-redirect">
-                                    PASS (Redirected)
+                                <span class="badge badge-pass">
+                                    PASS
                                 </span>
                             </td>
                         </tr>
@@ -9904,6 +9900,81 @@ Call log:
                             <td class="text-muted small">644</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
+                            <td class="fw-semibold">View Product</td>
+                            <td><a href="https://www.woodenstreet.com/product/feltro-sofa-cum-bed-honey-finish" target="_blank" class="url-link">https://www.woodenstreet.com/product/feltro-sofa-cum-bed-honey-finish</a></td>
+                            <td><a href="https://www.woodenstreet.com/product/feltro-sofa-cum-bed-honey-finish" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/product/feltro-sofa-cum-bed-honey-finish</a></td>
+                            <td class="text-center"><span class="badge bg-success">200</span></td>
+                            <td>
+                                <span class="badge badge-pass">
+                                    PASS
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
+                            <td class="text-muted small">645</td>
+                            <td><span class="device-tag device-mobile">Mobile</span></td>
+                            <td><span class="section-tag">Mobile Body Section</span></td>
+                            <td class="fw-semibold">View Product</td>
+                            <td><a href="https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory" target="_blank" class="url-link">https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory</a></td>
+                            <td><a href="https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/product/lorenz-3-seater-sofa-cotton-jade-ivory</a></td>
+                            <td class="text-center"><span class="badge bg-success">200</span></td>
+                            <td>
+                                <span class="badge badge-pass">
+                                    PASS
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
+                            <td class="text-muted small">646</td>
+                            <td><span class="device-tag device-mobile">Mobile</span></td>
+                            <td><span class="section-tag">Mobile Body Section</span></td>
+                            <td class="fw-semibold">View Product</td>
+                            <td><a href="https://www.woodenstreet.com/product/waver-4-seater-outdoor-dining-set" target="_blank" class="url-link">https://www.woodenstreet.com/product/waver-4-seater-outdoor-dining-set</a></td>
+                            <td><a href="https://www.woodenstreet.com/product/waver-4-seater-outdoor-dining-set" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/product/waver-4-seater-outdoor-dining-set</a></td>
+                            <td class="text-center"><span class="badge bg-success">200</span></td>
+                            <td>
+                                <span class="badge badge-pass">
+                                    PASS
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
+                            <td class="text-muted small">647</td>
+                            <td><span class="device-tag device-mobile">Mobile</span></td>
+                            <td><span class="section-tag">Mobile Body Section</span></td>
+                            <td class="fw-semibold">View Product</td>
+                            <td><a href="https://www.woodenstreet.com/product/walken-bed-with-storage-honey-finish" target="_blank" class="url-link">https://www.woodenstreet.com/product/walken-bed-with-storage-honey-finish</a></td>
+                            <td><a href="https://www.woodenstreet.com/product/walken-bed-with-storage-honey-finish" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/product/walken-bed-with-storage-honey-finish</a></td>
+                            <td class="text-center"><span class="badge bg-success">200</span></td>
+                            <td>
+                                <span class="badge badge-pass">
+                                    PASS
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
+                            <td class="text-muted small">648</td>
+                            <td><span class="device-tag device-mobile">Mobile</span></td>
+                            <td><span class="section-tag">Mobile Body Section</span></td>
+                            <td class="fw-semibold">View All</td>
+                            <td><a href="https://www.woodenstreet.com/customer-stories" target="_blank" class="url-link">https://www.woodenstreet.com/customer-stories</a></td>
+                            <td><a href="https://www.woodenstreet.com/customer-stories" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/customer-stories</a></td>
+                            <td class="text-center"><span class="badge bg-success">200</span></td>
+                            <td>
+                                <span class="badge badge-pass">
+                                    PASS
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
+                            <td class="text-muted small">649</td>
+                            <td><span class="device-tag device-mobile">Mobile</span></td>
+                            <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">solid wood furniture</td>
                             <td><a href="https://www.woodenstreet.com/solid-wood-furniture" target="_blank" class="url-link">https://www.woodenstreet.com/solid-wood-furniture</a></td>
                             <td><a href="https://www.woodenstreet.com/solid-wood-furniture" target="_blank" class="url-link text-secondary">https://www.woodenstreet.com/solid-wood-furniture</a></td>
@@ -9916,7 +9987,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">645</td>
+                            <td class="text-muted small">650</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">sofa set</td>
@@ -9931,7 +10002,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">646</td>
+                            <td class="text-muted small">651</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">recliner</td>
@@ -9946,7 +10017,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">647</td>
+                            <td class="text-muted small">652</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">coffee table for living room</td>
@@ -9961,7 +10032,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">648</td>
+                            <td class="text-muted small">653</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">carpets</td>
@@ -9976,7 +10047,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">649</td>
+                            <td class="text-muted small">654</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">TV units</td>
@@ -9991,7 +10062,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">650</td>
+                            <td class="text-muted small">655</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Sofa Cum Bed</td>
@@ -10006,7 +10077,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">651</td>
+                            <td class="text-muted small">656</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">single bed</td>
@@ -10021,7 +10092,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">652</td>
+                            <td class="text-muted small">657</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">double bed</td>
@@ -10036,7 +10107,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">653</td>
+                            <td class="text-muted small">658</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">divan bed</td>
@@ -10051,7 +10122,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">654</td>
+                            <td class="text-muted small">659</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">dressing table</td>
@@ -10066,7 +10137,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">655</td>
+                            <td class="text-muted small">660</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">bunk bed</td>
@@ -10081,7 +10152,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">656</td>
+                            <td class="text-muted small">661</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wardrobe</td>
@@ -10096,7 +10167,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">657</td>
+                            <td class="text-muted small">662</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">buy a bed online</td>
@@ -10111,7 +10182,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">658</td>
+                            <td class="text-muted small">663</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">mattresses</td>
@@ -10126,7 +10197,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">659</td>
+                            <td class="text-muted small">664</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">cushions</td>
@@ -10141,7 +10212,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">660</td>
+                            <td class="text-muted small">665</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">dining table</td>
@@ -10156,7 +10227,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">661</td>
+                            <td class="text-muted small">666</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">dining chairs</td>
@@ -10171,7 +10242,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">662</td>
+                            <td class="text-muted small">667</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">kitchen cabinets</td>
@@ -10186,7 +10257,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">663</td>
+                            <td class="text-muted small">668</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">crockery units</td>
@@ -10201,7 +10272,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">664</td>
+                            <td class="text-muted small">669</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">folding dining tables</td>
@@ -10216,7 +10287,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">665</td>
+                            <td class="text-muted small">670</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">foldable study tables</td>
@@ -10231,7 +10302,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">666</td>
+                            <td class="text-muted small">671</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">bookshelves</td>
@@ -10246,7 +10317,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">667</td>
+                            <td class="text-muted small">672</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">computer tables</td>
@@ -10261,7 +10332,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">668</td>
+                            <td class="text-muted small">673</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">study table</td>
@@ -10276,7 +10347,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">669</td>
+                            <td class="text-muted small">674</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">study chairs</td>
@@ -10291,7 +10362,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">670</td>
+                            <td class="text-muted small">675</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">kids bed</td>
@@ -10306,7 +10377,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">671</td>
+                            <td class="text-muted small">676</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">office chairs</td>
@@ -10321,7 +10392,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">672</td>
+                            <td class="text-muted small">677</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">office tables</td>
@@ -10336,7 +10407,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">673</td>
+                            <td class="text-muted small">678</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">computer chair</td>
@@ -10351,7 +10422,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">674</td>
+                            <td class="text-muted small">679</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">executive chair</td>
@@ -10366,7 +10437,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">675</td>
+                            <td class="text-muted small">680</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">ergonomic chair</td>
@@ -10381,7 +10452,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">676</td>
+                            <td class="text-muted small">681</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">revolving chair</td>
@@ -10396,7 +10467,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">677</td>
+                            <td class="text-muted small">682</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">office sofa</td>
@@ -10411,7 +10482,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">678</td>
+                            <td class="text-muted small">683</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">home decor</td>
@@ -10426,7 +10497,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">679</td>
+                            <td class="text-muted small">684</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">wall mirrors,</td>
@@ -10441,7 +10512,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">680</td>
+                            <td class="text-muted small">685</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">gifts</td>
@@ -10456,7 +10527,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">681</td>
+                            <td class="text-muted small">686</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">shoe rack</td>
@@ -10471,7 +10542,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">682</td>
+                            <td class="text-muted small">687</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">foldable mattress</td>
@@ -10486,7 +10557,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">683</td>
+                            <td class="text-muted small">688</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">latex mattress</td>
@@ -10501,7 +10572,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">684</td>
+                            <td class="text-muted small">689</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Get it on Google Play</td>
@@ -10516,7 +10587,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="FAIL">
-                            <td class="text-muted small">685</td>
+                            <td class="text-muted small">690</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Download on the App Store</td>
@@ -10533,53 +10604,49 @@ Call log:
 [2m    - accept-encoding: gzip,deflate,br[22m
 [2m    - Accept-Language: en-US,en;q=0.9[22m
 [2m    - Cache-Control: no-cache[22m
-[2m  - ← 301 Apple WebObjects 5.9.8-1[22m
-[2m    - connection: keep-alive[22m
-[2m    - content-length: 0[22m
+[2m  - ← 301 Moved Permanently[22m
 [2m    - server: daiquiri/5[22m
 [2m    - content-type: text/html; charset=UTF-8[22m
-[2m    - x-apple-jingle-correlation-key: 4VDH7XVLVKLAPPVPVRKEBOTA4Y[22m
-[2m    - x-apple-request-uuid: e5467fde-abaa-9607-beaf-ac5440ba60e6[22m
+[2m    - content-length: 0[22m
+[2m    - x-apple-jingle-correlation-key: MV6NIZWYLEBAMZY43E4NS22Q5E[22m
+[2m    - x-apple-request-uuid: 657cd466-d859-0206-671c-d938d96b50e9[22m
 [2m    - x-apple-translated-wo-url: /WebObjects/MZStore.woa/wa/viewSoftware?ls=1&id=1162068644&cc=in&urlDesc=/wooden-street[22m
 [2m    - apple-tk: false[22m
-[2m    - x-b3-spanid: 420a6ab8538940ef[22m
-[2m    - edge-control: cache-maxage=0s, cache-maxage=0s[22m
+[2m    - x-b3-spanid: f09acc21e855d5fa[22m
 [2m    - x-apple-lokamai-no-cache: true, true[22m
-[2m    - b3: e5467fdeabaa9607beafac5440ba60e6-420a6ab8538940ef[22m
+[2m    - b3: 657cd466d8590206671cd938d96b50e9-f09acc21e855d5fa[22m
 [2m    - cache-control: max-age=0, max-age=0, no-store[22m
-[2m    - x-apple-aka-ttl: Generated Mon Sep 28 05:28:11 PDT 2026, Expires Mon Sep 28 05:28:11 PDT 2026, TTL 0s, cache-maxage=0s[22m
-[2m    - x-b3-traceid: e5467fdeabaa9607beafac5440ba60e6[22m
+[2m    - x-apple-aka-ttl: Generated Mon Sep 28 05:53:01 PDT 2026, Expires Mon Sep 28 05:53:01 PDT 2026, TTL 0s, cache-maxage=0s[22m
+[2m    - x-b3-traceid: 657cd466d8590206671cd938d96b50e9[22m
 [2m    - x-webobjects-loadaverage: 0[22m
-[2m    - last-modified: Mon, 28 Sep 2026 12:28:11 GMT[22m
+[2m    - last-modified: Mon, 28 Sep 2026 12:53:01 GMT[22m
 [2m    - apple-seq: 0.0[22m
 [2m    - access-control-allow-origin: *[22m
 [2m    - apple-originating-system: MZStore[22m
 [2m    - strict-transport-security: max-age=31536000; includeSubDomains[22m
 [2m    - x-frame-options: SAMEORIGIN[22m
 [2m    - x-apple-orig-url: https://apps.apple.com/in/app/wooden-street/id1162068644?ls=1[22m
-[2m    - x-apple-application-site: ST11[22m
+[2m    - x-apple-application-site: MR22[22m
 [2m    - apple-timing-app: 3 ms[22m
 [2m    - location: itms-appss://apps.apple.com/in/app/wooden-street/id1162068644?ls=1[22m
-[2m    - x-apple-application-instance: 2500196[22m
-[2m    - x-responding-instance: MZStore:2500196:::[22m
-[2m    - x-daiquiri-instance: daiquiri:41896014:st47p00it-qujn12071501:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-st, daiquiri:41896001:st53p00it-qujn12040301:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-st, daiquiri:42282007:st53p00it-qujn11032102:7987:26RELEASE153:daiquiri-amp-store-l7shared-ext-001-st[22m
-[2m    - x-daiquiri-debug-worker-pid: 75044, 2310, 102174[22m
-[2m    - accept-ranges: bytes[22m
-[2m    - date: Mon, 28 Sep 2026 12:28:11 GMT[22m
-[2m    - via: 1.1 varnish[22m
-[2m    - x-cdn: fsly[22m
-[2m    - x-served-by: cache-maa10220-MAA[22m
-[2m    - x-cache-hits: 0[22m
-[2m    - x-timer: S1790598491.467521,VS0,VE294[22m
-[2m    - set-cookie: geo=IN; domain=apple.com[22m
-[2m    - x-cache: MISS fsly[22m
+[2m    - x-apple-application-instance: 3500163[22m
+[2m    - x-responding-instance: MZStore:3500163:::[22m
+[2m    - x-daiquiri-instance: daiquiri:11896010:mr50p00it-qujn12072902:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-mr, daiquiri:11896007:mr47p00it-qujn04123002:7987:26RELEASE153:daiquiri-amp-store-l7shared-int-001-mr, daiquiri:12282001:mr47p00it-qujn06080702:7987:26RELEASE153:daiquiri-amp-store-l7shared-ext-001-mr[22m
+[2m    - x-daiquiri-debug-worker-pid: 34030, 43099, 108974[22m
+[2m    - date: Mon, 28 Sep 2026 12:53:01 GMT[22m
+[2m    - x-cache: TCP_REFRESH_MISS from a23-48-245-229.deploy.akamaitechnologies.com (AkamaiGHost/22.6.4-888a2d21768272d5e2d80e9762941e76) (S)[22m
+[2m    - connection: keep-alive[22m
+[2m    - x-cache-remote: TCP_REFRESH_MISS from a184-86-112-215.deploy.akamaitechnologies.com (AkamaiGHost/22.6.3-da071da6976b6d633b0b37bcfe65c0fc) (S)[22m
+[2m    - set-cookie: geo=IN; domain=.apple.com[22m
+[2m    - alt-svc: h3=":443"; ma=93600[22m
+[2m    - vary: X-Apple-Store-Front, Cookie[22m
 )
                                 </span>
                             </td>
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">686</td>
+                            <td class="text-muted small">691</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">About Us</td>
@@ -10594,7 +10661,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">687</td>
+                            <td class="text-muted small">692</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Career</td>
@@ -10609,7 +10676,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">688</td>
+                            <td class="text-muted small">693</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Media</td>
@@ -10624,7 +10691,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">689</td>
+                            <td class="text-muted small">694</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Get in Touch</td>
@@ -10639,7 +10706,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">690</td>
+                            <td class="text-muted small">695</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Customer Stories</td>
@@ -10654,7 +10721,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">691</td>
+                            <td class="text-muted small">696</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Investor Relations</td>
@@ -10669,7 +10736,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">692</td>
+                            <td class="text-muted small">697</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Blog</td>
@@ -10684,7 +10751,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">693</td>
+                            <td class="text-muted small">698</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Living Room</td>
@@ -10699,7 +10766,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">694</td>
+                            <td class="text-muted small">699</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Bedroom</td>
@@ -10714,7 +10781,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">695</td>
+                            <td class="text-muted small">700</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Dining Room</td>
@@ -10729,7 +10796,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">696</td>
+                            <td class="text-muted small">701</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Storage</td>
@@ -10744,7 +10811,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">697</td>
+                            <td class="text-muted small">702</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Outdoor</td>
@@ -10759,7 +10826,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">698</td>
+                            <td class="text-muted small">703</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Home Decor</td>
@@ -10774,7 +10841,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">699</td>
+                            <td class="text-muted small">704</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Our Stores</td>
@@ -10789,7 +10856,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">700</td>
+                            <td class="text-muted small">705</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Custom Furniture</td>
@@ -10804,7 +10871,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">701</td>
+                            <td class="text-muted small">706</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Ws Luxury Furniture</td>
@@ -10819,7 +10886,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">702</td>
+                            <td class="text-muted small">707</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Sell on WoodenStreet</td>
@@ -10834,7 +10901,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">703</td>
+                            <td class="text-muted small">708</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Become a Franchise</td>
@@ -10849,7 +10916,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">704</td>
+                            <td class="text-muted small">709</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Exporters</td>
@@ -10864,7 +10931,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">705</td>
+                            <td class="text-muted small">710</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Hotel Furniture</td>
@@ -10879,7 +10946,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">706</td>
+                            <td class="text-muted small">711</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Bulk Order</td>
@@ -10894,7 +10961,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">707</td>
+                            <td class="text-muted small">712</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Terms of Use</td>
@@ -10909,7 +10976,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">708</td>
+                            <td class="text-muted small">713</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Security & Privacy Policy</td>
@@ -10924,7 +10991,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">709</td>
+                            <td class="text-muted small">714</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Return & Refund</td>
@@ -10939,7 +11006,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">710</td>
+                            <td class="text-muted small">715</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Payment Policy</td>
@@ -10954,7 +11021,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">711</td>
+                            <td class="text-muted small">716</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Grievance Cell</td>
@@ -10969,7 +11036,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">712</td>
+                            <td class="text-muted small">717</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Quality Research Organization - Certification of Registration</td>
@@ -10984,7 +11051,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">713</td>
+                            <td class="text-muted small">718</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Certification - Verification of Compliance of BIFMA</td>
@@ -10999,7 +11066,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">714</td>
+                            <td class="text-muted small">719</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Street Instagram profile</td>
@@ -11014,7 +11081,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">715</td>
+                            <td class="text-muted small">720</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Street Facebook profile</td>
@@ -11029,7 +11096,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">716</td>
+                            <td class="text-muted small">721</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Street twitter profile</td>
@@ -11044,7 +11111,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">717</td>
+                            <td class="text-muted small">722</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Street Pinterest profile</td>
@@ -11059,7 +11126,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">718</td>
+                            <td class="text-muted small">723</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Street linkedin profile</td>
@@ -11074,7 +11141,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">719</td>
+                            <td class="text-muted small">724</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Living Room Furniture</td>
@@ -11089,7 +11156,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">720</td>
+                            <td class="text-muted small">725</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Sofa Set</td>
@@ -11104,7 +11171,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">721</td>
+                            <td class="text-muted small">726</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wooden Sofa Sets</td>
@@ -11119,7 +11186,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">722</td>
+                            <td class="text-muted small">727</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">L Shape Sofa</td>
@@ -11134,7 +11201,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">723</td>
+                            <td class="text-muted small">728</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">TV Units and Stands</td>
@@ -11149,7 +11216,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">724</td>
+                            <td class="text-muted small">729</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Shoe Racks</td>
@@ -11164,7 +11231,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">725</td>
+                            <td class="text-muted small">730</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Mandir for Home Temple</td>
@@ -11179,7 +11246,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">726</td>
+                            <td class="text-muted small">731</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Coffee & Centre Table</td>
@@ -11194,7 +11261,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">727</td>
+                            <td class="text-muted small">732</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Console Tables</td>
@@ -11209,7 +11276,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">728</td>
+                            <td class="text-muted small">733</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Laptop Tables</td>
@@ -11224,7 +11291,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">729</td>
+                            <td class="text-muted small">734</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Computer Tables</td>
@@ -11239,7 +11306,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">730</td>
+                            <td class="text-muted small">735</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Chairs</td>
@@ -11254,7 +11321,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">731</td>
+                            <td class="text-muted small">736</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Lounge Chairs</td>
@@ -11269,7 +11336,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">732</td>
+                            <td class="text-muted small">737</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">4 Seater Dining Table Sets</td>
@@ -11284,7 +11351,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">733</td>
+                            <td class="text-muted small">738</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">6 Seater Dining Table Sets</td>
@@ -11299,7 +11366,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">734</td>
+                            <td class="text-muted small">739</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Cabinet & Sideboard</td>
@@ -11314,7 +11381,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">735</td>
+                            <td class="text-muted small">740</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Beds</td>
@@ -11329,7 +11396,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">736</td>
+                            <td class="text-muted small">741</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Single Beds</td>
@@ -11344,7 +11411,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">737</td>
+                            <td class="text-muted small">742</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Queen Size Beds</td>
@@ -11359,7 +11426,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">738</td>
+                            <td class="text-muted small">743</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Double Beds</td>
@@ -11374,7 +11441,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">739</td>
+                            <td class="text-muted small">744</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">King Size Bed</td>
@@ -11389,7 +11456,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">740</td>
+                            <td class="text-muted small">745</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Bedside Tables</td>
@@ -11404,7 +11471,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">741</td>
+                            <td class="text-muted small">746</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Dressing Tables</td>
@@ -11419,7 +11486,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">742</td>
+                            <td class="text-muted small">747</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Wardrobes</td>
@@ -11434,7 +11501,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">743</td>
+                            <td class="text-muted small">748</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Chest Of Drawers</td>
@@ -11449,7 +11516,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">744</td>
+                            <td class="text-muted small">749</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Diwan Beds</td>
@@ -11464,7 +11531,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="Redirected">
-                            <td class="text-muted small">745</td>
+                            <td class="text-muted small">750</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Side Tables</td>
@@ -11479,7 +11546,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">746</td>
+                            <td class="text-muted small">751</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Swing Chairs</td>
@@ -11494,7 +11561,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">747</td>
+                            <td class="text-muted small">752</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Kitchen Cabinets</td>
@@ -11509,7 +11576,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">748</td>
+                            <td class="text-muted small">753</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Crockery Units</td>
@@ -11524,7 +11591,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">749</td>
+                            <td class="text-muted small">754</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Office Tables</td>
@@ -11539,7 +11606,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">750</td>
+                            <td class="text-muted small">755</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Kitchen Racks</td>
@@ -11554,7 +11621,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">751</td>
+                            <td class="text-muted small">756</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Almirah</td>
@@ -11569,7 +11636,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">752</td>
+                            <td class="text-muted small">757</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Platform Beds</td>
@@ -11584,7 +11651,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">753</td>
+                            <td class="text-muted small">758</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Cots</td>
@@ -11599,7 +11666,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">754</td>
+                            <td class="text-muted small">759</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Folding Bed</td>
@@ -11614,7 +11681,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">755</td>
+                            <td class="text-muted small">760</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Palangs</td>
@@ -11629,7 +11696,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">756</td>
+                            <td class="text-muted small">761</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Dining Table Sets</td>
@@ -11644,7 +11711,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">757</td>
+                            <td class="text-muted small">762</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Terms of Use</td>
@@ -11659,7 +11726,7 @@ Call log:
                         </tr>
                         
                         <tr data-device="Mobile" data-section="Mobile Body Section" data-status="200">
-                            <td class="text-muted small">758</td>
+                            <td class="text-muted small">763</td>
                             <td><span class="device-tag device-mobile">Mobile</span></td>
                             <td><span class="section-tag">Mobile Body Section</span></td>
                             <td class="fw-semibold">Privacy Policy</td>
