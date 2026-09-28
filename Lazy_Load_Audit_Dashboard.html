@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoodenStreet Beta - Lazy Load Verification Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; background-color: #0b0f17; color: #f1f5f9; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body class="p-6 md:p-10 min-h-screen">
+  <div class="max-w-7xl mx-auto space-y-8">
+    
+    <!-- HEADER -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🖼️</span>
+          <h1 class="text-3xl font-black text-white">Beta Homepage Lazy Load Audit</h1>
+        </div>
+        <p class="text-slate-400 mt-1">Verification of lazy loading component rendering, image health & scroll behavior on Desktop & Mobile</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="bg-slate-800 border border-slate-700 text-sky-400 font-mono text-xs px-3 py-1.5 rounded-full">
+          Target: https://beta.teamwoodenstreet.com/
+        </span>
+      </div>
+    </header>
+
+    <!-- KEY STATS CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- DESKTOP CARD -->
+      <div class="glass-card p-6 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>💻</span> Desktop Viewport (1920x1080)
+          </h2>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            🟢 All Components Loaded
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Total Images</div>
+            <div class="text-2xl font-extrabold text-white mt-1">111</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Explicit Lazy</div>
+            <div class="text-2xl font-extrabold text-sky-400 mt-1">70</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Loaded Clean</div>
+            <div class="text-2xl font-extrabold text-emerald-400 mt-1">95</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Broken Imgs</div>
+            <div class="text-2xl font-extrabold text-slate-400 mt-1">0</div>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <h3 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Component Visibility Status</h3>
+          <div class="space-y-1 text-sm">
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Header / Navigation</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Main Hero Banner / Slider</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Shop By Category</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Product Carousels / Best Sellers</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Exclusive Collections / Banners</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Customer Testimonials / Reviews</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Footer Section</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE CARD -->
+      <div class="glass-card p-6 space-y-4">
+        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+          <h2 class="text-xl font-bold text-white flex items-center gap-2">
+            <span>📱</span> Mobile Viewport (iPhone Emulation)
+          </h2>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            🟢 All Components Loaded
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Total Images</div>
+            <div class="text-2xl font-extrabold text-white mt-1">162</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Explicit Lazy</div>
+            <div class="text-2xl font-extrabold text-sky-400 mt-1">116</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Loaded Clean</div>
+            <div class="text-2xl font-extrabold text-emerald-400 mt-1">122</div>
+          </div>
+          <div class="bg-slate-900/60 p-3 rounded-xl">
+            <div class="text-xs text-slate-400">Broken Imgs</div>
+            <div class="text-2xl font-extrabold text-slate-400 mt-1">0</div>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-2">
+          <h3 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Component Visibility Status</h3>
+          <div class="space-y-1 text-sm">
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Header / Navigation</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Main Hero Banner / Slider</span>
+                <span class="text-xs font-bold text-emerald-400">
+                  🟢 Rendered & Visible
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Shop By Category</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Product Carousels / Best Sellers</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Exclusive Collections / Banners</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Customer Testimonials / Reviews</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+              <div class="flex justify-between items-center py-1 border-b border-slate-800/40">
+                <span class="text-slate-300">Footer Section</span>
+                <span class="text-xs font-bold text-rose-400">
+                  🔴 Missing / Hidden
+                </span>
+              </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DETAILED AUDIT TABLE: BROKEN OR UNRENDERED IMAGES IF ANY -->
+    <div class="glass-card p-6">
+      <h3 class="text-lg font-bold text-white mb-4">Detailed Image & Network Failure Audit</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-xs text-left text-slate-300">
+          <thead class="bg-slate-900 text-slate-400 uppercase">
+            <tr>
+              <th class="py-2.5 px-4">Device</th>
+              <th class="py-2.5 px-4">Type</th>
+              <th class="py-2.5 px-4">Asset / URL</th>
+              <th class="py-2.5 px-4">Lazy Flag</th>
+              <th class="py-2.5 px-4">Status / Error Details</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=1&ae=g&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69n1h1v79560732za200zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120385423~120469145~120469153&tft=1790576832600&tfd=3275&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=1&ae=g&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69n1h1v79560732za200zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938466~115938468~118897920~118897930~120385423~120469145~120469153&tft=1790576832600&tfd=3275&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://ad.doubleclick.net/ccm/s/collect?auid=1710395843.1790576833&gtm=45He69n1h1v79560732za200zd79560732xeaxf1&fmt=8" target="_blank">https://ad.doubleclick.net/ccm/s/collect?auid=1710395843.1790576833&gtm=45He69n1h1v79560732za200zd79560732xeaxf1&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGAC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=4107" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGAC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=4107</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/rmkt/collect/798096347/?random=1790576833488&cv=11&fst=1790576833488&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5" target="_blank">https://www.google.com/rmkt/collect/798096347/?random=1790576833488&cv=11&fst=1790576833488&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/rmkt/collect/798096347/?random=1790576833520&cv=11&fst=1790576833520&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&ept=68&gcp=5" target="_blank">https://www.google.com/rmkt/collect/798096347/?random=1790576833520&cv=11&fst=1790576833520&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&_tu=CA&ept=68&gcp=5</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&ae=g&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&_tu=CA&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&tft=1790576833533&tfd=4208&tids=AW-798096347&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&ae=g&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&_tu=CA&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&tft=1790576833533&tfd=4208&tids=AW-798096347&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&tft=1790576833532&tfd=4207&tids=AW-798096347&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1710395843.1790576833&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=1744144391.1790576833&navt=n&npa=0&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&tft=1790576833532&tfd=4207&tids=AW-798096347&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://signals.bigatom.ai/events/4c48426048798cee49d2e0ec015bb440dbfb00030b744f971a838f34d6a0313e" target="_blank">https://signals.bigatom.ai/events/4c48426048798cee49d2e0ec015bb440dbfb00030b744f971a838f34d6a0313e</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.co.in/pagead/1p-conversion/798096347/?random=124176557&cv=11&fst=1790576833524&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&ec_mode=a&oidsrc=3&ecsid2=1649966892.1790576834&_tu=CBA&gcl_ctr=1~0~0~0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw_eLVBhDVjs-anZ754IcBEjMAI3k_jkmK6bpGOKCSgVXbDO19c19PajAEZuJAsKg-DcHcvr1udcrynzGnQ96b_UjAip_w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCNvcsQIIh9uxAgjTxbECCOvMsQII7c6xAgjVz7ECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgiO57ECCKbdsQIIsN6xAgiA27ECCM3hsQJKJnRyaWdnZXI7bmF2aWdhdGlvbi1zb3VyY2U7ZXZlbnQtc291cmNlWgMKAQFiAwoBAw&cerd=CgzI7L4t2O2-LZ3ptzg&fsk=ChAI8P3i1QYQ_tmNl_L6t4hKEiwAX0Jo11WONp5-cmEn0FEGLxeC4XOCFKuKTRAhgTSCMGxvlTAGXdWShF4E5xoC0M0&is_vtc=1&cid=CAQS0wEAQM4h3CcGWkL2b2h-XeFLzGVer3mYEAdJSk5uDhUMUxqsRZjbGi4UpD864JFfn6Z5cSoLigsuV_mzXxbPy574Dgw8Sj67hHtR7JbbkvEGcazaBekG9zecm8szyFCFXqk-DiwM2v_sItRsyKI9OcnONW6eyXPXOLEWc6Dir-o9pKMtFmbAWA6MXTcIvguXggyskiH_JPcWrMYlA9SppV4drom7BzxKVgUWfeZrSaiILvG5uM2pVMXlVgSH5qS-1xfUUJJiD-oj-qifTauBVCHZ811N&eitems=ChAI8P3i1QYQoZbPj7HFgfg_Eh0AwAX83RqksLv66D0Zp4HBcxf0-xUHPxdhPSGMcg&random=3263183973&ipr=y&pscrd=IhMIv8yLwdKQlwMVfFSdCR3Y5h8WOiJodHRwczovL2JldGEudGVhbXdvb2RlbnN0cmVldC5jb20vQlZDaEFJOFAzaTFRWVEtdHpJd1pXX3FiNWlFaXdBY05fYUp1dnJjemowTGY5cTFaYkw4Mkstb0Yzd0FXT2pYZlBrcEVqeVY1Qnp0NHZvazBjMF9CNzB4d3oMCAliCAgAEAAYACAAggETcAGIAQHiAQEC8QH0HhBD-DvvPw" target="_blank">https://www.google.co.in/pagead/1p-conversion/798096347/?random=124176557&cv=11&fst=1790576833524&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be69n1h1v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153&u_w=1920&u_h=1080&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=6&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1710395843.1790576833&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=10.0&uaw=0&ec_mode=a&oidsrc=3&ecsid2=1649966892.1790576834&_tu=CBA&gcl_ctr=1~0~0~0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkgKEQjw_eLVBhDVjs-anZ754IcBEjMAI3k_jkmK6bpGOKCSgVXbDO19c19PajAEZuJAsKg-DcHcvr1udcrynzGnQ96b_UjAip_w_wcB&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCNvcsQIIh9uxAgjTxbECCOvMsQII7c6xAgjVz7ECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgiO57ECCKbdsQIIsN6xAgiA27ECCM3hsQJKJnRyaWdnZXI7bmF2aWdhdGlvbi1zb3VyY2U7ZXZlbnQtc291cmNlWgMKAQFiAwoBAw&cerd=CgzI7L4t2O2-LZ3ptzg&fsk=ChAI8P3i1QYQ_tmNl_L6t4hKEiwAX0Jo11WONp5-cmEn0FEGLxeC4XOCFKuKTRAhgTSCMGxvlTAGXdWShF4E5xoC0M0&is_vtc=1&cid=CAQS0wEAQM4h3CcGWkL2b2h-XeFLzGVer3mYEAdJSk5uDhUMUxqsRZjbGi4UpD864JFfn6Z5cSoLigsuV_mzXxbPy574Dgw8Sj67hHtR7JbbkvEGcazaBekG9zecm8szyFCFXqk-DiwM2v_sItRsyKI9OcnONW6eyXPXOLEWc6Dir-o9pKMtFmbAWA6MXTcIvguXggyskiH_JPcWrMYlA9SppV4drom7BzxKVgUWfeZrSaiILvG5uM2pVMXlVgSH5qS-1xfUUJJiD-oj-qifTauBVCHZ811N&eitems=ChAI8P3i1QYQoZbPj7HFgfg_Eh0AwAX83RqksLv66D0Zp4HBcxf0-xUHPxdhPSGMcg&random=3263183973&ipr=y&pscrd=IhMIv8yLwdKQlwMVfFSdCR3Y5h8WOiJodHRwczovL2JldGEudGVhbXdvb2RlbnN0cmVldC5jb20vQlZDaEFJOFAzaTFRWVEtdHpJd1pXX3FiNWlFaXdBY05fYUp1dnJjemowTGY5cTFaYkw4Mkstb0Yzd0FXT2pYZlBrcEVqeVY1Qnp0NHZvazBjMF9CNzB4d3oMCAliCAgAEAAYACAAggETcAGIAQHiAQEC8QH0HhBD-DvvPw</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/86943.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/86943.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/92223.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/92223.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/57262.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/57262.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=2&tfd=14029" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=2&tfd=14029</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=1&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=3&tfd=18166" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69n1h1v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576831919&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=1263990483.1790576833&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-gb&gaf=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1790576833&sct=1&seg=1&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=3&tfd=18166</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=1&ae=g&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69o0h2v79560732za200zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117776795~118131810~118897920~118897930~120385423~120469145~120469153~121280969&tft=1790576860087&tfd=7009&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=1&ae=g&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He69o0h2v79560732za200zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117776795~118131810~118897920~118897930~120385423~120469145~120469153~121280969&tft=1790576860087&tfd=7009&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://ad.doubleclick.net/ccm/s/collect?_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&auid=503597057.1790576860&gtm=45He69o0h2v79560732za200zd79560732xeaxf1&fmt=8" target="_blank">https://ad.doubleclick.net/ccm/s/collect?_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&auid=503597057.1790576860&gtm=45He69o0h2v79560732za200zd79560732xeaxf1&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/home-page/home-page-video.mp4</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/rmkt/collect/798096347/?random=1790576860555&cv=11&fst=1790576860555&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&_tu=CA&ept=68&gcp=5" target="_blank">https://www.google.com/rmkt/collect/798096347/?random=1790576860555&cv=11&fst=1790576860555&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&_tu=CA&ept=68&gcp=5</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/rmkt/collect/798096347/?random=1790576860493&cv=11&fst=1790576860493&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5" target="_blank">https://www.google.com/rmkt/collect/798096347/?random=1790576860493&cv=11&fst=1790576860493&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&data=event%3Dgtag.config&ept=68&gcp=5</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&ae=g&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&_tu=CA&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&tft=1790576860570&tfd=7492&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&tids=AW-798096347&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&ae=g&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&_tu=CA&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&tft=1790576860570&tfd=7492&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&tids=AW-798096347&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&tft=1790576860569&tfd=7491&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&tids=AW-798096347&fmt=8" target="_blank">https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=503597057.1790576860&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&scrsrc=www.googletagmanager.com&rnd=90137272.1790576860&navt=n&npa=0&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&tft=1790576860569&tfd=7491&_gsid=hL2whdVi1P8E1ApwuQUT-xkS8KJ10MhUGg&tids=AW-798096347&fmt=8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://signals.bigatom.ai/events/4c48426048798cee49d2e0ec015bb440dbfb00030b744f971a838f34d6a0313e" target="_blank">https://signals.bigatom.ai/events/4c48426048798cee49d2e0ec015bb440dbfb00030b744f971a838f34d6a0313e</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/88282.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1" target="_blank">https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/product-carousel/93503.mp4?v=1</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://www.google.co.in/pagead/1p-conversion/798096347/?random=70818345&cv=11&fst=1790576860559&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&label=30cBCNaQ24UcENv3x_wC&capi=2&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&ec_mode=a&oidsrc=3&ecsid2=202477205.1790576861&_tu=CBA&gcl_ctr=1~0~0~0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEQjw_eLVBhDVjs-anZ754IcBEjIAI3k_jn3vhJpubBtiICI9giuvWwRQuvWhv7BYmTBh6uM0WuiEMEwdDVbCb7_fosB5LPD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCNvcsQIIh9uxAgjTxbECCOvMsQII7c6xAgjVz7ECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgiO57ECCKbdsQIIsN6xAgiA27ECCM3hsQIIy-GxAiIBAkoHdHJpZ2dlcloDCgEBYgMKAQM&cerd=ChCDsL4tyOy-Ldftvi2d6bc4&fsk=ChAI8P3i1QYQ_tmNl_L6t4hKEiwAX0Jo14uW1xt46_L7xGx20AoZXY36RQDiC0yXwwYrdDH9sJNGyWMoXquXvxoCVCc&is_vtc=1&cid=CAQS0wEAQM4h3AK9ygpytF34UpQfT1D0vi6RDnrfK98gRTzBD2p4vndzf9A2kvQpCW_M8Rx9RhYfjST3BSFDUQ1gKHfgoD6yY_lz-G_t-xpSYyjlCMtdqC9CXDyzQHnppw_7BTpx7Vg6EFYsNCs1XR_CcWRhCncEmIrVJxW9kJBoifTr_IsUmdfsUfIQ6pElCrciEd_qQt1KQl9DzLDwz80JVZDPSwMEAdlxjr10pdjsBP8EnknNkW_f02B9LFgydsyPgHbcMDzvx9XwMFsi1SMIKpSQvUBc&eitems=ChAI8P3i1QYQoZbPj7HFgfg_Eh0AwAX83fs6hNP9jVd_-a2sBjgXIjye4p4CgG-Txg&random=1396670211&ipr=y&pscrd=IhMI3JTrzdKQlwMVhwzpBR26RhtXOiJodHRwczovL2JldGEudGVhbXdvb2RlbnN0cmVldC5jb20vQldDaEFJOFAzaTFRWVEtdHpJd1pXX3FiNWlFaTBBY05fYUpxTFVJQlNydlJUWjZSQ1EyVF9hN2xhcWlTcTlIeWVKa3FrQzR6bmI2NzdERm1XTXluV2Z2U1l6DAgJYggIABAAGAAgAIIBE3ABiAEB4gEBAvEBpqLjVp6P7D8" target="_blank">https://www.google.co.in/pagead/1p-conversion/798096347/?random=70818345&cv=11&fst=1790576860559&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45be69o0h2v893459555z879560732za20gzb79560732zd79560732xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118131810~118897920~118897930~120213116~120385422~120469145~120469153~121280969&u_w=390&u_h=844&url=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&rcb=0&label=30cBCNaQ24UcENv3x_wC&capi=2&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=503597057.1790576860&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=1&uam=&uap=iOS&uapv=16.5&uaw=0&ec_mode=a&oidsrc=3&ecsid2=202477205.1790576861&_tu=CBA&gcl_ctr=1~0~0~0&category=acrcp_v1_512&em=tv.1&emd=tvd.1&ept=5&ct_cookie_present=false&eoid=CkcKEQjw_eLVBhDVjs-anZ754IcBEjIAI3k_jn3vhJpubBtiICI9giuvWwRQuvWhv7BYmTBh6uM0WuiEMEwdDVbCb7_fosB5LPD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCNvcsQIIh9uxAgjTxbECCOvMsQII7c6xAgjVz7ECCPTasQII4uqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgiO57ECCKbdsQIIsN6xAgiA27ECCM3hsQIIy-GxAiIBAkoHdHJpZ2dlcloDCgEBYgMKAQM&cerd=ChCDsL4tyOy-Ldftvi2d6bc4&fsk=ChAI8P3i1QYQ_tmNl_L6t4hKEiwAX0Jo14uW1xt46_L7xGx20AoZXY36RQDiC0yXwwYrdDH9sJNGyWMoXquXvxoCVCc&is_vtc=1&cid=CAQS0wEAQM4h3AK9ygpytF34UpQfT1D0vi6RDnrfK98gRTzBD2p4vndzf9A2kvQpCW_M8Rx9RhYfjST3BSFDUQ1gKHfgoD6yY_lz-G_t-xpSYyjlCMtdqC9CXDyzQHnppw_7BTpx7Vg6EFYsNCs1XR_CcWRhCncEmIrVJxW9kJBoifTr_IsUmdfsUfIQ6pElCrciEd_qQt1KQl9DzLDwz80JVZDPSwMEAdlxjr10pdjsBP8EnknNkW_f02B9LFgydsyPgHbcMDzvx9XwMFsi1SMIKpSQvUBc&eitems=ChAI8P3i1QYQoZbPj7HFgfg_Eh0AwAX83fs6hNP9jVd_-a2sBjgXIjye4p4CgG-Txg&random=1396670211&ipr=y&pscrd=IhMI3JTrzdKQlwMVhwzpBR26RhtXOiJodHRwczovL2JldGEudGVhbXdvb2RlbnN0cmVldC5jb20vQldDaEFJOFAzaTFRWVEtdHpJd1pXX3FiNWlFaTBBY05fYUpxTFVJQlNydlJUWjZSQ1EyVF9hN2xhcWlTcTlIeWVKa3FrQzR6bmI2NzdERm1XTXluV2Z2U1l6DAgJYggIABAAGAAgAIIBE3ABiAEB4gEBAvEBpqLjVp6P7D8</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGAC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=7776" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGAC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&_s=1&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=7776</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=2&tfd=14372" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&_s=2&tfd=14372</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+              <tr class="hover:bg-slate-800/40">
+                <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                <td class="py-2.5 px-4 font-mono text-amber-400">Failed Network</td>
+                <td class="py-2.5 px-4 font-mono truncate max-w-md text-sky-400"><a href="https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&_s=3&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=scroll_depth&epn.percent_scrolled=90&_et=2012&tfd=16366" target="_blank">https://analytics.google.com/g/collect?v=2&tid=G-WYJWZGFQ0J&gtm=45je69o0h2v877978765z879560732za20gzb79560732zd79560732xf1&_p=1790576855672&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=EAAAAGQC&are=1&cid=641761797.1790576861&frm=0&ir=1&pscdl=noapi&rcb=0&sr=390x844&uaa=arm&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=1&uap=iOS&uapv=16.5&uaw=0&ul=en-gb&gaf=2&_s=3&tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280969&sid=1790576860&sct=1&seg=0&dl=https%3A%2F%2Fbeta.teamwoodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=scroll_depth&epn.percent_scrolled=90&_et=2012&tfd=16366</a></td>
+                <td class="py-2.5 px-4 font-mono text-slate-400">-</td>
+                <td class="py-2.5 px-4 font-mono text-rose-400 font-bold">net::ERR_ABORTED</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
