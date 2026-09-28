@@ -11,13 +11,20 @@ const path = require('path');
     const failedNetworkRequests = [];
     const allExtractedItems = [];
 
+    const defaultHeaders = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Cache-Control': 'no-cache'
+    };
+
     // -------------------------------------------------------------
     // 1. DESKTOP VIEWPORT SCAN (1440x900)
     // -------------------------------------------------------------
     console.log('\n[1/4] Scanning Desktop Viewport (1440x900)...');
     const desktopContext = await browser.newContext({
         viewport: { width: 1440, height: 900 },
-        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        extraHTTPHeaders: defaultHeaders
     });
     const desktopPage = await desktopContext.newPage();
 
@@ -84,7 +91,6 @@ const path = require('path');
 
     console.log(`  - Extracted ${desktopLinkData.length} links on Desktop.`);
     allExtractedItems.push(...desktopLinkData);
-    await desktopContext.close();
 
 
     // -------------------------------------------------------------
@@ -95,7 +101,8 @@ const path = require('path');
         viewport: { width: 375, height: 812 },
         userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
         isMobile: true,
-        hasTouch: true
+        hasTouch: true,
+        extraHTTPHeaders: defaultHeaders
     });
     const mobilePage = await mobileContext.newPage();
 
@@ -229,7 +236,7 @@ const path = require('path');
     // -------------------------------------------------------------
     // 4. TEST INTERNAL URLS FOR HTTP 404 AND SOFT 404
     // -------------------------------------------------------------
-    console.log('\n[4/4] Testing internal URLs status codes...');
+    console.log('\n[4/4] Testing internal URLs status codes with browser HTTP headers...');
     const linkCheckResults = [];
     const batchSize = 15;
 
@@ -242,7 +249,11 @@ const path = require('path');
             let isSoft404 = false;
 
             try {
-                const res = await mobilePage.request.get(item.fullUrl, { timeout: 20000, maxRedirects: 5 });
+                const res = await desktopPage.request.get(item.fullUrl, { 
+                    timeout: 20000, 
+                    maxRedirects: 5,
+                    headers: defaultHeaders 
+                });
                 status = res.status();
                 finalUrl = res.url();
 
@@ -259,7 +270,6 @@ const path = require('path');
                 errorMsg = err.message;
             }
 
-            // Associate result with all occurrences of this fullUrl
             const occurrences = allExtractedItems.filter(x => x.fullUrl === item.fullUrl);
             occurrences.forEach(occ => {
                 linkCheckResults.push({
@@ -273,6 +283,8 @@ const path = require('path');
         }));
     }
 
+    await desktopContext.close();
+    await mobileContext.close();
     await browser.close();
 
     // -------------------------------------------------------------

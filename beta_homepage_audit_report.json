@@ -1,60 +1,12 @@
 {
-  "timestamp": "2026-09-28T10:02:13.591Z",
+  "timestamp": "2026-09-28T10:33:09.532Z",
   "targetUrl": "https://beta.teamwoodenstreet.com/",
   "totalLinksExtracted": 797,
   "desktopLinks": 548,
   "mobileLinks": 249,
   "uniqueInternalUrlsTested": 275,
-  "total404s": 5,
+  "total404s": 1,
   "broken404Links": [
-    {
-      "device": "Desktop",
-      "href": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "fullUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "text": "Rugs And Carpets",
-      "parentSection": "Header",
-      "sourceUrl": "https://beta.teamwoodenstreet.com/",
-      "status": 404,
-      "finalUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "errorMsg": null,
-      "isSoft404": false
-    },
-    {
-      "device": "Desktop",
-      "href": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "fullUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "text": "Rugs & Carpets",
-      "parentSection": "Header",
-      "sourceUrl": "https://beta.teamwoodenstreet.com/",
-      "status": 404,
-      "finalUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "errorMsg": null,
-      "isSoft404": false
-    },
-    {
-      "device": "Desktop",
-      "href": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "fullUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "text": "carpets",
-      "parentSection": "Body",
-      "sourceUrl": "https://beta.teamwoodenstreet.com/",
-      "status": 404,
-      "finalUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "errorMsg": null,
-      "isSoft404": false
-    },
-    {
-      "device": "Mobile",
-      "href": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "fullUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "text": "carpets",
-      "parentSection": "Mobile Body",
-      "sourceUrl": "https://beta.teamwoodenstreet.com/",
-      "status": 404,
-      "finalUrl": "https://beta.teamwoodenstreet.com/rugs-and-carpets",
-      "errorMsg": null,
-      "isSoft404": false
-    },
     {
       "device": "Mobile",
       "href": "https://beta.teamwoodenstreet.com/design-services",
@@ -71,6 +23,104 @@
   "otherHttpErrors": [],
   "fetchFailures": [],
   "emptyOrHashLinks": [],
-  "consoleErrors": [],
-  "failedNetworkRequests": []
+  "consoleErrors": [
+    {
+      "device": "Desktop",
+      "text": "Access to script at 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' from origin 'https://beta.teamwoodenstreet.com' has been blocked by CORS policy: Request header field cache-control is not allowed by Access-Control-Allow-Headers in preflight response.",
+      "location": {
+        "url": "https://beta.teamwoodenstreet.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Desktop",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Desktop",
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "location": {
+        "url": "https://o.clarity.ms/collect",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Desktop",
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "location": {
+        "url": "https://o.clarity.ms/collect",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Mobile",
+      "text": "Access to script at 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' from origin 'https://beta.teamwoodenstreet.com' has been blocked by CORS policy: Request header field cache-control is not allowed by Access-Control-Allow-Headers in preflight response.",
+      "location": {
+        "url": "https://beta.teamwoodenstreet.com/",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Mobile",
+      "text": "Failed to load resource: net::ERR_FAILED",
+      "location": {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Mobile",
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "location": {
+        "url": "https://h.clarity.ms/collect",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    },
+    {
+      "device": "Mobile",
+      "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+      "location": {
+        "url": "https://h.clarity.ms/collect",
+        "lineNumber": 0,
+        "columnNumber": 0
+      }
+    }
+  ],
+  "failedNetworkRequests": [
+    {
+      "device": "Desktop",
+      "url": "https://o.clarity.ms/collect",
+      "status": 400,
+      "statusText": "Bad Request"
+    },
+    {
+      "device": "Desktop",
+      "url": "https://o.clarity.ms/collect",
+      "status": 400,
+      "statusText": "Bad Request"
+    },
+    {
+      "device": "Mobile",
+      "url": "https://h.clarity.ms/collect",
+      "status": 400,
+      "statusText": "Bad Request"
+    },
+    {
+      "device": "Mobile",
+      "url": "https://h.clarity.ms/collect",
+      "status": 400,
+      "statusText": "Bad Request"
+    }
+  ]
 }
