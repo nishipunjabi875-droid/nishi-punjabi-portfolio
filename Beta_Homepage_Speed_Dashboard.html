@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoodenStreet Beta Homepage - Speed & Performance Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; background-color: #0b0f17; color: #f1f5f9; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+    }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      border-width: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+  <div class="max-w-7xl mx-auto space-y-8">
+    
+    <!-- HEADER -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 border-b border-slate-800">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="text-3xl">🚀</span>
+          <h1 class="text-3xl font-black text-white tracking-tight">WoodenStreet Beta Homepage Speed Audit</h1>
+        </div>
+        <p class="text-slate-400 mt-1">Real-browser Performance, Core Web Vitals, and Network Resource Breakdown</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="text-xs bg-slate-800/80 border border-slate-700 text-slate-300 px-3 py-1.5 rounded-full font-mono">
+          URL: <strong class="text-sky-400">https://beta.teamwoodenstreet.com/</strong>
+        </span>
+        <span class="text-xs bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-full font-semibold">
+          Runs: 3 Desktop | 3 Mobile
+        </span>
+      </div>
+    </header>
+
+    <!-- KPI COMPARISON SUMMARY GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- LCP CARD -->
+      <div class="glass-card p-5 flex flex-col justify-between">
+        <div class="flex justify-between items-start">
+          <span class="text-slate-400 text-xs uppercase font-bold tracking-wider">Largest Contentful Paint</span>
+          <span class="text-xs text-slate-500">Target ≤ 2.5s</span>
+        </div>
+        <div class="my-4 grid grid-cols-2 gap-2 border-y border-slate-800/80 py-3">
+          <div>
+            <div class="text-xs text-slate-400">Desktop</div>
+            <div class="text-2xl font-black text-white">2.45s</div>
+            <span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">Mobile</div>
+            <div class="text-2xl font-black text-white">1.81s</div>
+            <span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">Main visual content render speed</div>
+      </div>
+
+      <!-- FCP CARD -->
+      <div class="glass-card p-5 flex flex-col justify-between">
+        <div class="flex justify-between items-start">
+          <span class="text-slate-400 text-xs uppercase font-bold tracking-wider">First Contentful Paint</span>
+          <span class="text-xs text-slate-500">Target ≤ 1.8s</span>
+        </div>
+        <div class="my-4 grid grid-cols-2 gap-2 border-y border-slate-800/80 py-3">
+          <div>
+            <div class="text-xs text-slate-400">Desktop</div>
+            <div class="text-2xl font-black text-white">2.45s</div>
+            <span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">Mobile</div>
+            <div class="text-2xl font-black text-white">1.81s</div>
+            <span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">Initial content render timestamp</div>
+      </div>
+
+      <!-- TTFB CARD -->
+      <div class="glass-card p-5 flex flex-col justify-between">
+        <div class="flex justify-between items-start">
+          <span class="text-slate-400 text-xs uppercase font-bold tracking-wider">Time To First Byte</span>
+          <span class="text-xs text-slate-500">Target ≤ 800ms</span>
+        </div>
+        <div class="my-4 grid grid-cols-2 gap-2 border-y border-slate-800/80 py-3">
+          <div>
+            <div class="text-xs text-slate-400">Desktop</div>
+            <div class="text-2xl font-black text-white">1161ms</div>
+            <span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">Mobile</div>
+            <div class="text-2xl font-black text-white">1039ms</div>
+            <span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">Server response latency</div>
+      </div>
+
+      <!-- CLS CARD -->
+      <div class="glass-card p-5 flex flex-col justify-between">
+        <div class="flex justify-between items-start">
+          <span class="text-slate-400 text-xs uppercase font-bold tracking-wider">Cumulative Layout Shift</span>
+          <span class="text-xs text-slate-500">Target ≤ 0.10</span>
+        </div>
+        <div class="my-4 grid grid-cols-2 gap-2 border-y border-slate-800/80 py-3">
+          <div>
+            <div class="text-xs text-slate-400">Desktop</div>
+            <div class="text-2xl font-black text-white">0.032</div>
+            <span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span>
+          </div>
+          <div>
+            <div class="text-xs text-slate-400">Mobile</div>
+            <div class="text-2xl font-black text-white">0.003</div>
+            <span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span>
+          </div>
+        </div>
+        <div class="text-xs text-slate-500">Visual stability metric</div>
+      </div>
+
+    </div>
+
+    <!-- CHARTS SECTION -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- LOAD TIMES CHART -->
+      <div class="glass-card p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Desktop vs Mobile Load Metrics (ms)</h3>
+        <div class="h-64">
+          <canvas id="metricsChart"></canvas>
+        </div>
+      </div>
+
+      <!-- PAGE WEIGHT & REQUESTS -->
+      <div class="glass-card p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Page Payload Size (MB) & Request Count</h3>
+        <div class="h-64">
+          <canvas id="weightChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILED BENCHMARK COMPARISON TABLE -->
+    <div class="glass-card overflow-hidden">
+      <div class="p-6 border-b border-slate-800/80 flex justify-between items-center">
+        <h3 class="text-xl font-extrabold text-white">Full Side-by-Side Performance Matrix</h3>
+        <span class="text-xs text-slate-400">Tested on Playwright Chromium Engine</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm text-left text-slate-300">
+          <thead class="bg-slate-900/90 text-slate-400 uppercase text-xs">
+            <tr>
+              <th class="py-3 px-6">Metric Description</th>
+              <th class="py-3 px-6 text-center">Desktop Avg</th>
+              <th class="py-3 px-6 text-center">Desktop Rating</th>
+              <th class="py-3 px-6 text-center">Mobile Avg</th>
+              <th class="py-3 px-6 text-center">Mobile Rating</th>
+              <th class="py-3 px-6 text-center">Recommended Threshold</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60">
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Time to First Byte (TTFB)</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">1161 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">1039 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 800 ms</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">First Contentful Paint (FCP)</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">2451 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">1813 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-amber-500/20 text-amber-400 border-amber-500/30">Needs Improvement</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 1,800 ms</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Largest Contentful Paint (LCP)</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">2451 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">1813 ms</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 2,500 ms</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Cumulative Layout Shift (CLS)</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">0.032</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">0.003</td>
+              <td class="py-4 px-6 text-center"><span class="badge bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Good</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 0.10</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">DOM Content Loaded Time</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">3197 ms</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">2159 ms</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 2,000 ms</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Fully Loaded Time (Load Event)</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">5484 ms</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">3772 ms</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 3,500 ms</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Total HTTP Network Requests</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">121</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">162</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 80 requests</td>
+            </tr>
+            <tr class="hover:bg-slate-800/30">
+              <td class="py-4 px-6 font-semibold text-white">Total Transferred Payload Size</td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">17.25 MB</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-sky-400 font-bold">24.21 MB</td>
+              <td class="py-4 px-6 text-center"><span class="text-xs text-slate-500">-</span></td>
+              <td class="py-4 px-6 text-center font-mono text-slate-400">≤ 2.50 MB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- RESOURCE WEIGHT BREAKDOWN TABLES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- DESKTOP RESOURCE BREAKDOWN -->
+      <div class="glass-card p-6 space-y-4">
+        <h4 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Desktop Resource Distribution</h4>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🖼️ Images</span>
+            <span class="font-mono text-white font-bold">52 files | 15.86 MB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">⚡ Scripts (JS)</span>
+            <span class="font-mono text-white font-bold">48 files | 1.17 MB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🎨 Styles (CSS)</span>
+            <span class="font-mono text-white font-bold">5 files | 72.7 KB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🔤 Fonts</span>
+            <span class="font-mono text-white font-bold">5 files | 109.2 KB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🌐 XHR / API Requests</span>
+            <span class="font-mono text-white font-bold">11 files | 5.6 KB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE RESOURCE BREAKDOWN -->
+      <div class="glass-card p-6 space-y-4">
+        <h4 class="text-lg font-bold text-white border-b border-slate-800 pb-3">Mobile Resource Distribution</h4>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🖼️ Images</span>
+            <span class="font-mono text-white font-bold">57 files | 23.25 MB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">⚡ Scripts (JS)</span>
+            <span class="font-mono text-white font-bold">62 files | 0.51 MB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🎨 Styles (CSS)</span>
+            <span class="font-mono text-white font-bold">7 files | 78.2 KB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🔤 Fonts</span>
+            <span class="font-mono text-white font-bold">4 files | 86.2 KB</span>
+          </div>
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-slate-400">🌐 XHR / API Requests</span>
+            <span class="font-mono text-white font-bold">16 files | 18.7 KB</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SLOWEST ASSETS TABLE -->
+    <div class="glass-card p-6">
+      <h3 class="text-xl font-extrabold text-white mb-4">Top 5 Slowest Assets (Desktop vs Mobile)</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-xs text-left text-slate-300">
+          <thead class="bg-slate-900/80 text-slate-400 uppercase">
+            <tr>
+              <th class="py-2.5 px-4">Device</th>
+              <th class="py-2.5 px-4">Type</th>
+              <th class="py-2.5 px-4">Duration</th>
+              <th class="py-2.5 px-4">Size</th>
+              <th class="py-2.5 px-4">URL</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">document</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">4411 ms</td>
+                  <td class="py-2.5 px-4 font-mono">44.9 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://beta.teamwoodenstreet.com/">https://beta.teamwoodenstreet.com/</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">xhr</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">1627 ms</td>
+                  <td class="py-2.5 px-4 font-mono">4.4 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://apiv1.teamwoodenstreet.com/api/v1/information/new-arrivals">https://apiv1.teamwoodenstreet.com/api/v1/information/new-arrivals</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">xhr</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">1397 ms</td>
+                  <td class="py-2.5 px-4 font-mono">0.0 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://j.clarity.ms/collect">https://j.clarity.ms/collect</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">image</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">1148 ms</td>
+                  <td class="py-2.5 px-4 font-mono">348.4 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://images.woodenstreet.de/image/data/ws-nextjs/home-page/dining-room-furniture.jpg">https://images.woodenstreet.de/image/data/ws-nextjs/home-page/dining-room-furniture.jpg</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Desktop</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">image</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">1147 ms</td>
+                  <td class="py-2.5 px-4 font-mono">21.6 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://images.woodenstreet.de/image/data/ws-nextjs/home-page/distinctly-indian.png">https://images.woodenstreet.de/image/data/ws-nextjs/home-page/distinctly-indian.png</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">xhr</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">3404 ms</td>
+                  <td class="py-2.5 px-4 font-mono">4.4 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://apiv1.teamwoodenstreet.com/api/v1/information/new-arrivals">https://apiv1.teamwoodenstreet.com/api/v1/information/new-arrivals</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">fetch</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">2794 ms</td>
+                  <td class="py-2.5 px-4 font-mono">0.6 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/shoe-racks.json?slug=shoe-racks">https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/shoe-racks.json?slug=shoe-racks</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">fetch</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">2789 ms</td>
+                  <td class="py-2.5 px-4 font-mono">0.6 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/modular-kitchen-designs.json?slug=modular-kitchen-designs">https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/modular-kitchen-designs.json?slug=modular-kitchen-designs</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">fetch</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">2782 ms</td>
+                  <td class="py-2.5 px-4 font-mono">0.6 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/dining-table-sets.json?slug=dining-table-sets">https://beta.teamwoodenstreet.com/_next/data/Cv0O23vArej2FaMAIV_6w/dining-table-sets.json?slug=dining-table-sets</td>
+                </tr>
+              
+                <tr class="hover:bg-slate-800/40">
+                  <td class="py-2.5 px-4 font-bold text-white">Mobile</td>
+                  <td class="py-2.5 px-4 uppercase font-mono text-sky-400">image</td>
+                  <td class="py-2.5 px-4 font-mono font-bold text-amber-400">2464 ms</td>
+                  <td class="py-2.5 px-4 font-mono">247.7 KB</td>
+                  <td class="py-2.5 px-4 font-mono truncate max-w-md text-slate-400" title="https://images.woodenstreet.de/image/data/ws-nextjs/home-page/study-room-furniture.jpg">https://images.woodenstreet.de/image/data/ws-nextjs/home-page/study-room-furniture.jpg</td>
+                </tr>
+              
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    window.onload = function() {
+      // 1. Metrics Chart
+      const ctx1 = document.getElementById('metricsChart').getContext('2d');
+      new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: ['TTFB', 'FCP', 'LCP', 'DOMContentLoaded', 'Load Event'],
+          datasets: [
+            {
+              label: 'Desktop (ms)',
+              data: [1161, 2451, 2451, 3197, 5484],
+              backgroundColor: '#38bdf8',
+              borderRadius: 6
+            },
+            {
+              label: 'Mobile (ms)',
+              data: [1039, 1813, 1813, 2159, 3772],
+              backgroundColor: '#a855f7',
+              borderRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#cbd5e1' } } },
+          scales: {
+            x: { grid: { color: '#1e293b' }, ticks: { color: '#cbd5e1' } },
+            y: { grid: { color: '#1e293b' }, ticks: { color: '#cbd5e1' } }
+          }
+        }
+      });
+
+      // 2. Weight Chart
+      const ctx2 = document.getElementById('weightChart').getContext('2d');
+      new Chart(ctx2, {
+        type: 'bar',
+        data: {
+          labels: ['Total Payload (MB)', 'Request Count'],
+          datasets: [
+            {
+              label: 'Desktop',
+              data: [17.25, 121],
+              backgroundColor: '#10b981',
+              borderRadius: 6
+            },
+            {
+              label: 'Mobile',
+              data: [24.21, 162],
+              backgroundColor: '#f59e0b',
+              borderRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#cbd5e1' } } },
+          scales: {
+            x: { grid: { color: '#1e293b' }, ticks: { color: '#cbd5e1' } },
+            y: { grid: { color: '#1e293b' }, ticks: { color: '#cbd5e1' } }
+          }
+        }
+      });
+    };
+  </script>
+</body>
+</html>
