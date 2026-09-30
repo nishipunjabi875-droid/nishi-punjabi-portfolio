@@ -42,48 +42,52 @@ class TicketHelper {
         await page.waitForTimeout(400).catch(() => {});
       }
 
-      // 2. Target exact 'Click to select Order ID' trigger element
+      // 2. Target exact 'Click to select Order ID' trigger element if visible to open side drawer
       const trigger = page.getByText('Click to select Order ID', { exact: true })
         .or(page.locator('div.font-pangramregular:has-text("Click to select Order ID")'))
         .or(page.locator('div:has-text("Click to select Order ID")'))
         .or(page.locator('div[class*="border"]:has-text("Order ID")'))
         .first();
 
-      if (await trigger.isVisible({ timeout: 3000 }).catch(() => false)) {
+      if (await trigger.isVisible({ timeout: 2500 }).catch(() => false)) {
         console.log('   Clicking "Click to select Order ID" trigger to open side drawer...');
         await trigger.scrollIntoViewIfNeeded().catch(() => {});
         await trigger.click({ force: true }).catch(() => {});
         await page.waitForTimeout(1000).catch(() => {});
       }
 
-      // 3. Locate side drawer container
+      // 3. Locate side drawer container & execute robust scroll + click via evaluate
       const drawer = page.locator('div.style_sidebar__e3yOK, [class*="sidebar" i], div:has-text("Select Order")').last();
       if (await drawer.isVisible({ timeout: 3000 }).catch(() => false)) {
         console.log(`   Searching side drawer for Order ID #${orderNum}...`);
-        
-        // Try to match order card with matching order text
-        const matchingCard = drawer.locator('div.border, div[class*="rounded-lg"], li').filter({ hasText: `#${orderNum}` }).first();
-        if (await matchingCard.isVisible({ timeout: 2000 }).catch(() => false)) {
-          console.log(`   ✓ Found matching order card for #${orderNum}. Selecting order...`);
-          const cb = matchingCard.locator('input[type="checkbox"]').first();
-          if (await cb.isVisible().catch(() => false)) {
-            await cb.check({ force: true }).catch(() => {});
+
+        const selectionResult = await page.evaluate((targetOrd) => {
+          const sidebar = document.querySelector('div.style_sidebar__e3yOK') || 
+                          document.querySelector('[class*="sidebar" i]') ||
+                          document.body;
+
+          const cards = Array.from(sidebar.querySelectorAll('div.border, div[class*="rounded"]'));
+          let targetCard = cards.find(c => c.textContent.includes(targetOrd)) || cards[0];
+
+          if (!targetCard) return { success: false, reason: 'No order cards found in sidebar drawer' };
+
+          const cb = targetCard.querySelector('input[type="checkbox"], input[type="radio"]');
+          if (cb) {
+            cb.scrollIntoView({ block: 'center', behavior: 'instant' });
+            cb.checked = true;
+            cb.dispatchEvent(new Event('change', { bubbles: true }));
+            cb.dispatchEvent(new Event('input', { bubbles: true }));
+            cb.click();
+            return { success: true, cardText: targetCard.textContent.trim().substring(0, 80) };
           } else {
-            await matchingCard.click({ force: true }).catch(() => {});
+            targetCard.scrollIntoView({ block: 'center', behavior: 'instant' });
+            targetCard.click();
+            return { success: true, cardText: targetCard.textContent.trim().substring(0, 80), fallback: true };
           }
-        } else {
-          console.log(`   Order #${orderNum} not found in drawer, selecting first available order...`);
-          const firstCard = drawer.locator('div.border, div[class*="rounded-lg"], li').first();
-          if (await firstCard.isVisible({ timeout: 2000 }).catch(() => false)) {
-            const cb = firstCard.locator('input[type="checkbox"]').first();
-            if (await cb.isVisible().catch(() => false)) {
-              await cb.check({ force: true }).catch(() => {});
-            } else {
-              await firstCard.click({ force: true }).catch(() => {});
-            }
-          }
-        }
-        await page.waitForTimeout(600).catch(() => {});
+        }, orderNum).catch((err) => ({ success: false, reason: err.message }));
+
+        console.log(`   ✓ Order item selection in drawer: ${JSON.stringify(selectionResult)}`);
+        await page.waitForTimeout(800).catch(() => {});
 
         // Close drawer overlay
         const closeBtn = drawer.locator('button.style_closeButton__dLuIk, button[aria-label="Close"], button:has-text("Done")').first();
