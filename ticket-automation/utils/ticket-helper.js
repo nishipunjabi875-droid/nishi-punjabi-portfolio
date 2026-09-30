@@ -404,7 +404,13 @@ class TicketHelper {
     await this.validateFormFields(page, l1, l2, this.generateSubject(l1, l2), this.generateDescription(l1, l2));
 
     // Target exact form submit CTA button (avoiding header tab switcher buttons)
-    let submitBtn = page.locator('button.style_btn-primary__lUk_R, button[class*="btn-primary"], button[type="submit"].style_btn-primary__lUk_R').first();
+    let submitBtn = page.locator('button.style_btn-primary__lUk_R:has-text("Create Ticket")')
+      .or(page.locator('button.style_btn-primary__lUk_R[type="submit"]'))
+      .or(page.locator('button[type="submit"]:has-text("Create Ticket")'))
+      .or(page.getByRole('button', { name: 'Create Ticket', exact: true }))
+      .first();
+
+    await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
 
     if (!await submitBtn.isVisible().catch(() => false)) {
       submitBtn = page.locator('#tabs-content button[type="submit"], form button[type="submit"]').last();
@@ -417,7 +423,7 @@ class TicketHelper {
       throw new Error(`Submit CTA button ("Create Ticket") is not visible on page. Form could be obscured by an overlay.`);
     }
 
-    console.log('   Clicking Create Ticket CTA button at bottom of form...');
+    console.log('   Clicking "Create Ticket" CTA button at bottom of form...');
     let capturedApiTicketId = null;
     let successMessage = 'Ticket submitted successfully';
     let statusCode = null;
@@ -428,6 +434,7 @@ class TicketHelper {
     }, { timeout: 15000 }).catch(() => null);
 
     await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
+    await submitBtn.evaluate(el => el.click()).catch(() => {});
     await submitBtn.click({ force: true }).catch(() => { });
 
     const apiResponse = await responsePromise;
