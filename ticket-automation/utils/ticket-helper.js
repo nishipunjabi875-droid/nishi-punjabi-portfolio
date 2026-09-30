@@ -430,8 +430,11 @@ class TicketHelper {
 
     const responsePromise = page.waitForResponse(response => {
       const url = response.url().toLowerCase();
-      return url.includes('freshdesk/create-ticket') || (url.includes('freshdesk') && url.includes('create')) || url.includes('ticket');
-    }, { timeout: 15000 }).catch(() => null);
+      return url.includes('api.woodenstreet.com/api/v1/freshdesk/create-ticket') ||
+             url.includes('freshdesk/create-ticket') ||
+             (url.includes('freshdesk') && url.includes('create-ticket')) ||
+             (url.includes('freshdesk') && url.includes('create'));
+    }, { timeout: 20000 }).catch(() => null);
 
     await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
     await submitBtn.evaluate(el => el.click()).catch(() => {});
@@ -440,7 +443,7 @@ class TicketHelper {
     const apiResponse = await responsePromise;
     if (apiResponse) {
       statusCode = apiResponse.status();
-      console.log(`   ✓ Create Ticket API Response Status: ${statusCode}`);
+      console.log(`   ✓ Create Ticket API (https://api.woodenstreet.com/api/v1/freshdesk/create-ticket) Response Status: ${statusCode}`);
       try {
         const json = await apiResponse.json().catch(() => null);
         if (json) {
@@ -449,6 +452,8 @@ class TicketHelper {
           if (json.message) successMessage = json.message;
         }
       } catch (e) { }
+    } else {
+      console.log('   ⚠️ API response timeout or network response not intercepted.');
     }
 
     // Wait for on-screen notification or response delay
