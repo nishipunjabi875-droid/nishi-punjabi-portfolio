@@ -42,11 +42,15 @@ class TicketHelper {
         await page.waitForTimeout(400).catch(() => {});
       }
 
-      // 2. Locate exact Order ID trigger element if visible to open side drawer
-      const trigger = page.locator('div:has-text("Click to select Order ID"), div:has-text("Select Your Order ID"), div[class*="border"]:has-text("Order ID")').first();
+      // 2. Target exact 'Click to select Order ID' trigger element
+      const trigger = page.getByText('Click to select Order ID', { exact: true })
+        .or(page.locator('div.font-pangramregular:has-text("Click to select Order ID")'))
+        .or(page.locator('div:has-text("Click to select Order ID")'))
+        .or(page.locator('div[class*="border"]:has-text("Order ID")'))
+        .first();
 
-      if (await trigger.isVisible({ timeout: 2000 }).catch(() => false)) {
-        console.log('   Clicking Order ID selector trigger to open side drawer...');
+      if (await trigger.isVisible({ timeout: 3000 }).catch(() => false)) {
+        console.log('   Clicking "Click to select Order ID" trigger to open side drawer...');
         await trigger.scrollIntoViewIfNeeded().catch(() => {});
         await trigger.click({ force: true }).catch(() => {});
         await page.waitForTimeout(1000).catch(() => {});
