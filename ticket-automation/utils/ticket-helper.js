@@ -437,8 +437,11 @@ class TicketHelper {
     }, { timeout: 20000 }).catch(() => null);
 
     await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
-    await submitBtn.evaluate(el => el.click()).catch(() => {});
-    await submitBtn.click({ force: true }).catch(() => { });
+    try {
+      await submitBtn.click({ force: true, timeout: 5000 });
+    } catch (e) {
+      await submitBtn.evaluate(el => el.click()).catch(() => {});
+    }
 
     const apiResponse = await responsePromise;
     if (apiResponse) {
