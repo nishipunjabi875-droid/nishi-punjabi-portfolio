@@ -1,0 +1,24 @@
+{
+  "validLead": {
+    "fullName": "QA Lead Tester",
+    "email": "lead_smoke_test@woodenstreet.com",
+    "phone": "9876543210",
+    "pincode": "302015",
+    "city": "Jaipur",
+    "message": "Automated smoke test requirement inquiry."
+  },
+  "forms": [
+    {
+      "label": "Contact Us",
+      "url": "/contact"
+    },
+    {
+      "label": "Customer Support",
+      "url": "/support"
+    },
+    {
+      "label": "Franchise Inquiry",
+      "url": "/franchise-opportunities"
+    }
+  ]
+}

@@ -22,3 +22,5 @@ scratch/
 # System files
 .DS_Store
 Thumbs.db
+.dart_tool/
+

@@ -1,0 +1,5 @@
+{
+  "serviceablePincodes": ["302015", "110001", "400001", "560001"],
+  "nonServiceablePincodes": ["799001", "190001"],
+  "invalidPincodes": ["000000", "123", "abcdef"]
+}

@@ -29,7 +29,7 @@ export default function ResumeModal({ isOpen, onClose }) {
           </div>
         </div>
         
-        <div className="resume-modal-body" style={{ background: 'var(--bg-card)', padding: '2rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
+        <div className="resume-modal-body">
           <div className="resume-doc" style={{ fontFamily: 'var(--font-sans)', color: 'var(--text-color)', lineHeight: 1.6 }}>
             
             {/* Header */}

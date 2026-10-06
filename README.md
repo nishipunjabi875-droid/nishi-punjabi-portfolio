@@ -1,229 +1,177 @@
-# Website Health Check Automation Framework
+# WoodenStreet Daily Smoke Testing Automation Framework
 
-A production-ready, modular, and highly scalable QA & Site Reliability Engineering (SRE) automation framework built using **Playwright**, **Node.js (JavaScript)**, and **ExcelJS**.
-
-This framework automatically audits website health parameters, evaluates page performance, checks SEO/Accessibility compliance, intercept network assets/APIs, and crawls internal links for errors. It calculates an overall **Health Score %** and generates professional **HTML Dashboards** and **Multi-sheet Excel Workbooks** suitable for engineering, SRE, and product management reviews.
+A production-ready **Daily Smoke Testing Automation Framework** built with **Playwright**, **TypeScript**, **Page Object Model (POM)**, **Custom Fixtures**, **Data-Driven Testing**, **Network Error Monitoring**, **Excel Report Generation**, and an **Interactive HTML Dashboard**.
 
 ---
 
-## Technical Features & Checks
-
-The framework executes 20 core health checks grouped across 4 scopes:
-
-### 1. Availability & Infrastructure
-* **SSL Validation**: Verifies certificate validity, expiration dates, days remaining, and issuer details.
-* **DNS Resolution**: Confirms that hostname DNS records are active and reachable.
-* **Enforced Redirection**: Validates automatic redirection from HTTP to secure HTTPS.
-* **Important Pages check**: Validates core routes (Home, Category, Collection, PDP, Cart) load with HTTP status 200 and are non-blank.
-
-### 2. Network & Performance Interceptions
-* **API Health Check**: Intercepts background fetch/XHR calls, tracking response times and flagging 4xx/5xx status codes.
-* **Console Warnings & Exceptions**: Tracks uncaught browser exceptions, Javascript stack traces, and layout warnings.
-* **Failed Asset Resolution**: Identifies broken images (broken sources or $0\times0$ natural dimensions), styles, fonts, and scripts.
-* **Performance Web Vitals**: Measures Page Load Time, DOMContentLoaded, First Contentful Paint (FCP), and Largest Contentful Paint (LCP).
-
-### 3. SEO & Accessibility Compliance
-* **SEO Validations**: Verifies presence of `<title>`, `<meta name="description">`, `<link rel="canonical">`, `<meta name="robots">`, Open Graph tags, and heading hierachy (H1 count).
-* **Accessibility Audits**: Performs audits on image alt tags, color contrast, input labels, ARIA roles, and keyboard navigation using `axe-playwright`.
-* **Security Audits**: Audits Cookie secure/HttpOnly attributes and security headers (CSP, HSTS, X-Frame-Options).
-
-### 4. Interactive UX Journeys
-* **Dynamic Search audit**: Tests search speed, auto-suggestions visibility, and confirms empty results pages load when queried with bad data.
-* **Video Playback Audit**: Identifies HTML5/YouTube embedded video players, clicks to play, verifies video metadata loads, and validates playback streams.
-* **Smoke Flow journey**: Simulates complete end-to-end checkout (selecting variants, entering delivery pincodes, adding to cart, filling guest shipping forms, applying promo coupons, and loading the payment page).
-
----
-
-## Folder Structure
+## 🏗️ 1. Architecture Overview & Folder Structure
 
 ```
+c:\Users\lenovo\Desktop\learning\woodenstreet_test\
 ├── config/
-│   └── config.js              # Environment settings wrapper
-├── test-data/
-│   ├── pages.json             # Key audit routes config
-│   ├── products.json          # Target products metadata
-│   └── searches.json          # Search terms and expect criteria
-├── pages/
-│   ├── BasePage.js            # Base POM class: hooks events, parses SEO/performance
-│   ├── LoginPage.js           # POM: authentications
-│   ├── ProductPage.js         # POM: PDP elements, pincode, variants & video playing checks
-│   ├── CartPage.js            # POM: Cart quantity operations
-│   └── CheckoutPage.js        # POM: shipping fields, coupon apply & payment verify
-├── helpers/
-│   ├── sslValidator.js        # Standalone tls/dns/redirect helper
-│   └── crawler.js             # High-concurrency Axios link checking pool
-├── api/
-│   └── apiClient.js           # Standalone SRE REST API validator
-├── health-check/
-│   ├── runner.js              # Core framework orchestrator script
-│   └── healthScore.js         # Score logic & issue severity categorizer
+│   └── environments.ts          # Multi-environment loader (beta, staging, production)
+├── .env                         # Default environment configuration
+├── .env.beta                    # Beta environment configuration
+├── .env.staging                 # Staging environment configuration
+├── .env.production              # Production environment configuration
+├── test-data/                   # Data-driven JSON test datasets
+│   ├── login.json
+│   ├── products.json
+│   ├── checkout.json
+│   ├── leads.json
+│   ├── tickets.json
+│   ├── coupons.json
+│   └── pincodes.json
+├── pages/                       # Page Object Model (TypeScript)
+│   ├── BasePage.ts              # Core page foundation & network listeners
+│   ├── HomePage.ts              # Homepage navigation & health checks
+│   ├── LoginPage.ts             # Mobile & OTP customer login flow
+│   ├── SearchPage.ts            # Search box, suggestions & product cards
+│   ├── ProductPage.ts           # PDP details, price math, pincode & CTAs
+│   ├── CartPage.ts              # Cart items, qty, removal & order math
+│   ├── CheckoutPage.ts          # Customer & Guest shipping forms & payment checkpoint
+│   ├── WishlistPage.ts          # Wishlist management
+│   ├── TicketPage.ts            # Support ticket L1/L2 categories & creation
+│   ├── LeadPage.ts              # Data-driven lead form submissions
+│   ├── AccountPage.ts           # Profile & My Orders tab
+│   └── PaymentPage.ts           # Payment gateway initiation verification
+├── fixtures/
+│   └── testFixtures.ts          # Playwright test fixtures & error interceptors
 ├── utils/
-│   ├── logger.js              # Logger outputs
-│   ├── excelReporter.js       # ExcelJS multi-sheet workbook compiler
-│   └── htmlReporter.js        # Glassmorphism HTML tailwind dashboard generator
+│   ├── otpHelper.ts             # 3-Mode universal OTP strategy
+│   ├── logger.ts                # Masked structured logging
+│   ├── testData.ts              # Data reader helper
+│   ├── screenshotHelper.ts      # Automated failure screenshot handler
+│   ├── networkHelper.ts         # Critical API status (500/502/503/504) & classifier
+│   ├── validationHelper.ts      # Normalized price & order total calculation math
+│   └── reportGenerator.ts       # Excel report & HTML Dashboard generator
 ├── tests/
-│   ├── health-check.spec.js   # Dynamic Playwright spec (pages, PDP, video, search, smoke)
-│   └── security-accessibility.spec.js # Spec: accessibility & security headers
-├── screenshots/               # Folder for failure captures
-├── reports/                   # Consolidated report files (HTML/Excel/JSON)
-├── playwright.health.config.js # Custom configuration file for our framework
-├── .env                       # Environment credentials
-├── package.json               # Dependencies and runner commands
-└── README.md                  # This documentation
+│   └── smoke/                   # Tagged smoke test suite (@smoke, @p0, @p1, @p2)
+│       ├── 00-health.spec.ts
+│       ├── 01-login.spec.ts
+│       ├── 02-search.spec.ts
+│       ├── 03-product.spec.ts
+│       ├── 04-cart.spec.ts
+│       ├── 05-customer-checkout.spec.ts
+│       ├── 06-guest-checkout.spec.ts
+│       ├── 07-pincode.spec.ts
+│       ├── 08-coupon.spec.ts
+│       ├── 09-wishlist.spec.ts
+│       ├── 10-account.spec.ts
+│       ├── 11-payment.spec.ts
+│       ├── 12-ticket.spec.ts
+│       ├── 13-leads.spec.ts
+│       └── 14-negative-checkout.spec.ts
+├── scripts/
+│   └── generate_report_runner.ts# Custom report generation runner
+├── .github/
+│   └── workflows/
+│       └── daily-smoke.yml      # CI/CD daily scheduled workflow
+├── playwright.config.ts         # Playwright test configuration
+├── tsconfig.json                # TypeScript compiler config
+└── package.json                 # Project scripts & dependencies
 ```
 
 ---
 
-## Installation & Setup
+## 🔑 2. How OTP Strategy Works (`otpHelper.ts`)
 
-1. **Install Node.js dependencies**:
-   ```bash
-   npm install
-   ```
+The framework abstracts OTP retrieval so tests remain decoupled from where the OTP originates.
 
-2. **Download Playwright browser binaries**:
-   ```bash
-   npx playwright install chromium
-   ```
+Supported Modes (`OTP_MODE` in `.env`):
 
-3. **Configure Environment variables** by editing the `.env` file in the project root:
-   ```env
-   BASE_URL=https://www.woodenstreet.com
-   HEADLESS=true
-   BROWSER=chromium
-   TIMEOUT=30000
-   PARALLEL_WORKERS=4
-   MAX_CRAWL_PAGES=50
-   LOGIN_USER=test_user@woodenstreet.com
-   LOGIN_PASS=TestPassword123
-   ```
+1. **MODE 1 (Environment Variable)**: Reads OTP directly from `process.env.TEST_OTP`. Ideal for static test credentials or sandbox environments.
+2. **MODE 2 (API Test Service)**: Sends an HTTP GET request to a QA OTP service endpoint (`OTP_API_URL`) passing the phone number to fetch the live generated OTP.
+3. **MODE 3 (Manual / Console Fallback)**: Prompts for manual entry or falls back gracefully during local debugging.
+
+Usage:
+```typescript
+const otp = await OTPHelper.getOTP(phone);
+```
 
 ---
 
-## Execution Commands
+## 🛡️ 3. Customer & Guest Session Isolation
 
-### 1. Run Complete Health Audit
-Triggers SRE infrastructure checks, API audits, runs Playwright browser specs in parallel, and compiles HTML/Excel dashboards:
+- **Customer Checkout (`05-customer-checkout.spec.ts`)**: Uses the main browser context, performing login and maintaining session state.
+- **Guest Checkout (`06-guest-checkout.spec.ts`)**: Instantiates a fresh `browser.newContext()` explicitly to guarantee zero cookie/storage contamination from customer logins.
+
+```typescript
+const context = await browser.newContext(); // Fresh clean state
+const page = await context.newPage();
+```
+
+---
+
+## 📊 4. Reporting & Diagnostics
+
+### Excel Report & HTML Dashboard
+Running `npm run smoke:report` or running tests creates:
+1. `reports/Daily_Smoke_Test_Report.xlsx`: Formatted Excel spreadsheet with summary metrics and detailed per-test status.
+2. `reports/Daily_Smoke_Dashboard.html`: Interactive web dashboard featuring pass rate metrics, execution duration, failure categories, and filterable test execution logs.
+
+### Failure Classification
+Failures are categorized automatically into:
+- `ENVIRONMENT_FAILURE` (Network/DNS/Connection failures)
+- `API_FAILURE` (HTTP 500, 502, 503, 504 server errors)
+- `AUTH_FAILURE` (OTP / Login verification failures)
+- `UI_FAILURE` (Missing locator or element state issue)
+- `ASSERTION_FAILURE` (Value mismatch in expect assertions)
+- `TIMEOUT` (Page or action timeout)
+
+---
+
+## ⚡ 5. Execution Commands
+
+### Run Full Daily Smoke Suite
 ```bash
-node health-check/runner.js
+npm run smoke
 ```
 
-### 2. Resume Interrupted Runs
-If a run crashes or gets cancelled midway, the orchestrator automatically tracks progress in `reports/progress.json`. Subsequent runs will resume exactly from where they were interrupted, skipping already processed URLs.
-
-### 3. Run Playwright Tests Independently
-If you wish to debug tests or run them in headed UI mode:
+### Environment-Specific Runs
 ```bash
-# Run all tests using health config
-npx playwright test --config=playwright.health.config.js --headed
+npm run smoke:beta
+npm run smoke:staging
+npm run smoke:prod
+```
 
-# Run a specific spec
-npx playwright test tests/health-check.spec.js --config=playwright.health.config.js
+### Tag-Filtered Execution
+```bash
+npm run smoke:p0          # Run P0 Critical Path Tests
+npm run smoke:p1          # Run P1 Functional Tests
+npm run smoke:login       # Run Login Tests
+npm run smoke:checkout    # Run Checkout Tests
+npm run smoke:guest       # Run Guest Checkout
+npm run smoke:customer    # Run Customer Checkout
+```
+
+### Headed, Debug & UI Modes
+```bash
+npm run test:headed
+npm run test:debug
+npm run test:ui
+```
+
+### Generate Dashboard & Reports
+```bash
+npm run smoke:report
 ```
 
 ---
 
-## Report Formats
+## 🎯 6. Recommended Selectors & Test IDs for QA Engineering
 
-* **Excel Workbook (`reports/health-check-report.xlsx`)**: Structured spreadsheet formatted with Navy-Blue theme headers containing sheets: *Summary, Broken Links, Broken Images, Video Issues, API Errors, Console Errors, Network Errors, Performance, Product Validation, Failed Tests, and Execution Summary*.
-* **HTML Dashboard (`reports/dashboard.html`)**: Stunning Tailwind-styled dashboard showing Health Score ring, interactive Pass/Fail and Severity distribution charts, collapsible detailed data tables, and modal screenshot galleries for failure inspections.
+To further enhance test stability, the following `data-testid` attributes are recommended for addition to the application frontend:
 
----
-
-## CI/CD Integrations
-
-### GitHub Actions Workflow (`.github/workflows/health-check.yml`)
-
-```yaml
-name: Daily Website Health Check
-
-on:
-  schedule:
-    - cron: '0 5 * * *' # Every day at 05:00 UTC
-  workflow_dispatch:
-
-jobs:
-  health-audit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'npm'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install chromium --with-deps
-
-      - name: Run Health Audit Orchestrator
-        run: node health-check/runner.js
-        env:
-          BASE_URL: https://www.woodenstreet.com
-          HEADLESS: true
-          PARALLEL_WORKERS: 4
-          MAX_CRAWL_PAGES: 100
-
-      - name: Upload Report Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: Health-Reports
-          path: |
-            reports/dashboard.html
-            reports/health-check-report.xlsx
-            reports/results.json
-            screenshots/
-```
-
-### Jenkins Pipeline Blueprint (`Jenkinsfile`)
-
-```groovy
-pipeline {
-    agent any
-    triggers {
-        cron('H 5 * * *') // Run daily in the morning
-    }
-    environment {
-        BASE_URL = 'https://www.woodenstreet.com'
-        HEADLESS = 'true'
-        PARALLEL_WORKERS = '4'
-    }
-    stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Install Dependencies') {
-            steps {
-                bat 'npm ci'
-                bat 'npx playwright install chromium --with-deps'
-            }
-        }
-        stage('Run Audits') {
-            steps {
-                bat 'node health-check/runner.js'
-            }
-        }
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: 'reports/**/*, screenshots/**/*', fingerprint: true
-            publishHTML (target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'reports',
-                reportFiles: 'dashboard.html',
-                reportName: 'Website Health Dashboard'
-            ])
-        }
-    }
-}
-```
+| Element | Recommended Selector / Test ID |
+| :--- | :--- |
+| Mobile Phone Input | `data-testid="login-mobile-input"` |
+| Request OTP Button | `data-testid="request-otp-button"` |
+| OTP Entry Box | `data-testid="otp-input"` |
+| Product Title on PDP | `data-testid="pdp-product-title"` |
+| Product Price on PDP | `data-testid="pdp-product-price"` |
+| Add to Cart Button | `data-testid="add-to-cart-button"` |
+| Buy Now Button | `data-testid="buy-now-button"` |
+| Cart Proceed Button | `data-testid="proceed-to-checkout"` |
+| Shipping Name Input | `data-testid="shipping-name-input"` |
+| Place Order Button | `data-testid="place-order-button"` |

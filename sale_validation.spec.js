@@ -19,10 +19,10 @@ const CONFIG = {
   reportFile: "./results/sale_validation_report_prod.xlsx",
 
   // Sale Details
-  couponCode: process.env.COUPON_CODE || "BHARAT79",        // The coupon code to validate
-  saleName: process.env.SALE_NAME || "independence day sale", // The sale text expected in banners
-  previousCouponCode: process.env.PREVIOUS_COUPON_CODE || "REFRESH50", // Previous coupon code
-  previousSaleName: process.env.PREVIOUS_SALE_NAME || "fresh finds july", // Previous sale text
+  couponCode: process.env.COUPON_CODE || "REFRESH",        // The coupon code to validate
+  saleName: process.env.SALE_NAME || "the festive refresh", // The sale text expected in banners
+  previousCouponCode: process.env.PREVIOUS_COUPON_CODE || "BHARAT79", // Previous coupon code
+  previousSaleName: process.env.PREVIOUS_SALE_NAME || "independence day sale", // Previous sale text
 
   // Selectors (Update these if the website's DOM changes)
   selectors: {
@@ -48,7 +48,13 @@ const CONFIG = {
       '.mid-banner', '.category-promo', '.middle-strip', '.section-banner', 'img[src*="offer_strip"]'
     ],
     bigBanner: [
-      '.hero-banner', '.main-slider', '.home-banner', '.large-banner', '[alt*="banner" i]', 'img[src*="hero"]'
+      '.hero-banner', '.main-slider', '.home-banner', '.large-banner', 
+      '[alt*="banner" i]', '[alt*="sale" i]', '[alt*="offer" i]',
+      'img[src*="hero"]', 'img[src*="home_page"]', 'img[src*="homenew"]', 'img[src*="banner"]', 'img[src*="slider"]',
+      '[class*="banner"]', '[class*="slider"]', '[class*="hero"]', '[class*="carousel"]'
+    ],
+    mobileBanner: [
+      '.mobile-banner', '.mob-banner', '[class*="mobile-banner"]', '[class*="mobBanner"]', '[class*="menu-mobile"]', 'img[src*="mobile"]', 'img[src*="mob_"]', 'img[src*="mob-"]', 'img[src*="mob/"]', 'img[alt*="mobile" i]'
     ]
   },
 
@@ -140,14 +146,45 @@ function detectPageType(urlStr) {
 }
 
 // ─── HELPER FUNCTIONS ────────────────────────────────────────────────────────
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function matchesTerm(sourceStr, term) {
+  if (!sourceStr || !term) return false;
+  const s = sourceStr.toLowerCase();
+  const t = term.toLowerCase().trim();
+
+  // If the term is a single alphanumeric coupon code (e.g., REFRESH, REFRESH50, BHARAT79)
+  if (/^[a-z0-9]+$/i.test(t)) {
+    // Word boundary regex ensures REFRESH will NEVER match REFRESH50!
+    const regex = new RegExp(`\\b${escapeRegExp(t)}\\b`, 'i');
+    return regex.test(s);
+  }
+
+  // Multi-word phrase or hyphenated phrase (e.g. "festive refresh" or "the festive refresh")
+  const altHyphen = t.replace(/\s+/g, '-');
+  if (s.includes(t) || s.includes(altHyphen)) return true;
+
+  // If term starts with "the ", check without "the " prefix (e.g., "festive refresh" vs "the festive refresh")
+  if (t.startsWith("the ")) {
+    const coreTerm = t.slice(4).trim();
+    const coreHyphen = coreTerm.replace(/\s+/g, '-');
+    if (s.includes(coreTerm) || s.includes(coreHyphen)) return true;
+  }
+
+  return false;
+}
+
 async function checkElementContainsText(page, selectorList, expectedText, elementName) {
-  const termsToCheck = [expectedText.toLowerCase(), CONFIG.couponCode.toLowerCase()];
+  const termsToCheck = [expectedText, CONFIG.couponCode].filter(Boolean);
   let extractedCoupon = "";
 
   const extractCoupon = (str) => {
+    if (!str) return "";
     const match = str.match(/(?:code|coupon|use|apply)[\s:-]*([A-Z0-9]{4,15})/i);
     if (match) return match[1].toUpperCase();
-    const capsMatch = str.match(/\b[A-Z]{4,15}[0-9]+\b/);
+    const capsMatch = str.match(/\b[A-Z0-9]{4,15}\b/);
     if (capsMatch) return capsMatch[0];
     return "";
   };
@@ -163,53 +200,66 @@ async function checkElementContainsText(page, selectorList, expectedText, elemen
           const src = isImg ? (await el.getAttribute('src')) || "" : "";
 
           const rawText = text + " " + alt + " " + src;
-          const combinedStr = rawText.toLowerCase();
           if (!extractedCoupon) extractedCoupon = extractCoupon(rawText);
 
           for (const term of termsToCheck) {
-            if (combinedStr.includes(term)) {
-              return { found: true, message: `✅ Found banner/coupon matching '${term}' in ${elementName} (${sel})`, actualCoupon: extractedCoupon || CONFIG.couponCode };
+            if (term && matchesTerm(rawText, term)) {
+              return { 
+                found: true, 
+                message: `✅ Found banner/coupon matching '${term}' in ${elementName} (${sel})`, 
+                actualCoupon: extractedCoupon || CONFIG.couponCode 
+              };
             }
           }
         }
       }
-    } catch { }
+    } catch {}
   }
 
-  // Fallback: search all images and body text for either term
   try {
     const bodyText = await page.evaluate(() => document.body.innerText);
-    const lowerBody = bodyText.toLowerCase();
-
     const imgs = await page.$$eval('img', imgs =>
       imgs.filter(img => {
         const rect = img.getBoundingClientRect();
         return rect.width > 0 && rect.height > 0;
-      }).map(i => {
-        const combined = (i.alt || "") + " " + (i.src || "");
-        return { raw: combined, lower: combined.toLowerCase() };
-      })
+      }).map(i => (i.alt || "") + " " + (i.src || ""))
     );
 
     if (!extractedCoupon) extractedCoupon = extractCoupon(bodyText);
     if (!extractedCoupon) {
-      for (const img of imgs) {
-        extractedCoupon = extractCoupon(img.raw);
+      for (const imgStr of imgs) {
+        extractedCoupon = extractCoupon(imgStr);
         if (extractedCoupon) break;
       }
     }
 
     for (const term of termsToCheck) {
-      if (lowerBody.includes(term)) {
-        return { found: true, message: `✅ Found '${term}' in visible page text (generic fallback)`, actualCoupon: extractedCoupon || CONFIG.couponCode };
+      if (term && matchesTerm(bodyText, term)) {
+        return { 
+          found: true, 
+          message: `✅ Found '${term}' in visible page text (generic fallback)`, 
+          actualCoupon: extractedCoupon || CONFIG.couponCode 
+        };
       }
-      if (imgs.some(imgObj => imgObj.lower.includes(term))) {
-        return { found: true, message: `✅ Found visible image banner containing '${term}'`, actualCoupon: extractedCoupon || CONFIG.couponCode };
+      if (term && imgs.some(imgStr => matchesTerm(imgStr, term))) {
+        return { 
+          found: true, 
+          message: `✅ Found visible image banner containing '${term}'`, 
+          actualCoupon: extractedCoupon || CONFIG.couponCode 
+        };
       }
     }
-  } catch (err) { }
+  } catch (err) {}
 
-  return { found: false, message: `❌ Missing expected sale text or coupon for ${elementName}`, actualCoupon: extractedCoupon || "None Found" };
+  const failureMsg = (extractedCoupon && extractedCoupon !== "None Found" && extractedCoupon !== CONFIG.couponCode)
+    ? `❌ Incorrect/outdated sale banner or coupon ('${extractedCoupon}') found for ${elementName} (Expected: '${expectedText}' / '${CONFIG.couponCode}')`
+    : `❌ Missing expected sale text or coupon for ${elementName}`;
+
+  return { 
+    found: false, 
+    message: failureMsg, 
+    actualCoupon: extractedCoupon || "None Found" 
+  };
 }
 
 async function hoverAndCheckTooltip(page, infoBtnSelectors, tooltipSelectors, expectedText) {
@@ -224,45 +274,55 @@ async function hoverAndCheckTooltip(page, infoBtnSelectors, tooltipSelectors, ex
         if (result.found) return result;
 
         const bodyText = await page.locator('body').textContent();
-        if (bodyText && bodyText.toLowerCase().includes(expectedText.toLowerCase())) {
+        if (bodyText && matchesTerm(bodyText, expectedText)) {
           return { found: true, message: `✅ Found '${expectedText}' after hovering ${btnSel} (caught in body)`, actualCoupon: CONFIG.couponCode };
         }
       }
-    } catch { }
+    } catch {}
   }
   return { found: false, message: `❌ Failed to find or hover info button to check for '${expectedText}'`, actualCoupon: "None Found" };
 }
 
 async function checkPreviousSaleNotVisible(page) {
   const oldTerms = [
-    CONFIG.previousCouponCode ? CONFIG.previousCouponCode.toLowerCase() : null,
-    CONFIG.previousSaleName ? CONFIG.previousSaleName.toLowerCase() : null,
-    CONFIG.previousSaleName ? CONFIG.previousSaleName.toLowerCase().replace(/\s+/g, '-') : null,
+    CONFIG.previousCouponCode,
+    CONFIG.previousSaleName,
+    "BHARAT79",
+    "REFRESH50",
+    "independence day sale",
+    "fresh finds july",
+    "monsoon sale",
+    "freedom sale",
+    "rakhi sale",
+    "clearance sale"
   ].filter(Boolean);
 
   try {
-    const bodyText = (await page.evaluate(() => document.body.innerText)).toLowerCase();
-    const imgs = await page.$$eval('img', imgs => 
-      imgs.map(i => ((i.alt || '') + ' ' + (i.src || '')).toLowerCase())
+    const bodyText = await page.evaluate(() => document.body.innerText);
+    const imgs = await page.$$eval('img', imgs =>
+      imgs.map(i => (i.alt || '') + ' ' + (i.src || ''))
     );
-    const links = await page.$$eval('a', anchors => 
-      anchors.map(a => (a.href || '').toLowerCase())
+    const links = await page.$$eval('a', anchors =>
+      anchors.map(a => a.href || '')
     );
 
     for (const term of oldTerms) {
-      if (bodyText.includes(term)) {
-        return { foundOld: true, message: `❌ Old sale term '${term}' found in visible page text!` };
+      if (!term || term.toLowerCase() === CONFIG.couponCode.toLowerCase() || term.toLowerCase() === CONFIG.saleName.toLowerCase()) {
+        continue;
       }
-      if (imgs.some(src => src.includes(term))) {
-        return { foundOld: true, message: `❌ Old sale image/alt containing '${term}' found on page!` };
+      if (matchesTerm(bodyText, term)) {
+        return { foundOld: true, message: `❌ Old/Incorrect sale term '${term}' found in visible page text!` };
       }
-      if (links.some(href => href.includes(term))) {
-        return { foundOld: true, message: `❌ Old sale link containing '${term}' found on page!` };
+      if (imgs.some(src => matchesTerm(src, term))) {
+        return { foundOld: true, message: `❌ Old/Incorrect sale image/alt containing '${term}' found on page!` };
+      }
+      if (links.some(href => matchesTerm(href, term))) {
+        return { foundOld: true, message: `❌ Old/Incorrect sale link containing '${term}' found on page!` };
       }
     }
   } catch (err) {}
 
-  return { foundOld: false, message: `✅ Verified: No previous sale ('${CONFIG.previousSaleName}' / '${CONFIG.previousCouponCode}') found on page.` };
+  return { foundOld: false, message: `✅ Verified: No previous or incorrect sale banners found on page.` };
 }
 
 async function checkBannerRedirections(page, pageType, vpName) {
@@ -485,8 +545,12 @@ async function validateHeroBanners(homepagePage, browser) {
   page.setDefaultTimeout(10000);
 
   for (const b of banners) {
-    const expectedCategory = getExpectedCategory(b.href);
-    console.log(`   [Hero Banner ${index}/${banners.length}] Checking navigation to: ${b.href} (Expected Category: ${expectedCategory})`);
+    let targetUrl = b.href || "";
+    if (!CONFIG.baseUrl.includes("beta.") && targetUrl.includes("beta.teamwoodenstreet.com")) {
+      targetUrl = targetUrl.replace(/https?:\/\/beta\.teamwoodenstreet\.com/g, CONFIG.baseUrl.replace(/\/$/, ""));
+    }
+    const expectedCategory = getExpectedCategory(targetUrl);
+    console.log(`   [Hero Banner ${index}/${banners.length}] Checking navigation to: ${targetUrl} (Expected Category: ${expectedCategory})`);
 
     let status = "FAIL";
     let httpStatus = "N/A";
@@ -497,7 +561,7 @@ async function validateHeroBanners(homepagePage, browser) {
     let screenshotName = "";
 
     try {
-      const response = await page.goto(b.href, { waitUntil: "load" });
+      const response = await page.goto(targetUrl, { waitUntil: "load" });
       await page.waitForTimeout(2000);
       actualUrl = page.url();
       httpStatus = response ? response.status() : 200;
@@ -621,6 +685,9 @@ test("Sale Validation - Desktop and Mobile", async ({ }, testInfo) => {
         if (!fullUrl.startsWith("http")) {
           fullUrl = CONFIG.baseUrl + (fullUrl.startsWith("/") ? fullUrl : "/" + fullUrl);
         }
+        if (!CONFIG.baseUrl.includes("beta.") && fullUrl.includes("beta.teamwoodenstreet.com")) {
+          fullUrl = fullUrl.replace(/https?:\/\/beta\.teamwoodenstreet\.com/g, CONFIG.baseUrl.replace(/\/$/, ""));
+        }
 
         await page.goto(fullUrl, { waitUntil: CONFIG.waitUntil });
         await page.waitForTimeout(CONFIG.settleMs);
@@ -630,17 +697,33 @@ test("Sale Validation - Desktop and Mobile", async ({ }, testInfo) => {
 
         // ─── PAGE SPECIFIC VALIDATIONS ───────────────────────────────────────
         if (result.page_type === "pdp") {
-          checks.push(await hoverAndCheckTooltip(page, CONFIG.selectors.infoButton, CONFIG.selectors.tooltipBox, CONFIG.couponCode));
+          const hoverRes = await hoverAndCheckTooltip(page, CONFIG.selectors.infoButton, CONFIG.selectors.tooltipBox, CONFIG.couponCode);
+          if (hoverRes.found) {
+            checks.push(hoverRes);
+          } else {
+            const pdpOfferCheck = await checkElementContainsText(
+              page, 
+              [...CONFIG.selectors.couponDisplay, ...CONFIG.selectors.productPrice, '.price-info', '.offer-details', 'body'], 
+              CONFIG.couponCode, 
+              "PDP Price / Offer Area"
+            );
+            checks.push(pdpOfferCheck);
+          }
         }
         else if (result.page_type === "cart") {
-          checks.push(await checkElementContainsText(page, [...CONFIG.selectors.couponDisplay, 'body'], CONFIG.couponCode, "Cart Coupon Area"));
+          checks.push(await checkElementContainsText(page, [...CONFIG.selectors.couponDisplay, '.cart-coupon', 'body'], CONFIG.couponCode, "Cart Coupon Area"));
         }
         else if (result.page_type === "category" || result.page_type === "information") {
-          checks.push(await checkElementContainsText(page, CONFIG.selectors.bigBanner, CONFIG.saleName, "Big Category Banner"));
-          checks.push(await checkElementContainsText(page, CONFIG.selectors.midStripBanner, CONFIG.saleName, "Mid Strip Banner"));
+          const categoryBannerSelectors = [
+            ...CONFIG.selectors.bigBanner, 
+            ...CONFIG.selectors.midStripBanner, 
+            ...CONFIG.selectors.topStripBanner,
+            '.category-header', '.offer-banner', '.discount-strip', 'img[src*="banner"]', 'img[src*="offer"]', 'img[src*="strip"]'
+          ];
+          checks.push(await checkElementContainsText(page, categoryBannerSelectors, CONFIG.saleName, "Category / Page Banners"));
         }
         else if (result.page_type === "home") {
-          checks.push(await checkElementContainsText(page, CONFIG.selectors.bigBanner, CONFIG.saleName, "Big Banner"));
+          checks.push(await checkElementContainsText(page, CONFIG.selectors.bigBanner, CONFIG.saleName, "Homepage Banners"));
         }
 
         // Validate that previous sale text/links are NOT present

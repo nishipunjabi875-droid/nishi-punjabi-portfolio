@@ -58,3 +58,4 @@ class CartPage extends BasePage {
 }
 
 module.exports = CartPage;
+module.exports.CartPage = CartPage;

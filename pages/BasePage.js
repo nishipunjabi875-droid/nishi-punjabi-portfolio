@@ -1,5 +1,6 @@
 const { injectAxe, getViolations } = require('axe-playwright');
 const axios = require('axios');
+const { NetworkMonitor } = require('../utils/networkHelper');
 
 class BasePage {
   constructor(page) {
@@ -7,6 +8,7 @@ class BasePage {
     this.consoleErrors = [];
     this.networkErrors = [];
     this.apiLogs = [];
+    this.monitor = new NetworkMonitor(page);
     this._initListeners();
   }
 
@@ -95,12 +97,25 @@ class BasePage {
     const status = response ? response.status() : 0;
     const headers = response ? response.headers() : {};
     
-    return {
-      url,
-      status,
-      responseTime,
-      headers
-    };
+    return status;
+  }
+
+  async dismissOverlays() {
+    try {
+      await this.page.keyboard.press('Escape').catch(() => {});
+      const closeSelectors = [
+        '.close-clone', '.close', '#close-button', '.close-btn',
+        'button[aria-label="Close"]', '#login-close', '[class*="close-btn" i]',
+        'button:has-text("✕")', 'button:has-text("Cancel")'
+      ];
+      for (const selector of closeSelectors) {
+        const btn = this.page.locator(selector).first();
+        if (await btn.isVisible({ timeout: 200 }).catch(() => false)) {
+          await btn.click({ force: true }).catch(() => {});
+          break;
+        }
+      }
+    } catch (e) {}
   }
 
   // Scroll page to trigger lazy loading assets
@@ -298,6 +313,10 @@ class BasePage {
     }
   }
 
+  async getPageTitle() {
+    return await this.page.title();
+  }
+
   // Clean collected logs
   clearLogs() {
     this.consoleErrors = [];
@@ -307,3 +326,4 @@ class BasePage {
 }
 
 module.exports = BasePage;
+module.exports.BasePage = BasePage;

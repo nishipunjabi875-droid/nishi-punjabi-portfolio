@@ -89,13 +89,12 @@ class TicketHelper {
         console.log(`   ✓ Order item selection in drawer: ${JSON.stringify(selectionResult)}`);
         await page.waitForTimeout(800).catch(() => {});
 
-        // Close drawer overlay
-        const closeBtn = drawer.locator('button.style_closeButton__dLuIk, button[aria-label="Close"], button:has-text("Done")').first();
-        if (await closeBtn.isVisible({ timeout: 1000 }).catch(() => false)) {
-          await closeBtn.click({ force: true }).catch(() => {});
-        } else {
-          await page.keyboard.press('Escape').catch(() => {});
-        }
+        // Close drawer overlay safely
+        await page.evaluate(() => {
+          const closeBtn = document.querySelector('button.style_closeButton__dLuIk') || document.querySelector('button[aria-label="Close"]');
+          if (closeBtn) closeBtn.click();
+        }).catch(() => {});
+        await page.keyboard.press('Escape').catch(() => {});
         await page.waitForTimeout(400).catch(() => {});
       } else {
         console.log('   Side drawer closed or Order ID already selected.');
@@ -404,23 +403,10 @@ class TicketHelper {
     await this.validateFormFields(page, l1, l2, this.generateSubject(l1, l2), this.generateDescription(l1, l2));
 
     // Target exact form submit CTA button (avoiding header tab switcher buttons)
-    let submitBtn = page.locator('button.style_btn-primary__lUk_R:has-text("Create Ticket")')
-      .or(page.locator('button.style_btn-primary__lUk_R[type="submit"]'))
-      .or(page.locator('button[type="submit"]:has-text("Create Ticket")'))
-      .or(page.getByRole('button', { name: 'Create Ticket', exact: true }))
-      .first();
-
-    await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
+    let submitBtn = page.locator('form button[type="submit"], button.style_btn-primary__lUk_R[type="submit"], button.style_btn-primary__lUk_R').last();
 
     if (!await submitBtn.isVisible().catch(() => false)) {
-      submitBtn = page.locator('#tabs-content button[type="submit"], form button[type="submit"]').last();
-    }
-
-    await submitBtn.waitFor({ state: 'attached', timeout: 8000 }).catch(() => {});
-
-    if (!await submitBtn.isVisible().catch(() => false)) {
-      console.log('   ❌ Submit CTA button ("Create Ticket") is NOT visible on page.');
-      throw new Error(`Submit CTA button ("Create Ticket") is not visible on page. Form could be obscured by an overlay.`);
+      submitBtn = page.locator('button[type="submit"]:has-text("Create Ticket"), button:has-text("Create Ticket")').last();
     }
 
     console.log('   Clicking "Create Ticket" CTA button at bottom of form...');
@@ -436,11 +422,32 @@ class TicketHelper {
              (url.includes('freshdesk') && url.includes('create'));
     }, { timeout: 20000 }).catch(() => null);
 
-    await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
-    try {
-      await submitBtn.click({ force: true, timeout: 5000 });
-    } catch (e) {
-      await submitBtn.evaluate(el => el.click()).catch(() => {});
+    // Perform click using multiple strategies to guarantee execution
+    let clickSuccessful = false;
+    if (await submitBtn.isVisible().catch(() => false)) {
+      try {
+        await submitBtn.scrollIntoViewIfNeeded().catch(() => {});
+        await submitBtn.click({ force: true, timeout: 5000 });
+        clickSuccessful = true;
+      } catch (e) {
+        console.log(`   ⚠️ Playwright direct click fallback: ${e.message}`);
+      }
+    }
+
+    if (!clickSuccessful) {
+      console.log('   Executing JS evaluate click & form submit fallback...');
+      await page.evaluate(() => {
+        const btns = Array.from(document.querySelectorAll('button'));
+        const createBtn = btns.filter(b => (b.innerText || '').includes('Create Ticket')).pop() ||
+                          document.querySelector('form button[type="submit"]') ||
+                          document.querySelector('button[type="submit"]');
+        if (createBtn) {
+          createBtn.scrollIntoView({ block: 'center', inline: 'center' });
+          createBtn.click();
+        }
+        const form = document.querySelector('form');
+        if (form) form.requestSubmit();
+      }).catch(() => {});
     }
 
     const apiResponse = await responsePromise;

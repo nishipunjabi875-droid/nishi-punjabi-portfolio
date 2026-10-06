@@ -69,7 +69,7 @@ export default function SaleValidationDashboard() {
             <button className={`skill-tab-btn ${filter === 'CART' ? 'active' : ''}`} onClick={() => setFilter('CART')}>Cart & Checkout</button>
           </div>
 
-          <div style={{ position: 'relative', width: '280px' }}>
+          <div className="dashboard-search-wrapper" style={{ position: 'relative', width: '100%', maxWidth: '280px' }}>
             <input
               type="text"
               placeholder="Search URL or notes..."

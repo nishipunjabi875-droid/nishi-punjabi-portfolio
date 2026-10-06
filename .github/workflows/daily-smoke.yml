@@ -1,0 +1,81 @@
+name: WoodenStreet Daily Smoke Testing Automation Pipeline
+
+on:
+  schedule:
+    # Run every weekday at 06:00 AM UTC (11:30 AM IST)
+    - cron: '0 6 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target Environment (production | beta | staging)'
+        required: true
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - beta
+          - staging
+      suite:
+        description: 'Tag Filter (e.g. @smoke, @p0, @p1, @checkout)'
+        required: false
+        default: '@smoke'
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  smoke-test:
+    name: Execute Daily Smoke Suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install NPM Dependencies
+        run: npm ci
+
+      - name: Install Playwright Browsers with Dependencies
+        run: npx playwright install --with-deps chromium
+
+      - name: Execute Daily Smoke Tests
+        env:
+          TEST_ENV: ${{ github.event.inputs.environment || 'production' }}
+          TEST_PHONE: ${{ secrets.TEST_PHONE }}
+          TEST_OTP: ${{ secrets.TEST_OTP }}
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          ALLOW_REAL_PAYMENT: 'false'
+          CI: 'true'
+        run: |
+          npx playwright test --config=playwright.config.ts
+
+      - name: Generate Custom Excel Report & HTML Dashboard
+        if: always()
+        run: |
+          npm run smoke:report || true
+
+      - name: Upload Playwright Artifacts (Screenshots, Videos, Traces)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failure-artifacts
+          path: |
+            test-results/
+            screenshots/
+          retention-days: 14
+
+      - name: Upload Daily Smoke Reports (HTML & Excel)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-smoke-reports
+          path: reports/
+          retention-days: 30

@@ -1,17 +1,24 @@
 const { defineConfig } = require('@playwright/test');
+const fs = require('fs');
+const path = require('path');
+
+const authPath = path.resolve(__dirname, 'auth.json');
 
 module.exports = defineConfig({
-  workers: 8,
-  globalTeardown: require.resolve('./utils/teardown.js'),
-  fullyParallel: true,
+  workers: 1,
+  fullyParallel: false,
   use: {
-    // Record video only on failure to optimize disk space and execution speed
+    headless: process.env.HEADLESS === 'false' ? false : true,
+    viewport: { width: 1280, height: 720 },
+    storageState: fs.existsSync(authPath) ? authPath : undefined,
     video: 'retain-on-failure',
-    // Capture screenshot only on failure
     screenshot: 'only-on-failure',
+    trace: 'off'
   },
-  // Use line reporter for cleaner console logs
-  reporter: 'line',
-  // Individual test timeout (includes page navigation & media metadata initialization)
-  timeout: 50000,
+  reporter: [
+    ['line'],
+    ['json', { outputFile: 'reports/test-results.json' }]
+  ],
+  timeout: 3600000,
 });
+

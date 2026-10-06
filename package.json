@@ -1,23 +1,50 @@
 {
   "name": "woodenstreet_test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Daily Smoke Testing Automation Framework for WoodenStreet E-Commerce",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx playwright test --config=playwright.config.ts",
+    "smoke": "npx playwright test --config=playwright.config.ts",
+    "smoke:beta": "set TEST_ENV=beta&& npx playwright test --config=playwright.config.ts",
+    "smoke:staging": "set TEST_ENV=staging&& npx playwright test --config=playwright.config.ts",
+    "smoke:prod": "set TEST_ENV=production&& npx playwright test --config=playwright.config.ts",
+    "smoke:p0": "npx playwright test --grep @p0 --config=playwright.config.ts",
+    "smoke:p1": "npx playwright test --grep @p1 --config=playwright.config.ts",
+    "smoke:p2": "npx playwright test --grep @p2 --config=playwright.config.ts",
+    "smoke:login": "npx playwright test --grep @login --config=playwright.config.ts",
+    "smoke:checkout": "npx playwright test --grep @checkout --config=playwright.config.ts",
+    "smoke:guest": "npx playwright test --grep @guest --config=playwright.config.ts",
+    "smoke:customer": "npx playwright test --grep @customer --config=playwright.config.ts",
+    "smoke:search": "npx playwright test --grep @search --config=playwright.config.ts",
+    "smoke:cart": "npx playwright test --grep @cart --config=playwright.config.ts",
+    "smoke:wishlist": "npx playwright test --grep @wishlist --config=playwright.config.ts",
+    "smoke:lead": "npx playwright test --grep @lead --config=playwright.config.ts",
+    "smoke:ticket": "npx playwright test --grep @ticket --config=playwright.config.ts",
+    "smoke:payment": "npx playwright test --grep @payment --config=playwright.config.ts",
+    "smoke:report": "node scripts/generate_report_runner.js",
+    "test:headed": "npx playwright test --headed --config=playwright.config.ts",
+    "test:debug": "npx playwright test --debug --config=playwright.config.ts",
+    "test:ui": "npx playwright test --ui --config=playwright.config.ts",
     "ui-audit:capture": "node src/automation/run.js --mode=capture",
     "ui-audit:compare": "node src/automation/run.js --mode=compare",
     "dev:faq": "node faq-clone/server.js",
-    "test:cart-qa": "npx playwright test cart-deep-qa.spec.js --config=playwright.cart-qa.config.js",
-    "audit:cart:capture": "set MODE=capture&& npx playwright test cart-audit.spec.js",
-    "audit:cart:daily": "set MODE=compare&& npx playwright test cart-audit.spec.js"
+    "test:cart-qa": "npx playwright test cart-deep-qa.spec.js --config=playwright.cart-qa.config.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "playwright",
+    "typescript",
+    "smoke-testing",
+    "e-commerce",
+    "qa-automation"
+  ],
+  "author": "QA Engineering",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.58.2"
+    "@playwright/test": "^1.58.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "axe-playwright": "^2.2.2",
@@ -28,9 +55,10 @@
     "exceljs": "^4.4.0",
     "fs-extra": "^11.3.6",
     "mysql2": "^3.21.1",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^9.1.1",
     "playwright": "^1.58.2",
     "playwright-core": "^1.58.2",
-    "selenium-webdriver": "^4.46.0",
     "xlsx": "^0.18.5"
   }
 }

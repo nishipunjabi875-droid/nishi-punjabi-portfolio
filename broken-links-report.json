@@ -1,0 +1,3195 @@
+{
+  "meta": {
+    "targetUrl": "https://www.woodenstreet.com/",
+    "pageTitle": "https://www.woodenstreet.com/",
+    "checkedAt": "2026-09-21T05:02:22.213Z",
+    "totalUrls": 530,
+    "okCount": 524,
+    "brokenCount": 6,
+    "notFoundCount": 5
+  },
+  "broken": [
+    {
+      "url": "https://images.woodenstreet.de/",
+      "status": 403,
+      "finalUrl": "https://images.woodenstreet.de/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dYzg1YT.dNzQzZD&gtm=45E92e69h0h2v79560732za204zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120385422~120469145~120469153~120847435&tft=1789966871126&tfd=3744&fmt=8",
+      "status": 404,
+      "finalUrl": "https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dYzg1YT.dNzQzZD&gtm=45E92e69h0h2v79560732za204zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616985~115938465~115938469~117776795~118897920~118897930~120385422~120469145~120469153~120847435&tft=1789966871126&tfd=3744&fmt=8",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=836441241.1789966871&gtm=45E92e69h0h2v79560732za204zd79560732xeaxf4&fmt=8",
+      "status": 404,
+      "finalUrl": "https://ad.doubleclick.net/ccm/s/collect?auid=836441241.1789966871&gtm=45E92e69h0h2v79560732za204zd79560732xeaxf4&fmt=8",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=12&frm=0&apvc=0&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&did=dYzg1YT&gdid=dYzg1YT&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&tft=1789966871654&tfd=4272&gap.gtb=2&tids=AW-798096347&fmt=8",
+      "status": 404,
+      "finalUrl": "https://www.google.com/ccm/collect?rcb=12&frm=0&apvc=0&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&en=page_view&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&did=dYzg1YT&gdid=dYzg1YT&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&tft=1789966871654&tfd=4272&gap.gtb=2&tids=AW-798096347&fmt=8",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=12&frm=0&apvc=0&ae=g&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&did=dYzg1YT&gdid=dYzg1YT&_tu=CA&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&tft=1789966871655&tfd=4272&_gsid=s52FJs6BOMspliX7uiy23jdLWRWTpOXELg&gap.gtb=2&tids=AW-798096347&fmt=8",
+      "status": 404,
+      "finalUrl": "https://www.google.com/ccm/collect?rcb=12&frm=0&apvc=0&ae=g&auid=836441241.1789966871&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&tid=AW-798096347&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&scrsrc=www.woodenstreet.com&rnd=1499491487.1789966871&navt=n&npa=0&did=dYzg1YT&gdid=dYzg1YT&_tu=CA&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&tft=1789966871655&tfd=4272&_gsid=s52FJs6BOMspliX7uiy23jdLWRWTpOXELg&gap.gtb=2&tids=AW-798096347&fmt=8",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cdn-cgi/rum?",
+      "status": 404,
+      "finalUrl": "https://www.woodenstreet.com/cdn-cgi/rum?",
+      "method": "HEAD"
+    }
+  ],
+  "ok": [
+    {
+      "url": "https://www.woodenstreet.com/",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-interiors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-interiors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bulk-orders",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bulk-orders",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/furniture-franchise",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/furniture-franchise",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/track-order-by-email",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/track-order-by-email",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/help-center",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/help-center",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/king-size-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/king-size-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/coffee-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/coffee-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sofa-cum-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sofa-cum-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fabric-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fabric-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wooden-sofa",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wooden-sofa",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/lounge-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/lounge-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/shoe-racks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/shoe-racks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/tv-units",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/tv-units",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-decors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-decors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/modular-kitchen-designs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/modular-kitchen-designs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/lamps-and-lighting",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/lamps-and-lighting",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/offline-furniture-store",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/offline-furniture-store",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cart",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cart",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sofa-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sofa-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/three-seater-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/three-seater-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/two-seater-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/two-seater-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/one-seater-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/one-seater-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/3-1-1-sofa-set",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/3-1-1-sofa-set",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-sofa-cum-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-sofa-cum-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/l-shaped-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/l-shaped-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/leather-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/leather-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chaise-lounges",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chaise-lounges",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/outdoor-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/outdoor-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/divan-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/divan-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wooden-sofa-cum-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wooden-sofa-cum-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fabric-sofa-cum-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fabric-sofa-cum-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/recliners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/recliners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-recliners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-recliners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/1-seater-recliners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/1-seater-recliners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/2-seater-recliners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/2-seater-recliners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/3-seater-recliners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/3-seater-recliners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/accent-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/accent-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/arm-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/arm-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wing-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wing-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/loveseats",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/loveseats",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/benches",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/benches",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/ottomans",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/ottomans",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/stools",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/stools",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/living-room-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/living-room-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/swing-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/swing-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/rocking-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/rocking-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/room-dividers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/room-dividers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/coffee-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/coffee-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/side-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/side-end-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/nest-of-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/nest-of-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/console-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/console-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/laptop-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/laptop-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/solid-wood-tv-units",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/solid-wood-tv-units",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/modular-tv-units",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/modular-tv-units",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-temple",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-temple",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/storage-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/storage-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bookshelves",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bookshelves",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chest-of-drawers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chest-of-drawers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cabinet-sideboards",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cabinet-sideboards",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/display-units",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/display-units",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-shelves",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-shelves",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-furnishing",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-furnishing",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sofa-covers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sofa-covers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cushion-covers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cushion-covers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cushion-fillers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cushion-fillers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/rugs-and-carpets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/rugs-and-carpets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-runner",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-runner",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/runners",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/runners",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bedroom-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bedroom-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/solid-wood-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/solid-wood-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/engineered-wood-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/engineered-wood-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/upholstered-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/upholstered-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/hydraulic-storage-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/hydraulic-storage-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/poster-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/poster-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kids-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kids-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/#",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/#",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/queen-size-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/queen-size-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/double-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/double-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/single-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/single-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/l-shape-sofa-cum-bed",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/l-shape-sofa-cum-bed",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wardrobes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wardrobes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-wardrobes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-wardrobes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/solid-wood-wardrobes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/solid-wood-wardrobes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/modular-wardrobes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/modular-wardrobes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/single-door-wardrobe",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/single-door-wardrobe",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/2-door-wardrobe",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/2-door-wardrobe",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/3-door-wardrobe",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/3-door-wardrobe",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/4-door-wardrobe",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/4-door-wardrobe",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sliding-door-wardrobes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sliding-door-wardrobes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bedside-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bedside-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dressing-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dressing-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/breakfast-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/breakfast-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/trunk-blanket-boxes",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/trunk-blanket-boxes",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/king-size-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/king-size-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/queen-size-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/queen-size-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/double-bed-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/double-bed-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/mattress-protectors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/mattress-protectors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/pillow",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/pillow",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bed-sheets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bed-sheets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/penguin-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/penguin-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/ortho-zen-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/ortho-zen-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dream-lux-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dream-lux-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bamboo-bliss-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bamboo-bliss-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/memory-foam-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/memory-foam-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/foam-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/foam-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/latex-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/latex-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cool-gel-memory-foam-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cool-gel-memory-foam-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/orthopedic-mattress",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/orthopedic-mattress",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/foldable-mattresses",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/foldable-mattresses",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/memory-foam-pillows",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/memory-foam-pillows",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cervical-pillows",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cervical-pillows",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cuddle-pillow",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cuddle-pillow",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/body-pillow",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/body-pillow",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dining-room-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dining-room-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/6-seater-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/6-seater-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/4-seater-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/4-seater-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/2-seater-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/2-seater-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/8-seater-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/8-seater-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/folding-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/folding-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wooden-dining-table-set",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wooden-dining-table-set",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/marble-dining-table-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/marble-dining-table-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/metal-dining-table-set",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/metal-dining-table-set",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dining-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dining-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wooden-dining-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wooden-dining-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fabric-dining-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fabric-dining-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/dining-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/dining-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chair-covers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chair-covers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-mats",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-mats",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kitchen-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kitchen-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kitchen-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kitchen-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kitchen-racks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kitchen-racks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/microwave-stand",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/microwave-stand",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kitchen-trolley",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kitchen-trolley",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/serveware",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/serveware",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/serving-trays",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/serving-trays",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cutlery-holders",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cutlery-holders",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/tissue-box",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/tissue-box",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bar-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bar-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bar-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bar-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bar-trolleys",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bar-trolleys",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bar-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bar-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/solid-wood-shoe-racks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/solid-wood-shoe-racks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/modular-shoe-racks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/modular-shoe-racks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/living-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/living-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bedroom-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bedroom-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wooden-showcase",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wooden-showcase",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kitchen-storage",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kitchen-storage",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/crockery-units",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/crockery-units",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/hutch-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/hutch-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/study-room-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/study-room-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/study-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/study-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/all-study-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/all-study-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/computer-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/computer-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/folding-study-table",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/folding-study-table",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/corner-study-table",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/corner-study-table",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-mounted-study-table",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-mounted-study-table",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/height-adjustable-table",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/height-adjustable-table",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/office-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/office-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/office-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/office-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/study-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/study-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/gaming-chair",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/gaming-chair",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/executive-chair",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/executive-chair",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cafe-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cafe-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/office-sofas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/office-sofas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/file-cabinets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/file-cabinets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/outdoor-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/outdoor-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/balcony-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/balcony-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/balcony-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/balcony-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/balcony-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/balcony-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/balcony-tables",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/balcony-tables",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/outdoor-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/outdoor-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/outdoor-table-and-chair-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/outdoor-table-and-chair-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/outdoor-loungers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/outdoor-loungers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-garden",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-garden",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/artificial-flowers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/artificial-flowers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/artificial-plants",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/artificial-plants",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-decor",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-decor",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/key-holders",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/key-holders",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-mirrors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-mirrors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-paintings",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-paintings",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-arts",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-arts",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/jharokhas",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/jharokhas",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/clocks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/clocks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/wall-clocks",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/wall-clocks",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bathroom-accessories",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bathroom-accessories",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/soap-dispenser-sets",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/soap-dispenser-sets",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/home-improvements",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/home-improvements",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/spiritual",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/spiritual",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/mirrors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/mirrors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/full-length-mirrors",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/full-length-mirrors",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-decor",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-decor",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/vases",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/vases",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-showpiece",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-showpiece",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/candle-stands",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/candle-stands",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-organizer",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-organizer",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/lamps",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/lamps",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/floor-lamps",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/floor-lamps",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/table-lamps",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/table-lamps",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chandeliers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chandeliers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/chandelier-fans",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/chandelier-fans",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/lighting",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/lighting",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/hanging-lights",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/hanging-lights",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fabrics",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fabrics",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/modular-wardrobe-designs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/modular-wardrobe-designs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/new-arrivals",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/new-arrivals",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/festive-sale",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/festive-sale",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/pillow-offer",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/pillow-offer",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/calmora-engineered-wood-bed-with-upholstered-headboard-and-spacious-box-storage-king-size-columbian-walnut-finish",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/calmora-engineered-wood-bed-with-upholstered-headboard-and-spacious-box-storage-king-size-columbian-walnut-finish",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-4-seater-right-aligned-sofa-cotton-cottage-ivory",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-4-seater-right-aligned-sofa-cotton-cottage-ivory",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/alvaro-3-1-1-seater-fabric-sofa-with-wooden-accents-cotton-iris-blue",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/alvaro-3-1-1-seater-fabric-sofa-with-wooden-accents-cotton-iris-blue",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/danon-lounge-chair-beige-pomme",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/danon-lounge-chair-beige-pomme",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-salmon-pink",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-salmon-pink",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-three-seater-manual-fabric-recliner-chair-in-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-three-seater-manual-fabric-recliner-chair-in-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-left-aligned-sofa-cotton-mocha-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-left-aligned-sofa-cotton-mocha-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-salmon-pink",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-salmon-pink",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/danon-lounge-chair-aqua-flower",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/danon-lounge-chair-aqua-flower",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-jade-ivory",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-jade-ivory",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-three-seater-manual-fabric-recliner-chair-in-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-three-seater-manual-fabric-recliner-chair-in-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-left-aligned-sofa-cotton-sand-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-left-aligned-sofa-cotton-sand-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-jade-ivory",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-jade-ivory",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/danon-lounge-chair-sand-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/danon-lounge-chair-sand-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-iris-blue",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-iris-blue",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-irish-cream",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-irish-cream",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-indigo-blue",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-indigo-blue",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-sand-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-sand-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-indigo-blue",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-indigo-blue",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-mocha-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-mocha-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-graphite-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-graphite-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-sand-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-sand-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-graphite-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-graphite-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-three-seater-motorised-fabric-recliner-chair-in-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-4-seater-left-aligned-sofa-cotton-cottage-ivory",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-4-seater-left-aligned-sofa-cotton-cottage-ivory",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-dark-olive-green",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-3-1-1-seater-sofa-set-dark-olive-green",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-sage-green",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-sage-green",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-ginger-bread",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-ginger-bread",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/valios-3-seater-manual-fabric-recliner-chair-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/valios-3-seater-manual-fabric-recliner-chair-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-sand-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/albus-l-shape-5-seater-right-aligned-sofa-cotton-sand-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-leaf",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-leaf",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-dark-olive-green",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-dark-olive-green",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/valios-3-seater-manual-fabric-recliner-chair-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/valios-3-seater-manual-fabric-recliner-chair-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-velvet-salmon-pink",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-velvet-salmon-pink",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-ginger-bread",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-ginger-bread",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-chestnut-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/lorenz-1-seater-sofa-chestnut-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-green",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-green",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-cotton-irish-cream",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-cotton-irish-cream",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-cottage-ivory",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-cottage-ivory",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-leatherette-ginger-bread",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/oasis-l-shape-right-aligned-sectional-sofa-leatherette-ginger-bread",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-irish-cream",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-irish-cream",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/oasis-l-shape-left-aligned-sectional-sofa-velvet-salmon-pink",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/oasis-l-shape-left-aligned-sectional-sofa-velvet-salmon-pink",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-iris-blue",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-iris-blue",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/helios-two-seater-manual-fabric-recliner-chair-in-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/oasis-l-shape-left-aligned-sectional-sofa-leatherette-ginger-bread",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/oasis-l-shape-left-aligned-sectional-sofa-leatherette-ginger-bread",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/adoree-lounge-chair-arctic-diamonds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/adoree-lounge-chair-arctic-diamonds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/avion-two-seater-motorised-fabric-recliner-chair-in-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/vivian-2-seater-manual-fabric-recliner-chair-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/curve-single-seater-motorised-swivel-glider-recliner-chair-in-leatherette-beige-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/curve-single-seater-motorised-swivel-glider-recliner-chair-in-leatherette-beige-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-1-seater-motorised-rocking-revolving-recliner-chair-in-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-1-seater-motorised-rocking-revolving-recliner-chair-in-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-rocking-revolving-recliner-chair-in-fabric-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-rocking-revolving-recliner-chair-in-fabric-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-rocking-revolving-recliner-chair-in-fabric-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-rocking-revolving-recliner-chair-in-fabric-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-1-seater-motorised-fabric-recliner-chair-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-1-seater-motorised-fabric-recliner-chair-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-fabric-recliner-chair-in-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-fabric-recliner-chair-in-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-fabric-recliner-chair-in-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-motorised-fabric-recliner-chair-in-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-rocking-revolving-recliner-chair-in-fabric-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-brown",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-brown",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-beige",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-beige",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-grey",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/product/galaxy-single-seater-manual-fabric-recliner-chair-grey",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/deal-of-the-day",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/deal-of-the-day",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/solid-wood-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/solid-wood-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/bunk-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/bunk-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cushions",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cushions",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/computer-chairs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/computer-chairs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/ergonomic-chair",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/ergonomic-chair",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/revolving-chair",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/revolving-chair",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/gift",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/gift",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/about-us",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/about-us",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/careers",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/careers",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/media",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/media",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/blog/",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/blog/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/customer-stories",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/customer-stories",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/investor-relations",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/investor-relations",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/custom-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/custom-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/hotel-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/hotel-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/locations",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/locations",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/luxury-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/luxury-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/kids-furniture",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/kids-furniture",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/sell-on-woodenstreet",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/sell-on-woodenstreet",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/footer/qro.pdf",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/footer/qro.pdf",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/footer/ukcert.pdf",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/footer/ukcert.pdf",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/support-form",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/support-form",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.instagram.com/woodenstreet/",
+      "status": 200,
+      "finalUrl": "https://www.instagram.com/woodenstreet/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.facebook.com/woodenstreet/",
+      "status": 200,
+      "finalUrl": "https://www.facebook.com/woodenstreet/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://x.com/Wooden_street",
+      "status": 200,
+      "finalUrl": "https://x.com/Wooden_street",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://in.pinterest.com/woodenstreet/",
+      "status": 200,
+      "finalUrl": "https://in.pinterest.com/woodenstreet/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.linkedin.com/company/wooden-street/",
+      "status": 200,
+      "finalUrl": "https://www.linkedin.com/company/wooden-street/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.woodenstreet",
+      "status": 200,
+      "finalUrl": "https://play.google.com/store/apps/details?id=com.woodenstreet",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://apps.apple.com/in/app/wooden-street/id1162068644?ls=1",
+      "status": 200,
+      "finalUrl": "https://apps.apple.com/in/app/wooden-street/id1162068644?ls=1",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/terms-of-use",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/terms-of-use",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/security-and-privacy",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/security-and-privacy",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/return-and-refunds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/return-and-refunds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/payment-policy",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/payment-policy",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/grievance-redressal",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/grievance-redressal",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/almirah",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/almirah",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/platform-beds",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/platform-beds",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/cots",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/cots",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/folding-bed",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/folding-bed",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/palang",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/palang",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/header/mob-logo.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/header/mob-logo.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/svg//customers.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/svg//customers.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/svg//tools.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/svg//tools.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/svg//warranty.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/svg//warranty.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/svg//quality-check.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/svg//quality-check.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-beta/modular-kitchen.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-beta/modular-kitchen.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-beta/modular-wardrobe.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-beta/modular-wardrobe.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/error.jpg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/error.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/tv-units.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/tv-units.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/office-chairs.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/office-chairs.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/home-temple.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/home-temple.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/all-study-tables.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/all-study-tables.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/pillow.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/mid-banners/pillow.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/Qro-logo.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/Qro-logo.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/Ukcert-logo.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/Ukcert-logo.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/insta.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/insta.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/facebook.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/facebook.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/twitter.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/twitter.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/pin.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/pin.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/linkdin.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/linkdin.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/footer-cards.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/footer-cards.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/app-icon.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/app-icon.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/ios-icon.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/wsnew2024/static-webmedia/images/footer/ios-icon.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/footer/logofooter.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/footer/logofooter.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://scripts.clarity.ms/0.8.70/clarity.js",
+      "status": 200,
+      "finalUrl": "https://scripts.clarity.ms/0.8.70/clarity.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://signals.bigatom.ai/sdk/4842663966429323853/events.js",
+      "status": 200,
+      "finalUrl": "https://signals.bigatom.ai/sdk/4842663966429323853/events.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.clarity.ms/tag/frguloz9k4?ref=gtm",
+      "status": 200,
+      "finalUrl": "https://www.clarity.ms/tag/frguloz9k4?ref=gtm",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WKJ6WBR&gtg_health=1",
+      "status": 200,
+      "finalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-WKJ6WBR&gtg_health=1",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/Gmww5LcnqLIS9pa4GGDlT_768sdsTOmxtnP0G9hJY_Inl2e_Vcs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/j319/Gmww5LcnqLIS9pa4GGDlT_768sdsTOmxtnP0G9hJY_Inl2e_Vcs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/Gmww5LcnrshomOXXch6VLfqH8sdsTOmxtnP0G9hJY_Inl2e_Vcs",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/j319/Gmww5LcnrshomOXXch6VLfqH8sdsTOmxtnP0G9hJY_Inl2e_Vcs",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/j319/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/75757.3725712fbc0c8565.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/75757.3725712fbc0c8565.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/webpack-129bff79cd61a1f7.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/webpack-129bff79cd61a1f7.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/framework-c5a262624c7f965d.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/framework-c5a262624c7f965d.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/main-f67df17f-cd58388e85703721.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/main-f67df17f-cd58388e85703721.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/main-d91c2bd6-d23ba10055c5f588.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/main-d91c2bd6-d23ba10055c5f588.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/main-89d5c698-5a81cdf71a5643c2.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/main-89d5c698-5a81cdf71a5643c2.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/14486-90bc6b1230ae6efa.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/14486-90bc6b1230ae6efa.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/56639-962fd60abcc08962.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/56639-962fd60abcc08962.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/5091-3a0c7aff96cc2f9d.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/5091-3a0c7aff96cc2f9d.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/30959-1e510f57b8cba2f5.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/30959-1e510f57b8cba2f5.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/69593-d161113412865d77.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/69593-d161113412865d77.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/51782-6923feac843d3a45.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/51782-6923feac843d3a45.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/25764-fc1040c217cd63bd.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/25764-fc1040c217cd63bd.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/52748-c60071442534be86.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/52748-c60071442534be86.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/pages/_app-c14513c5bdfc4b9c.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/pages/_app-c14513c5bdfc4b9c.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/25675-f6fd506a34969ea7.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/25675-f6fd506a34969ea7.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/55156-408808098f9ff9a1.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/55156-408808098f9ff9a1.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/46634-aed0a433111d9e1a.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/46634-aed0a433111d9e1a.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/39640-c9d51151ada5d82c.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/39640-c9d51151ada5d82c.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/69891-bd9891c72501654d.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/69891-bd9891c72501654d.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/82702-d59123cdda52798e.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/82702-d59123cdda52798e.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/32766-b01d112e45ae0623.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/32766-b01d112e45ae0623.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/22940-d776561601b2f8f9.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/22940-d776561601b2f8f9.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/48929-4a1fa6be93abce6a.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/48929-4a1fa6be93abce6a.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/99304-e4c1cc2ad9be2050.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/99304-e4c1cc2ad9be2050.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/89382-a4c98acb264ef311.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/89382-a4c98acb264ef311.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/60849-899e8d8d6dfe5d84.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/60849-899e8d8d6dfe5d84.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/82375-91d02f8360b11c39.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/82375-91d02f8360b11c39.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/769-016a892201a75c91.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/769-016a892201a75c91.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/98697-724379d4dc08465c.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/98697-724379d4dc08465c.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/pages/index-a4b5fd02f17c0329.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/pages/index-a4b5fd02f17c0329.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/BasBb6T5PLhUkQhyyqiJx/_buildManifest.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/BasBb6T5PLhUkQhyyqiJx/_buildManifest.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/BasBb6T5PLhUkQhyyqiJx/_ssgManifest.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/BasBb6T5PLhUkQhyyqiJx/_ssgManifest.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-WKJ6WBR",
+      "status": 200,
+      "finalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-WKJ6WBR",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=1789966871606&cv=11&fst=1789966871606&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=4",
+      "status": 200,
+      "finalUrl": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=1789966871606&cv=11&fst=1789966871606&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=4",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=1789966871643&cv=11&fst=1789966871643&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=4",
+      "status": 200,
+      "finalUrl": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=1789966871643&cv=11&fst=1789966871643&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=4",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "status": 200,
+      "finalUrl": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/apple-touch-icon.png",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/apple-touch-icon.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/favicon-32x32.png",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/favicon-32x32.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/favicon-16x16.png",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/favicon-16x16.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/favicon.ico",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/favicon.ico",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/pangram/pangram-medium-webfont.woff2",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/pangram/pangram-medium-webfont.woff2",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/pangram/pangram-regular-webfont.woff2",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/pangram/pangram-regular-webfont.woff2",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/redhatdisplay-variablefont_wght-webfont.woff2",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/redhatdisplay-variablefont_wght-webfont.woff2",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/css/4d0f0e3e87f50b4c.css",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/css/4d0f0e3e87f50b4c.css",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/css/5dc2a57895562420.css",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/css/5dc2a57895562420.css",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/css/5bfc19ae42b9187f.css",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/css/5bfc19ae42b9187f.css",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/css/bda027e3240c216d.css",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/css/bda027e3240c216d.css",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/css/1b1f032f80f24f9e.css",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/css/1b1f032f80f24f9e.css",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://tagmanager.google.com/",
+      "status": 200,
+      "finalUrl": "https://accounts.google.com/v3/signin/identifier?continue=https://tagmanager.google.com/&followup=https://tagmanager.google.com/&passive=1209600&service=analytics&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550998953:1789966939872483",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google-analytics.com/",
+      "status": 200,
+      "finalUrl": "https://marketingplatform.google.com/about/analytics/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://connect.facebook.net/",
+      "status": 200,
+      "finalUrl": "https://www.facebook.com/",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/1.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/1.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/banner-mattress/home_page_mattress.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/banner-mattress/home_page_mattress.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_hero_2.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_hero_2.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_hero_3.jpg?v=1",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_hero_3.jpg?v=1",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/client/CaretLeft.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/client/CaretLeft.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/images/client/CaretRight.svg",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/images/client/CaretRight.svg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/roboto-regular-webfont.woff2",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/roboto-regular-webfont.woff2",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/redhatdisplay-medium.woff2",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/redhatdisplay-medium.woff2",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/pangram/pangram-regular-webfont.woff",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/pangram/pangram-regular-webfont.woff",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/pangram/pangram-medium-webfont.woff",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/pangram/pangram-medium-webfont.woff",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/8.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/8.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/2.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/2.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/experience-stores/store-thumb.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/experience-stores/store-thumb.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/fonts/roboto-regular-webfont.woff",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/fonts/roboto-regular-webfont.woff",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/52756.9b34c496f8fd5e71.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/52756.9b34c496f8fd5e71.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/630.ad3f463dacd7937e.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/630.ad3f463dacd7937e.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/17115-59b56ffa75fb82fb.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/17115-59b56ffa75fb82fb.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/99983.bc96bd7f71003dde.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/99983.bc96bd7f71003dde.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/19168.6baa2e802d1ca35b.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/19168.6baa2e802d1ca35b.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/static/chunks/7577.517d41723498d901.js",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/static/chunks/7577.517d41723498d901.js",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://api.woodenstreet.com/api/v1/information/new-arrivals",
+      "status": 200,
+      "finalUrl": "https://api.woodenstreet.com/api/v1/information/new-arrivals",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/_next/data/BasBb6T5PLhUkQhyyqiJx/index.json",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/_next/data/BasBb6T5PLhUkQhyyqiJx/index.json",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/bank-offers/no-cost-emi.png?v=5",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/bank-offers/no-cost-emi.png?v=5",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/customers.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/customers.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/delivery.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/delivery.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/warranty.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/warranty.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/stores.png",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/ws-nextjs/homenew-production/usps/stores.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://signals.bigatom.ai/events/896b48e01cff707af02eba0fa25d372d08fb29b55d68b8851404dcae828cffb9",
+      "status": 302,
+      "finalUrl": "https://signals.bigatom.ai/events/896b48e01cff707af02eba0fa25d372d08fb29b55d68b8851404dcae828cffb9",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/new-arrivals-bg.png",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/new-arrivals-bg.png",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+4+Seater+Sofa/Right+Aligned/Cottage+Ivory/8-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+4+Seater+Sofa/Right+Aligned/Cottage+Ivory/8-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Alvaro+Fabric+Sofa/3+1+1+Sofa+Set/Iris+Blue/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Alvaro+Fabric+Sofa/3+1+1+Sofa+Set/Iris+Blue/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Beige+Pomme/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Beige+Pomme/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Salmon+Pink/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Salmon+Pink/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Mocha+Brown/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Mocha+Brown/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Salmon+Pink-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Salmon+Pink-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Aqua+Flower/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Aqua+Flower/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Jade+Ivory/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Jade+Ivory/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Sand+Beige/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Sand+Beige/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Jade+Ivory/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Jade+Ivory/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Sand+Brown/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/fabric-sofa/Danon+Lounge+Chair/One+Seater/Sand+Brown/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Iris+Blue/3-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Iris+Blue/3-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Irish+Cream/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Irish+Cream/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Indigo+Blue-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Indigo+Blue-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sand+Brown/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sand+Brown/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Indigo+Blue+Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Indigo+Blue+Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Mocha+Brown/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Mocha+Brown/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Graphite+Grey-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Graphite+Grey-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sand+Beige/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sand+Beige/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Graphite+Grey+Velvet/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Graphite+Grey+Velvet/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+STR+MTR/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+4+Seater+Sofa/Left+Aligned/Cottage+Ivory/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+4+Seater+Sofa/Left+Aligned/Cottage+Ivory/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Dark+Olive+Green-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/3+1+1+Sofa+Set/Dark+Olive+Green-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sage+Green/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Sage+Green/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Ginger+Bread-+Leather/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Ginger+Bread-+Leather/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/brown/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/brown/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Sand+Beige/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Albus-Sofa/Albus-New/L-Shape+5+Seater/Right-Aligned/Sand+Beige/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Leaf-Leatherette/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Leaf-Leatherette/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Dark+Olive+Green/2-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Dark+Olive+Green/2-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/grey/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/grey/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Salmon+Pink-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Salmon+Pink-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Ginger+Bread-+Leather/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Ginger+Bread-+Leather/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Chestnut+Brown/3-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Lorenz/1+Seater/Chestnut+Brown/3-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/green/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/green/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Irish+Cream/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Irish+Cream/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Cottage+Ivory/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Cottage+Ivory/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Ginger+Bread-Leatherette/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Right+Aligned/New+AI+Images/Ginger+Bread-Leatherette/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Irish+Cream/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Irish+Cream/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Left+Aligned/New+AI+Images/Salmon+Pink-Velvet/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Left+Aligned/New+AI+Images/Salmon+Pink-Velvet/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Iris+Blue/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Iris+Blue/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/Beige/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Helios+ML+2STR/Beige/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Left+Aligned/New+AI+Images/Ginger+Bread-Leatherette/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Oasis+Sofa/Left+Aligned/New+AI+Images/Ginger+Bread-Leatherette/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Arctic+Diamonds/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/Adoree+Lounge+Chair/Arctic+Diamonds/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/AVION/2+str/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/CURVE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/CURVE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/GALAXY/1STR+MTR/1STR+MTR+NORMAL/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/1+STR+ML+RRR/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/BRWN/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/BRWN/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/BEIGE/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/BEIGE/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/GREY/1-810x702.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/cache/data/little+nap/Galaxy+Modern+Recliner+1+STR/GREY/1-810x702.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/798096347/?random=1789966871606&cv=11&fst=1789966871606&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=68&gcp=5",
+      "status": 200,
+      "finalUrl": "https://www.google.com/rmkt/collect/798096347/?random=1789966871606&cv=11&fst=1789966871606&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=68&gcp=5",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/798096347/?random=1789966871643&cv=11&fst=1789966871643&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=68&gcp=5",
+      "status": 200,
+      "finalUrl": "https://www.google.com/rmkt/collect/798096347/?random=1789966871643&cv=11&fst=1789966871643&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=68&gcp=5",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=7&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=4&ept=5&epp=5~22~63~74",
+      "status": 200,
+      "finalUrl": "https://www.googleadservices.com/pagead/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=7&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=4&ept=5&epp=5~22~63~74",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/as/p/c/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=74&epp=5~22~63~74",
+      "status": 204,
+      "finalUrl": "https://www.woodenstreet.com/j319/as/p/c/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=74&epp=5~22~63~74",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.googleadservices.com/pagead/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=7&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74",
+      "status": 200,
+      "finalUrl": "https://www.googleadservices.com/pagead/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=7&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/as/d/ccm/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=1&_uip=%3A%3A",
+      "status": 200,
+      "finalUrl": "https://www.woodenstreet.com/j319/as/d/ccm/conversion/798096347/?random=1789966871648&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=1&_uip=%3A%3A",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.woodenstreet.com/j319/ag/g/c?v=2&tid=G-WYJWZGFQ0J&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&_p=1789966870440&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dYzg1YT&_eu=EAAAAGAC&_uip=%3A%3A&are=1&cid=1026476968.1789966872&fp=1&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-gb&ur=IN-RJ&_gsid=UkM3gGJI330qsWRYram86C1UAyF4pll1ew&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&sid=1789966871&sct=1&seg=0&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&gap.gtb=2&tfd=4392",
+      "status": 204,
+      "finalUrl": "https://www.woodenstreet.com/j319/ag/g/c?v=2&tid=G-WYJWZGFQ0J&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&_p=1789966870440&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dYzg1YT&_eu=EAAAAGAC&_uip=%3A%3A&are=1&cid=1026476968.1789966872&fp=1&frm=0&ir=1&pscdl=noapi&rcb=5&sr=1280x720&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-gb&ur=IN-RJ&_gsid=UkM3gGJI330qsWRYram86C1UAyF4pll1ew&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&sid=1789966871&sct=1&seg=0&dl=https%3A%2F%2Fwww.woodenstreet.com%2F&dt=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&en=page_view&_fv=1&_nsi=1&_ss=1&gap.gtb=2&tfd=4392",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-WYJWZGFQ0J&cid=1026476968.1789966872&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&rcb=5&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153",
+      "status": 204,
+      "finalUrl": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-WYJWZGFQ0J&cid=1026476968.1789966872&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&rcb=5&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://analytics.google.com/g/s/collect?_gsid=UkM3gGJI330qsWRYram86C1UAyF4pll1ew&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4",
+      "status": 204,
+      "finalUrl": "https://analytics.google.com/g/s/collect?_gsid=UkM3gGJI330qsWRYram86C1UAyF4pll1ew&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-WYJWZGFQ0J&cid=1026476968.1789966872&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&rcb=5&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&z=1931521390",
+      "status": 200,
+      "finalUrl": "https://www.google.co.in/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-WYJWZGFQ0J&cid=1026476968.1789966872&gtm=45g92e69h0h2v877978765z879560732za20kzb79560732zd79560732xf4&rcb=5&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153&z=1931521390",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=1635867580&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74&ct_cookie_present=false&crd=&pscrd=IhMI14W4nPL-lgMVEuVzAR1OBiQ4Oh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tLw",
+      "status": 200,
+      "finalUrl": "https://www.google.com/pagead/1p-conversion/798096347/?random=1635867580&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74&ct_cookie_present=false&crd=&pscrd=IhMI14W4nPL-lgMVEuVzAR1OBiQ4Oh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tLw&is_vtc=1&cid=CAQS0wEAQM4h3PzvNai3EiWYR5bC7lqPmN8axVoMrh216y8f2z-CiokVvCTEKFDlGuwfU6HLrSEFsEwhVunqpOV2b4HUm5mBB94F3WdpGSP4-B3JckmHsP23DNCaDBXCmwgeTiTCZ1ALjalz4YGQIutELZ82zKTZXVHJU31hK-DhOLl8gOp-aFyt4HtiiUnEnYgY8tJ7RJ4Or7_sGmZZCb5uf6o7_qgmh-NmH6aaKccFXOZdkdr8IymsiDNODVddDaOMtMmf6Ij4Zv0-fj5iWB80id-BlXHo&eitems=ChEI8Ii-1QYQ8t292oHrjdfkARIdAHjhi7fmNONQwhJejR35LxJLzn965JVSc0j2Z_E&random=2676563324",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/798096347/?random=550325820&cv=11&fst=1789966871648&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=4&ept=5&epp=5~22~63~74&ct_cookie_present=false&eoid=CkcKEQjwiL7VBhDn4Oeei82V8IcBEjIAZxYeclmYrgA9zosOIYg6vqF28mMl_on1nlVw_MKCnZGEuZTOaHdyER-ehPkhudVP8PD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgjU5rECCLHhsQIIs-GxAgim3bECCLDesQIIgNuxAgjN4bECShR0cmlnZ2VyO2V2ZW50LXNvdXJjZVoDCgEBYgMKAQM&cerd=ChTbib4tlOS-Lbnrvi3z7L4tnem3OA&eitems=ChEI8Ii-1QYQ8t292oHrjdfkARIdAHjhi7cZj3b__JZFwhhM7hhdtFAeVPljLYF2hnI&fsk=ChAI8Ii-1QYQ0Nib7uz1s7oEEiwAE9pNW1TTunpojb47Q0c77AKB1KbqonvwgcCfDVz7gMjq_b1x8WySP4iMthoCEqE&pscrd=IhMImpK4nPL-lgMV1QS3AB1tyzywOh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tL0JXQ2hFSThJaS0xUVlRemV5ci11YTVodXVIQVJJc0FIRDROSjZrTV9QS3JMUGR6N0Q0eElkZjVKMHEyZVNLNGsyT2VZbS03ZVdlR0dUVmpVbTVGNnVJVEZNegwICWIICAAQABgAIAA",
+      "status": 200,
+      "finalUrl": "https://www.google.co.in/pagead/1p-conversion/798096347/?random=550325820&cv=11&fst=1789966871648&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&evjid=F7pJTklOgAR7c-8d8A&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=1&gcl_ctr=1~0~0~0&gap.gtb=2&category=acrcp_v1_512&emd=tvd.1&eme=tv.1~&gap.ch=4&ept=5&epp=5~22~63~74&ct_cookie_present=false&eoid=CkcKEQjwiL7VBhDn4Oeei82V8IcBEjIAZxYeclmYrgA9zosOIYg6vqF28mMl_on1nlVw_MKCnZGEuZTOaHdyER-ehPkhudVP8PD_BwE&crd=CLTesQII8t-xAgit4bECCK_hsQIIobixAgixwbECCLDBsQIIscOxAgiKxbECCMLJsQII1-ixAgi0xrECCJPasQII29yxAgiH27ECCNPFsQII68yxAgjtzrECCNXPsQII9NqxAgjo7rECCJLrsQIIyeOxAgiX1LECCMnbsQIIzeaxAgjU5rECCLHhsQIIs-GxAgim3bECCLDesQIIgNuxAgjN4bECShR0cmlnZ2VyO2V2ZW50LXNvdXJjZVoDCgEBYgMKAQM&cerd=ChTbib4tlOS-Lbnrvi3z7L4tnem3OA&fsk=ChAI8Ii-1QYQ0Nib7uz1s7oEEiwAE9pNW1TTunpojb47Q0c77AKB1KbqonvwgcCfDVz7gMjq_b1x8WySP4iMthoCEqE&is_vtc=1&cid=CAQS0wEAQM4h3M5uKo3cxR-01AZ5nJaLvL2EGQJm5Z81Y3nH-JC8QxxPEAToSCAcSMeO0K_YX5FP8VsoW49yRz0aP3z6FFNqFR83yn4_zXzkFDINv0bd-1nlSenb2MzPILepMOYHLU3FSROJgaeM9XsoMmLuUfycW6KVc64p8YupSEdGDQRieN-7x1vGxVxdk27OSqWEb9myrlzCrb1devFUy3SSfDw1-8dOCCE1vW1zR0p1hO9BqL_uFXb6uJDgTXzHfcZQ0PegUpmdwhHyrCFiOV67BqEE&eitems=ChEI8Ii-1QYQ8t292oHrjdfkARIdAHjhi7dET9qg_DvxqIC97TbCaefmW2o0X8i2ISI&random=3933072006&ipr=y&pscrd=IhMImpK4nPL-lgMV1QS3AB1tyzywOh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tL0JXQ2hFSThJaS0xUVlRemV5ci11YTVodXVIQVJJc0FIRDROSjZrTV9QS3JMUGR6N0Q0eElkZjVKMHEyZVNLNGsyT2VZbS03ZVdlR0dUVmpVbTVGNnVJVEZNegwICWIICAAQABgAIACCARNwAYgBAeIBAQLxAY7fmq1iju8_",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-conversion/798096347/?random=1635867580&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74&ct_cookie_present=false&crd=&pscrd=IhMI14W4nPL-lgMVEuVzAR1OBiQ4Oh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tLw&gcp=3",
+      "status": 200,
+      "finalUrl": "https://www.google.com/pagead/1p-conversion/798096347/?random=1635867580&cv=11&fst=1789966871648&fmt=3&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&label=30cBCNaQ24UcENv3x_wC&capi=1&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&bttype=purchase&value=0&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&ec_mode=a&oid=GG_358203928.1789966872&oidsrc=3&ecsid2=445266897.1789966872&_tu=CBA&mt=2&gcl_ctr=1~0~0~0&gap.gtb=2&emd=tvd.1&eme=tv.1~&gap.ch=1&ept=63&epp=5~22~63~74&ct_cookie_present=false&crd=&pscrd=IhMI14W4nPL-lgMVEuVzAR1OBiQ4Oh1odHRwczovL3d3dy53b29kZW5zdHJlZXQuY29tLw&gcp=3",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://i.clarity.ms/collect",
+      "status": 204,
+      "finalUrl": "https://i.clarity.ms/collect",
+      "method": "GET"
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/798096347/?random=1789966871643&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FBq9-H8gkMvq8S1SBYYBmZffbwR9ASk_UcTbr4Pe7ykB4A-dxszmWpaXXVLZIGC3AASgCJNDxybRf-MXPJaGjTNuo0D5QB-2zQ-zM1oo75CuEEvC2JGTa3kWk0lAH5KALrjBFYoFmicA_Pkrq1oWN9RzxMhEgEAJzrqVCq0b7MBdcEOzU31gnvkuV3kV3Fbn2nOZqj6duX_YBFgsQS9r7YdY7sIYe5YkHJBsNK3BRtIz36INkBrEHrMP2gA5M-pLGdSldQs752I-W94cZcz&random=22579498&rmt_tld=0&ipr=y",
+      "status": 200,
+      "finalUrl": "https://www.google.com/pagead/1p-user-list/798096347/?random=1789966871643&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FBq9-H8gkMvq8S1SBYYBmZffbwR9ASk_UcTbr4Pe7ykB4A-dxszmWpaXXVLZIGC3AASgCJNDxybRf-MXPJaGjTNuo0D5QB-2zQ-zM1oo75CuEEvC2JGTa3kWk0lAH5KALrjBFYoFmicA_Pkrq1oWN9RzxMhEgEAJzrqVCq0b7MBdcEOzU31gnvkuV3kV3Fbn2nOZqj6duX_YBFgsQS9r7YdY7sIYe5YkHJBsNK3BRtIz36INkBrEHrMP2gA5M-pLGdSldQs752I-W94cZcz&random=22579498&rmt_tld=0&ipr=y",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.co.in/pagead/1p-user-list/798096347/?random=1789966871643&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FBq9-H8gkMvq8S1SBYYBmZffbwR9ASk_UcTbr4Pe7ykB4A-dxszmWpaXXVLZIGC3AASgCJNDxybRf-MXPJaGjTNuo0D5QB-2zQ-zM1oo75CuEEvC2JGTa3kWk0lAH5KALrjBFYoFmicA_Pkrq1oWN9RzxMhEgEAJzrqVCq0b7MBdcEOzU31gnvkuV3kV3Fbn2nOZqj6duX_YBFgsQS9r7YdY7sIYe5YkHJBsNK3BRtIz36INkBrEHrMP2gA5M-pLGdSldQs752I-W94cZcz&random=22579498&rmt_tld=1&ipr=y",
+      "status": 200,
+      "finalUrl": "https://www.google.co.in/pagead/1p-user-list/798096347/?random=1789966871643&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xeaxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&_tu=CA&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FBq9-H8gkMvq8S1SBYYBmZffbwR9ASk_UcTbr4Pe7ykB4A-dxszmWpaXXVLZIGC3AASgCJNDxybRf-MXPJaGjTNuo0D5QB-2zQ-zM1oo75CuEEvC2JGTa3kWk0lAH5KALrjBFYoFmicA_Pkrq1oWN9RzxMhEgEAJzrqVCq0b7MBdcEOzU31gnvkuV3kV3Fbn2nOZqj6duX_YBFgsQS9r7YdY7sIYe5YkHJBsNK3BRtIz36INkBrEHrMP2gA5M-pLGdSldQs752I-W94cZcz&random=22579498&rmt_tld=1&ipr=y",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/798096347/?random=1789966871606&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FLRXyjgvEcXkySlaAgTrPIUmMedhGe8I0wqJpUt_8DQoZbidcyEC377q-dkNrUbE-s3DLJEASaNVawPCU8Wev1VxJN4U-D5CdNTe65IP2C45_JJnAM6efhJkJu3YrMpSCpxUAMX6evRI0ZKgBftPUjZitLEu0PbOwD1HyIZvh0XU52o1UbMoO-ui9ActDje68jM8Z8T7ZVRyMN20HJH8wiOwIqXI8aI213LTU5YtxMnx9eqgaXDwrMRXe7-F-9i_XxJlzgCErFAJ6Zg6MeR&random=3197587108&rmt_tld=0&ipr=y",
+      "status": 200,
+      "finalUrl": "https://www.google.com/pagead/1p-user-list/798096347/?random=1789966871606&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FLRXyjgvEcXkySlaAgTrPIUmMedhGe8I0wqJpUt_8DQoZbidcyEC377q-dkNrUbE-s3DLJEASaNVawPCU8Wev1VxJN4U-D5CdNTe65IP2C45_JJnAM6efhJkJu3YrMpSCpxUAMX6evRI0ZKgBftPUjZitLEu0PbOwD1HyIZvh0XU52o1UbMoO-ui9ActDje68jM8Z8T7ZVRyMN20HJH8wiOwIqXI8aI213LTU5YtxMnx9eqgaXDwrMRXe7-F-9i_XxJlzgCErFAJ6Zg6MeR&random=3197587108&rmt_tld=0&ipr=y",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://www.google.co.in/pagead/1p-user-list/798096347/?random=1789966871606&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FLRXyjgvEcXkySlaAgTrPIUmMedhGe8I0wqJpUt_8DQoZbidcyEC377q-dkNrUbE-s3DLJEASaNVawPCU8Wev1VxJN4U-D5CdNTe65IP2C45_JJnAM6efhJkJu3YrMpSCpxUAMX6evRI0ZKgBftPUjZitLEu0PbOwD1HyIZvh0XU52o1UbMoO-ui9ActDje68jM8Z8T7ZVRyMN20HJH8wiOwIqXI8aI213LTU5YtxMnx9eqgaXDwrMRXe7-F-9i_XxJlzgCErFAJ6Zg6MeR&random=3197587108&rmt_tld=1&ipr=y",
+      "status": 200,
+      "finalUrl": "https://www.google.co.in/pagead/1p-user-list/798096347/?random=1789966871606&cv=11&fst=1789966800000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e69h0h2v893459555z879560732za20kzb79560732zd79560732xecxf4&gcd=13l3l3l3l1l1&dma=0&tag_exp=115616986~115938465~115938468~117776795~118897920~118897930~120213116~120385423~120469145~120469153~120847435&u_w=1280&u_h=720&url=https%3A%2F%2Fwww.woodenstreet.com%2F&rcb=12&frm=0&tiba=Furniture%20%40upto%2070%25%20OFF%20%7C%20Online%20Furniture%20Store%20in%20India%20Wooden%20Street&did=dYzg1YT&gdid=dYzg1YT&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=836441241.1789966871&uaa=x86&uab=64&uafvl=HeadlessChrome%3B147.0.7727.15%7CNot.A%252FBrand%3B8.0.0.0%7CChromium%3B147.0.7727.15&uamb=0&uam=&uap=Windows&uapv=&uaw=0&data=event%3Dgtag.config&gap.gtb=2&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS0wEAQM4h3FLRXyjgvEcXkySlaAgTrPIUmMedhGe8I0wqJpUt_8DQoZbidcyEC377q-dkNrUbE-s3DLJEASaNVawPCU8Wev1VxJN4U-D5CdNTe65IP2C45_JJnAM6efhJkJu3YrMpSCpxUAMX6evRI0ZKgBftPUjZitLEu0PbOwD1HyIZvh0XU52o1UbMoO-ui9ActDje68jM8Z8T7ZVRyMN20HJH8wiOwIqXI8aI213LTU5YtxMnx9eqgaXDwrMRXe7-F-9i_XxJlzgCErFAJ6Zg6MeR&random=3197587108&rmt_tld=1&ipr=y",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://c.clarity.ms/c.gif",
+      "status": 200,
+      "finalUrl": "https://c.clarity.ms/c.gif?ctsa=mr&CtsSyncId=FF6AB5372DEE4611B8B8B4B61089A40D&MUID=2525D094CB7C6094331DC74FCA8461B7",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/3.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/3.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/4.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/4.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/5.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/5.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/6.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/6.jpg",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/7.jpg",
+      "status": 200,
+      "finalUrl": "https://images.woodenstreet.de/image/data/website-sale/FESTIVE/home_page/7.jpg",
+      "method": "HEAD"
+    }
+  ]
+}

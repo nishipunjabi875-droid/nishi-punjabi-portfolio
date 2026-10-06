@@ -102,3 +102,4 @@ class CheckoutPage extends BasePage {
 }
 
 module.exports = CheckoutPage;
+module.exports.CheckoutPage = CheckoutPage;

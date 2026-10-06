@@ -1,0 +1,29 @@
+{
+  "totalAnchors": 575,
+  "relativeLinksCount": 9,
+  "betaLinksCount": 553,
+  "prodLinksCount": 5,
+  "otherLinksCount": 8,
+  "prodLinksSample": [
+    {
+      "text": "View Product",
+      "rawHref": "https://www.woodenstreet.com/product/virasat-cushioned-seat-hand-carved-sheesham-wood-sofa-bench-teak-finish-green-stripes"
+    },
+    {
+      "text": "View Product",
+      "rawHref": "https://www.woodenstreet.com/product/reveka-chest-of-drawer-walnut-finish"
+    },
+    {
+      "text": "View Product",
+      "rawHref": "https://www.woodenstreet.com/product/venice-sheesham-wood-without-storage-bed-queen-size-walnut-finish"
+    },
+    {
+      "text": "View Product",
+      "rawHref": "https://www.woodenstreet.com/product/petlin-coffee-table"
+    },
+    {
+      "text": "Blog",
+      "rawHref": "https://www.woodenstreet.com/blog/"
+    }
+  ]
+}

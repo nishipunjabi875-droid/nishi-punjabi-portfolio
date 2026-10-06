@@ -1,0 +1,34 @@
+export class Logger {
+  private static sanitize(message: string): string {
+    if (!message) return '';
+    return message
+      .replace(/(otp|password|pass|token|cookie|auth)=([^&\s]+)/gi, '$1=***')
+      .replace(/(\d{6})/g, (match) => (match === '302015' || match === '110001' ? match : '******'));
+  }
+
+  public static mask(val: string): string {
+    if (!val) return '***';
+    if (val.length <= 4) return '***';
+    return val.substring(0, 2) + '*'.repeat(val.length - 4) + val.substring(val.length - 2);
+  }
+
+  public static info(message: string) {
+    const timestamp = new Date().toISOString().substring(11, 19);
+    console.log(`[${timestamp}] [INFO] ${this.sanitize(message)}`);
+  }
+
+  public static pass(message: string) {
+    const timestamp = new Date().toISOString().substring(11, 19);
+    console.log(`[${timestamp}] [PASS] ${this.sanitize(message)}`);
+  }
+
+  public static fail(message: string) {
+    const timestamp = new Date().toISOString().substring(11, 19);
+    console.error(`[${timestamp}] [FAIL] ${this.sanitize(message)}`);
+  }
+
+  public static warn(message: string) {
+    const timestamp = new Date().toISOString().substring(11, 19);
+    console.warn(`[${timestamp}] [WARN] ${this.sanitize(message)}`);
+  }
+}

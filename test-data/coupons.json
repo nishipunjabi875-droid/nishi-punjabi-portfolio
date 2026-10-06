@@ -1,0 +1,10 @@
+{
+  "validCoupon": {
+    "code": "WELCOME10",
+    "discountPercent": 10
+  },
+  "invalidCoupon": {
+    "code": "INVALIDCOUPON999",
+    "expectedMessage": "Invalid coupon code"
+  }
+}

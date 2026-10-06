@@ -1,0 +1,29 @@
+{
+  "customer": {
+    "firstName": "QA",
+    "lastName": "Automation",
+    "email": "qa_beta_smoke@woodenstreet.com",
+    "phone": "7976191632",
+    "address": "123 Automation Lane, Block B",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "pincode": "302015"
+  },
+  "guest": {
+    "firstName": "Guest",
+    "lastName": "Tester",
+    "email": "guest_smoke_test@woodenstreet.com",
+    "phone": "7976191632",
+    "address": "456 Guest Street, Block C",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "pincode": "302015"
+  },
+  "invalidInputs": {
+    "phoneShort": "123",
+    "phoneAlpha": "abc1234567",
+    "emailBad": "invalidemailformat",
+    "pincodeInvalid": "000000",
+    "pincodeAlpha": "abcxyz"
+  }
+}

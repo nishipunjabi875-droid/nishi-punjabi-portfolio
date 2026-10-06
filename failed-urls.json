@@ -1,0 +1,27 @@
+[
+  {
+    "url": "#",
+    "success": false,
+    "error": 404
+  },
+  {
+    "url": "/#",
+    "success": false,
+    "error": 404
+  },
+  {
+    "url": "/kitchenware",
+    "success": false,
+    "error": 404
+  },
+  {
+    "url": "/leather-sofas",
+    "success": false,
+    "error": 404
+  },
+  {
+    "url": "/store",
+    "success": false,
+    "error": "Alias not found"
+  }
+]

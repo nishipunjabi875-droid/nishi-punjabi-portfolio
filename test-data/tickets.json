@@ -1,0 +1,9 @@
+{
+  "ticketData": {
+    "subject": "QA Automation Test Ticket",
+    "description": "Automated smoke test ticket description for WoodenStreet QA validation.",
+    "category": "Order Issues",
+    "subcategory": "Delivery Delay",
+    "priority": "Low"
+  }
+}

@@ -284,4 +284,15 @@ test('Audit all Buying Guide pages on Beta environment for broken links, 404s, u
     const jsonPath = path.join(resultsDir, 'buying_guides_audit_raw.json');
     fs.writeFileSync(jsonPath, JSON.stringify(allPageResults, null, 2), 'utf-8');
     console.log(`\n✅ Saved raw audit results to: ${jsonPath}`);
+
+    // Automatically trigger report generation (Excel & HTML Dashboard) for updated pages
+    console.log(`\n======================================================`);
+    console.log(`📊 GENERATING BUYING GUIDES AUDIT REPORT & DASHBOARD`);
+    console.log(`======================================================`);
+    try {
+        const { execSync } = require('child_process');
+        execSync('node export_buying_guides_report.js', { stdio: 'inherit', cwd: __dirname });
+    } catch (err) {
+        console.error(`⚠️ Failed to generate Buying Guides report automatically: ${err.message}`);
+    }
 });

@@ -1,0 +1,13 @@
+{
+  "validUser": {
+    "phone": "7976191632",
+    "otp": "1111",
+    "email": "qa_beta_smoke@woodenstreet.com",
+    "expectedGreeting": "Hi"
+  },
+  "invalidUser": {
+    "phone": "7976191632",
+    "invalidOtp": "0000",
+    "expectedErrorMessage": "Invalid OTP"
+  }
+}
